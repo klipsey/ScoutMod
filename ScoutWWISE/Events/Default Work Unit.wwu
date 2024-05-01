@@ -1158,9 +1158,9 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="sfx_scout_atomic_duration" ID="{CA8B836B-9B49-4898-ACB2-B7FB11988854}">
+				<Event Name="sfx_scout_atomic_duration" ID="{BBFB698C-22EF-4531-9528-9513984FC2FD}">
 					<ChildrenList>
-						<Action Name="" ID="{9A9AF94A-03F0-4DA2-A37B-7D6448AFE4DD}" ShortID="518540863">
+						<Action Name="" ID="{A39DA56E-047D-43B5-9544-65D9C3733500}" ShortID="672256756">
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="sfx_scout_atomic_duration" ID="{4C0C159F-0B39-4CCF-8BD9-35DD9BE42635}" WorkUnitID="{FE3FA7C5-9E89-40FE-8C7C-97CE0994E519}"/>
