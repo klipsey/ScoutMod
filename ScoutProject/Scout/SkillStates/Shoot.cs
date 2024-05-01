@@ -11,7 +11,7 @@ namespace ScoutMod.Scout.SkillStates
     public class Shoot : BaseScoutSkillState
     {
         public static float damageCoefficient = ScoutStaticValues.shotgunDamageCoefficient;
-        public static float procCoefficient = 1f;
+        public static float procCoefficient = 0.7f;
         public float baseDuration = 1.6f; // the base skill duration. i.e. attack speed
         public static int bulletCount = 12;
         public static float bulletSpread = 8f;

@@ -79,7 +79,7 @@ namespace ScoutMod.Scout.Content
             {
                 if(damageInfo.HasModdedDamageType(FillAtomic))
                 {
-                    attackerBody.GetComponent<ScoutController>().FillAtomic(10f, damageInfo.crit);
+                    attackerBody.GetComponent<ScoutController>().FillAtomic(5f, damageInfo.crit);
                     attackerBody.RecalculateStats();
                 }
                 else if(damageInfo.HasModdedDamageType(FillAtomicShotgun))

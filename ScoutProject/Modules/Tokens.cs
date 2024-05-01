@@ -7,6 +7,9 @@ namespace ScoutMod.Modules
         public const string agilePrefix = "<style=cIsUtility>Agile</style>";
 
         public static string agileKeyword = KeywordText("Agile", "The skill can be used while sprinting.");
+
+        public static string miniCritsKeyword = KeywordText("Mini Crits", "Damage is increased by 150%.");
+
         public static string DamageText(string text)
         {
             return $"<style=cIsDamage>{text}</style>";

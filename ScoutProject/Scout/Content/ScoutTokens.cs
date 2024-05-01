@@ -56,7 +56,8 @@ namespace ScoutMod.Scout.Content
 
             #region Passive
             Language.Add(prefix + "PASSIVE_NAME", "Atomic Core");
-            Language.Add(prefix + "PASSIVE_DESCRIPTION", $"Scout can double jump. Deal <style=cIsDamage>damage</style> to build up <style=cHumanObjective>Atomic Core</style>.");
+            Language.Add(prefix + "PASSIVE_DESCRIPTION", $"Scout can double jump. Deal <style=cIsDamage>damage</style> to build up <style=cHumanObjective>Atomic Core</style>. " +
+                $"Taking damage reduces <style=cHumanObjective>Atomic Core</style>. <style=cHumanObjective>Atomic Core</style> increases movement speed.");
             #endregion
 
             #region Primary

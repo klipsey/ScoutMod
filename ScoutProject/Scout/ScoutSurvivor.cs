@@ -329,7 +329,7 @@ namespace ScoutMod.Scout
                 skillName = "Atomic Blast",
                 skillNameToken = SCOUT_PREFIX + "UTILITY_ATOMICBLAST_NAME",
                 skillDescriptionToken = SCOUT_PREFIX + "UTILITY_ATOMICBLAST_DESCRIPTION",
-                keywordTokens = new string[] { Tokens.agileKeyword },
+                keywordTokens = new string[] { Tokens.agileKeyword, Tokens.miniCritsKeyword },
                 skillIcon = assetBundle.LoadAsset<Sprite>("texAtomicIcon"),
 
                 activationState = new EntityStates.SerializableEntityStateType(typeof(ActivateAtomic)),
@@ -543,7 +543,7 @@ namespace ScoutMod.Scout
             {
                 if(s.atomicGauge > 0)
                 {
-                    self.moveSpeed += 3f * Util.Remap(s.atomicGauge, 0f, s.maxAtomicGauge, 0f, 3f);
+                    self.moveSpeed += Util.Remap(s.atomicGauge, 0f, s.maxAtomicGauge, 0f, 3f);
                 }
             }
             else if (self.HasBuff(ScoutBuffs.atomicBuff))

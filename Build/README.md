@@ -1,94 +1,76 @@
-# Seamstress
+# Scout
 
-- BETA
-- Multiplayer Compatible
-- Currently working on animations. Model not imported.
+[![](https://i.postimg.cc/qRX8gj2q/Screenshot-2024-05-01-002255.png)]()
 
-## Model Previews
+[![](https://i.postimg.cc/g2nq4ybt/icon.png)]()
 
-## [![](https://i.postimg.cc/gJ7r3rwH/seamstress.png)]()
-
-[![](https://i.postimg.cc/zD9FrGdh/Seamstress-MADISON.png)]()
+Original Concept by vo1dstud1os - discord https://codenamecrisis.carrd.co/ - carrd
+[![](https://i.postimg.cc/TPcwDSNz/scoutconcept.png)]()
 
 # Overview
 
-The Seamstress is a half-imp survivor who uses her health for damage. She doesn't gain base damage per level so stack health items to take advantage of her passive. Managing her needles, weapons, and health are all apart of her complex kit.
+[![](https://i.postimg.cc/7LXH6zfD/Abyssal-Wars.png)]()
 
 # Skills
 
-## Passive: **It Hungers**
+## Passive: **Atomic Core**
 
-- Gain base damage for every 1 health missing. Fill your Hunger during Insatiable giving movespeed and an additional layer of health.
+- Scout can double jump. Deal damage to build up Atomic Core. Taking damage reduces Atomic Core. Atomic Core increases movement speed.
 
-## Passive: **Imp Touched Heart**
+## Primary: **Splattergun**
 
-- The Seamstress Blinks instead of jumping. Needles can be fired to Blink in the air dealing damage.
+- Agile. Fire a scattergun burst for 12x50% damage.
 
-## Primary: **Trim**
+[![](https://i.postimg.cc/x8VgkXkj/Scout-Shotgun.gif)]()
 
-- Agile. Slash in front for damage. Every third hit deals bonus damage.
+## Primary Swap: **Bonk**
 
-## Primary: **Flurry**
+- Agile. Swing your bat for 320% damage.
 
-- Agile. Slash in front for damage.
+[![](https://i.postimg.cc/VsTmh1xf/Scout-Swapandbat.gif)]()
 
-## Secondary: **Clip**
+## Secondary: **Toxic Cleaver**
 
-- Sentient. Consume all Needles. Snip for damage. Snip up to 5 additional times based on Needles consumed. Heal for some of damage dealt.
+- Agile. Throw your cleaver blighting and dealing 350% damage. Crits and poisons stunned enemies.
 
-## Secondary: **Planar Manipulation**
+## Secondary Swap: **Spike Ball**
 
-- Manipulate. Slamming enemies at high speeds deals damage in an area. Seperate cooldown on the same target.
+- Agile. Hit your baseball stunning and dealing 240% damage. Stun duration scales with distance traveled.
 
-## Utility: **Glimpse of Corruption**
+[![](https://i.postimg.cc/XqYQbTt4/Scout-Ball-Cleaver.gif)]()
 
-- Tear out your Heart and gain Insatiable. Dash forward dealing damage that knocks enemies into the air. Recasting or taking damage that exceeds It Hungers gauge removes Insatiable and returns you to your Heart.
+## Utility: **Atomic Blast**
 
-## Utility: **Glimpse of Purity**
+- Agile. Drain your Atomic Core gaining mini crits, attack speed, and movement speed. If drained at max charge, deal 1500% damage around you.
 
-- Parry. If successful, dash forward dealing damage after a delay. Gain Insatiable. During Insatiable, gain base damage. Missing the parry window refunds 50% of the cooldown.
+[![](https://i.postimg.cc/bNtpcWPQ/Scout-Atomic-Minicrits.gif)]()
 
-## Special: **Skewer**
+## Special: **Swap**
 
-- Fire your Sentient weapon dealing damage to enemies. Picking up your Sentient weapon deals damage in an area. Gain Attack Speed and Movement Speed for each weapon missing.
+- Agile. Swap to your bat.
 
 # Keywords
 
-## **Needles**:
+## **Mini Crits**:
 
-- Gain Needles by picking up your Sentient weapon or when landing Sentient attacks without your weapon.
+- Damage is increased by 150%.
 
-## **Manipulate**
+This character was made in 24 hours! This release was made afterward with some polishing.
 
-- Deal bonus damage to an enemy based on their velocity and max health.
+Will add proper secondary icon and polished animations eventually.
 
-## **Cut**
+Not sure if it's networked but it should be.
 
-- Apply a bleed based on enemies missing health.
+[![Scout Video](https://img.youtube.com/vi/-vVGdieXHz8/0.jpg)](https://www.youtube.com/watch?v=-vVGdieXHz8)
 
-## **Insatiable**
-
-- Grant all skills additional lifesteal and Cut.
-
-## **Sentient**
-
-- EFFECT VARIES ON SKILL. When your Sentient weapon is available increase the range of this attack. When your Sentient weapon is available hit for an additional strike. Gain Attack Speed and Movement Speed for each Sentient weapon missing.
-
-Please play my mod. I need to find bugs.
 Contact me on Discord: https://discord.gg/3NaMEsvYeD
 
 # Credits
 
-tsuyoikenko - Code and (eventually) the base model/animations.
+tsuyoikenko - Code, model, animations.
 
-hkryu - Icon and art https://www.instagram.com/hkryu_/ https://twitter.com/___hkryu
+vo1dstud1os - Concept art.
 
-TheTimeSweeper - Incredible new Henry template and responsible for fixing like half my bugs.
+TheTimeSweeper - Incredible new Henry template.
 
-rob - Creator of the glorious Henry template. Also, his code for other survivors helped me get started.
-
-Gemo - Eclipse/Monsoon skin model (Raven) (Will be added much later).
-
-Feilong - Seamstress skin designer (Raven) and permission to use the assets.
-
-KoalaWalls, shitter, Tino, PartyManiac - Valuable feedback that helped cleanup the gameplay and model.
+rob - Creator of the glorious Henry template. Also, built Scouts animations using Driver as a base.
