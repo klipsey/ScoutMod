@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 753657025
+CRC: 2155221050
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: a1e745344c37fbf4ed5fbbada7650986
+    Hash: 56a2465369d8d66c7139bbb0710a3e36
   TypeTreeHash:
     serializedVersion: 2
     Hash: 5ee7658611abcd42393f76cbd44d6821
@@ -84,6 +84,7 @@ Assets:
 - Assets/Scout/HUD/ChargeBar.prefab
 - Assets/Scout/Animations/Armature_Descend.anim
 - Assets/Scout/Animations/Armature_RunR.anim
+- Assets/Scout/Animations/Armature_Ascend.anim
 - Assets/Scout/Animations/Armature_AimYaw.anim
 - Assets/Scout/VFX/matShockwave.mat
 - Assets/Scout/VFX/Badass/BigExplosion.prefab
@@ -98,6 +99,7 @@ Assets:
 - Assets/Scout/VFX/Badass/StoneHitEffect.prefab
 - Assets/Scout/Projectiles/CoinTracer.prefab
 - Assets/Scout/Animations/maskScoutAim.mask
+- Assets/Scout/Animations/Armature_JumpSprintBat.anim
 - Assets/Scout/Projectiles/CoinProjectile.prefab
 - Assets/Scout/Animations/Armature_SprintFast.anim
 - Assets/Scout/Animations/Armature_SwapToBat.anim
@@ -107,6 +109,7 @@ Assets:
 - Assets/Scout/Animations/Armature_RunFBat.anim
 - Assets/Scout/Animations/Armature_AimPitch.anim
 - Assets/Scout/Materials/matShotgunShell.mat
+- Assets/Scout/Animations/Armature_JumpBat.anim
 - Assets/Scout/Animations/Armature_SprintFastBat.anim
 - Assets/Scout/Icons/texBuffSyringe.png
 - Assets/Scout/VFX/texShockwave.png
@@ -116,46 +119,46 @@ Assets:
 - Assets/Scout/Projectiles/CoinOrbEffect.prefab
 - Assets/Scout/Projectiles/texAlphaGradient6Mask.png
 - Assets/Scout/Animations/Armature_CSSIdle.anim
-- Assets/Scout/Animations/Armature_BatSwing1.anim
 - Assets/Scout/Animations/Armature_Sprint.anim
 - Assets/Scout/Animations/Armature_RunBBat.anim
 - Assets/Scout/Icons/Skill/texBaseballIcon.png
 - Assets/Scout/Animations/Armature_RunB.anim
 - Assets/Scout/Animations/Armature_IdleIn.anim
+- Assets/Scout/Animations/Armature_JumpSprint.anim
 - Assets/Scout/Animations/Armature_AimPitchShotgun.anim
 - Assets/Scout/Animations/Armature_RunLBat.anim
 - Assets/Scout/HUD/WeaponChargeBar.prefab
-- Assets/Scout/Animations/Armature_CSSIdleIn.anim
 - Assets/Scout/Animations/Armature_StandPose.anim
 - Assets/Scout/Animations/Armature_SwapToGun.anim
 - Assets/Scout/Icons/texScoutIcon.png
 - Assets/Scout/Icons/Skill/texButcherKnifeIcon.png
+- Assets/Scout/Animations/Armature_RestIdleIn.anim
 - Assets/Scout/Animations/Armature_BatSwing2.anim
 - Assets/Scout/Materials/matScout.mat
 - Assets/Scout/Icons/texDefaultSkin.png
 - Assets/Scout/VFX/Badass/TinyExplosion.prefab
 - Assets/Scout/VFX/Badass/SandHitEffect.prefab
+- Assets/Scout/Animations/Armature_AscendBat.anim
 - Assets/Scout/HUD/ChargeRing.prefab
 - Assets/Scout/Animations/Armature_RunRBat.anim
 - Assets/Scout/Projectiles/texRampCoin.png
 - Assets/Scout/Projectiles/CoinProjectileGhost.prefab
 - Assets/Scout/Animations/Armature_DescendBat.anim
+- Assets/Scout/Animations/Armature_CSSIdleIn.anim
 - Assets/Scout/Projectiles/coin.asset
 - Assets/Scout/Animations/maskScoutLeftArm.mask
 - Assets/Scout/Icons/Skill/texDoubleJumpIcon.png
+- Assets/Scout/Animations/Armature_Jump.anim
 - Assets/Scout/HUD/Textures/texChargeRing.png
 - Assets/Scout/Textures/texScoutEmission.png
 - Assets/Scout/Projectiles/DriverStunGrenadeImpact.prefab
-- Assets/Scout/Animations/Armature_JumpSprint.anim
 - Assets/Scout/Textures/texBriefcaseGold.png
-- Assets/Scout/Animations/Armature_Ascend.anim
 - Assets/Scout/ScoutDisplay.prefab
 - Assets/Scout/Animations/Armature_RestIdleInBat.anim
 - Assets/Scout/Materials/matBriefcaseGold.mat
 - Assets/Scout/Animations/Armature_Idle.anim
-- Assets/Scout/Animations/Armature_Jump.anim
+- Assets/Scout/Animations/Armature_BatSwing1.anim
 - Assets/Scout/Projectiles/DriverStunGrenadeGhost.prefab
-- Assets/Scout/Animations/Armature_AscendBat.anim
 - Assets/Scout/Projectiles/texRampCoin2.png
 - Assets/Scout/VFX/Badass/WoodHitEffect.prefab
 - Assets/Scout/VFX/Badass/SmallExplosion.prefab
@@ -168,7 +171,6 @@ Assets:
 - Assets/Scout/Animations/maskScoutImpact.mask
 - Assets/Scout/Animations/Armature_LightImpact.anim
 - Assets/Scout/Animations/Armature_ShootBasic.anim
-- Assets/Scout/Animations/Armature_RestIdleIn.anim
 - Assets/Scout/FBX/Shell.dae
 - Assets/Scout/Textures/texShotgun.png
 - Assets/Scout/Textures/texShell.png

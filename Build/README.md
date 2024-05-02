@@ -59,6 +59,15 @@ This character was made in 24 hours! This release was made afterward with some p
 
 [![Scout Video](https://img.youtube.com/vi/-vVGdieXHz8/0.jpg)](https://www.youtube.com/watch?v=-vVGdieXHz8)
 
+
+Download other tf2 akin characters: 
+
+https://thunderstore.io/package/EnforcerGang/SniperClassic/
+
+https://thunderstore.io/package/EnforcerGang/Rocket/
+
+https://thunderstore.io/package/EnforcerGang/Enforcer/ (Nemforcer)
+
 Contact me on Discord: https://discord.gg/3NaMEsvYeD
 
 # Credits

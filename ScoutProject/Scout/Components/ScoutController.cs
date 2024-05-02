@@ -19,7 +19,7 @@ namespace ScoutMod.Scout.Components
         private Animator animator;
         private SkillLocator skillLocator;
         private GameObject scoutTrail;
-
+        private GameObject endEffect = ScoutAssets.atomicEndEffect;
         public DamageAPI.ModdedDamageType ModdedDamageType = DamageTypes.Default;
 
         private readonly int maxShellCount = 12;
@@ -145,6 +145,7 @@ namespace ScoutMod.Scout.Components
             atomicDraining = false;
             atomicGauge = 0f;
             this.ModdedDamageType = DamageTypes.Default;
+            Instantiate(endEffect, characterBody.modelLocator.transform);
         }
         public void SwitchLayer(string layerName)
         {

@@ -97,7 +97,7 @@ namespace ScoutMod.Scout.Content
             Language.Add(Tokens.GetAchievementDescriptionToken(ScoutMasteryAchievement.identifier), "As Scout, beat the game or obliterate on Monsoon.");
 
             Language.Add(Tokens.GetAchievementNameToken(ScoutUnlockAchievement.identifier), "Batter Up");
-            Language.Add(Tokens.GetAchievementDescriptionToken(ScoutUnlockAchievement.identifier), "Beat the stage one teleporter within 3 minutes without picking up a single item.");
+            Language.Add(Tokens.GetAchievementDescriptionToken(ScoutUnlockAchievement.identifier), "Beat the stage 1 teleporter within 2 minutes without picking up a single item.");
 
             #endregion
 

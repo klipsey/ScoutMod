@@ -1,3 +1,9 @@
+# 0.6.1
+
+- Jump polish and some other vfx stuff
+- Icon
+- Unlock achievement Batter Up: Beat the stage 1 teleporter in under 2 minutes without picking up a single item (Config to force unlock)
+
 # 0.6.0
 
 - Made Ball and Cleaver more accurate

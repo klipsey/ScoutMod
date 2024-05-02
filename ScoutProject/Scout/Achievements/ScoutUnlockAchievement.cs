@@ -13,48 +13,37 @@ namespace ScoutMod.Scout.Achievements
     {
         public const string identifier = ScoutSurvivor.SCOUT_PREFIX + "UNLOCK_ACHIEVEMENT";
         public const string unlockableIdentifier = ScoutSurvivor.SCOUT_PREFIX + "UNLOCK_ACHIEVEMENT";
-        public CharacterBody body;
-
-        private void CharacterBody_OnDeathStart(On.RoR2.CharacterBody.orig_OnDeathStart orig, CharacterBody self)
-        {
-            if (self)
-            {
-                if (self.isChampion &&
-                    self.HasBuff(RoR2Content.Buffs.Bleeding) || self.HasBuff(RoR2Content.Buffs.SuperBleed))
-                {
-                    Grant();
-                }
-            }
-            orig(self);
-        }
 
         public override void OnInstall()
         {
             base.OnInstall();
-            On.RoR2.CharacterBody.OnDeathStart += CharacterBody_OnDeathStart;
-            On.RoR2.CharacterBody.Start += CharacterBody_Start;
-        }
 
-        private void CharacterBody_Start(On.RoR2.CharacterBody.orig_Start orig, CharacterBody self)
-        {
-            orig(self);
-            if (self)
-            {
-                if (self.isPlayerControlled)
-                {
-                    if (!body)
-                    {
-                        body = self;
-                    }
-                }
-            }
+            TeleporterInteraction.onTeleporterChargedGlobal += Check;
         }
 
         public override void OnUninstall()
         {
             base.OnUninstall();
-            On.RoR2.CharacterBody.OnDeathStart -= CharacterBody_OnDeathStart;
-            On.RoR2.CharacterBody.Start -= CharacterBody_Start;
+
+            TeleporterInteraction.onTeleporterChargedGlobal -= Check;
+        }
+
+        private void Check(TeleporterInteraction teleporter)
+        {
+            if (Run.instance is null) return;
+            bool noItems = true;
+            if (localUser.cachedBody.inventory.GetTotalItemCountOfTier(ItemTier.Lunar) > 0 || localUser.cachedBody.inventory.GetTotalItemCountOfTier(ItemTier.VoidTier2) > 0
+                || localUser.cachedBody.inventory.GetTotalItemCountOfTier(ItemTier.Tier1) > 0 || localUser.cachedBody.inventory.GetTotalItemCountOfTier(ItemTier.Tier2) > 0
+                || localUser.cachedBody.inventory.GetTotalItemCountOfTier(ItemTier.Tier3) > 0 || localUser.cachedBody.inventory.GetTotalItemCountOfTier(ItemTier.VoidTier1) > 0
+                || localUser.cachedBody.inventory.GetTotalItemCountOfTier(ItemTier.VoidTier3) > 0 || localUser.cachedBody.inventory.GetTotalItemCountOfTier(ItemTier.Boss) > 0
+                || localUser.cachedBody.inventory.GetTotalItemCountOfTier(ItemTier.VoidBoss) > 0)
+            {
+                noItems = false;
+            }
+            if (Run.instance.time <= 120f && noItems)
+            {
+                base.Grant();
+            }
         }
     }
 }

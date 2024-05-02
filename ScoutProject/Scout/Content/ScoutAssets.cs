@@ -166,24 +166,25 @@ namespace ScoutMod.Scout.Content
             atomicEffect.transform.GetChild(0).GetChild(0).gameObject.GetComponent<ParticleSystemRenderer>().material.SetColor("_TintColor", new Color(85f / 255f, 188f / 255f, 0f));
             atomicEffect.transform.GetChild(0).GetChild(1).gameObject.GetComponent<ParticleSystemRenderer>().material.SetColor("_TintColor", new Color(85f / 255f, 188f / 255f, 0f));
             var main = atomicEffect.transform.GetChild(0).GetChild(0).gameObject.GetComponent<ParticleSystem>().main;
-            main.startColor = new Color(85f / 255f, 188f / 255f, 0f);
+            main.startColor = new Color(184f / 255f, 226f / 255f, 61f / 255f);
             var what = main.startColor;
             what.m_Mode = ParticleSystemGradientMode.Color;
 
             atomicEndEffect = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/LunarSkillReplacements/LunarDetonatorConsume.prefab").WaitForCompletion().InstantiateClone("ScoutAtomicEnd");
             atomicEndEffect.AddComponent<NetworkIdentity>();
             var fart = atomicEndEffect.transform.GetChild(0).gameObject.GetComponent<ParticleSystem>().main;
-            fart.startColor = Color.yellow;
+            fart.startColor = Color.black;
             fart = atomicEndEffect.transform.GetChild(1).gameObject.GetComponent<ParticleSystem>().main;
-            fart.startColor = Color.red;
-            atomicEndEffect.transform.GetChild(2).gameObject.GetComponent<ParticleSystemRenderer>().material.SetColor("_TintColor", Color.red);
+            fart.startColor = new Color(184f / 255f, 226f / 255f, 61f / 255f);
+            atomicEndEffect.transform.GetChild(2).gameObject.GetComponent<ParticleSystemRenderer>().material.SetColor("_TintColor", new Color(184f / 255f, 226f / 255f, 61f / 255f));
             atomicEndEffect.transform.GetChild(3).gameObject.SetActive(false);
-            atomicEndEffect.transform.GetChild(4).gameObject.GetComponent<ParticleSystemRenderer>().material.SetColor("_TintColor", Color.red);
+            atomicEndEffect.transform.GetChild(4).gameObject.GetComponent<ParticleSystemRenderer>().material.SetColor("_TintColor", new Color(184f / 255f, 226f / 255f, 61f / 255f));
             Material material = Object.Instantiate(Addressables.LoadAssetAsync<Material>("RoR2/Base/LunarSkillReplacements/matLunarNeedleImpactEffect.mat").WaitForCompletion());
-            material.SetColor("_TintColor", Color.red);
+            material.SetColor("_TintColor", new Color(184f / 255f, 226f / 255f, 61f / 255f));
             atomicEndEffect.transform.GetChild(5).gameObject.GetComponent<ParticleSystemRenderer>().material = material;
             atomicEndEffect.transform.GetChild(6).gameObject.SetActive(false);
             Object.Destroy(atomicEndEffect.GetComponent<EffectComponent>());
+
 
             atomicImpactEffect = CreateImpactExplosionEffect("ScoutAtomicBlast", Addressables.LoadAssetAsync<Material>("RoR2/Base/Beetle/matBeetleSpitShockwave.mat").WaitForCompletion(), Addressables.LoadAssetAsync<Material>("RoR2/Base/Beetle/matBeetleQueenAcidDecal.mat").WaitForCompletion(), 2);
 

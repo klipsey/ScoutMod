@@ -45,7 +45,7 @@ namespace ScoutMod.Scout
 
             characterPortrait = assetBundle.LoadAsset<Texture>("texScoutIcon"),
             bodyColor = new Color(85f / 255f, 188f / 255f, 0f),
-            sortPosition = 100,
+            sortPosition = 5.99f,
 
             crosshair = Assets.LoadCrosshair("SimpleDot"),
             podPrefab = RoR2.LegacyResourcesAPI.Load<GameObject>("Prefabs/NetworkedObjects/SurvivorPod"),
@@ -107,13 +107,14 @@ namespace ScoutMod.Scout
 
         public override void InitializeCharacter()
         {
+            ScoutConfig.Init();
+
             ScoutUnlockables.Init();
 
             base.InitializeCharacter();
 
             DamageTypes.Init();
 
-            ScoutConfig.Init();
             ScoutStates.Init();
             ScoutTokens.Init();
 
@@ -519,8 +520,8 @@ namespace ScoutMod.Scout
                 if (victimMachine && (victimMachine.state is EntityStates.StunState || victimBody.HasBuff(ScoutBuffs.scoutStunMarker)))
                 {
                     damageInfo.crit = true;
-                    damageInfo.damageType |= DamageType.PoisonOnHit;
                     damageInfo.damageType &= DamageType.BlightOnHit;
+                    damageInfo.damageType |= DamageType.PoisonOnHit;
                     Util.PlaySound("sfx_driver_blood_gurgle", self.gameObject);
                 }
             }
