@@ -83,6 +83,8 @@ namespace ScoutMod.Scout.SkillStates
                         }
                     }
 
+                    if (base.characterMotor.jumpCount == base.characterBody.baseJumpCount - 1) Util.PlaySound("sfx_driver_air_dodge", this.gameObject);
+
                     GenericCharacterMain.ApplyJumpVelocity(base.characterMotor, base.characterBody, horizontalBonus, verticalBonus, false);
 
                     if (this.hasModelAnimator)
@@ -96,7 +98,7 @@ namespace ScoutMod.Scout.SkillStates
                             }
                             else
                             {
-                                if (hopooFeather || base.characterMotor.jumpCount > 1)
+                                if (hopooFeather)
                                 {
                                     this.modelAnimator.CrossFadeInFixedTime("BonusJump", this.smoothingParameters.intoJumpTransitionTime, layerIndex);
                                 }

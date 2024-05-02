@@ -14,7 +14,7 @@ namespace ScoutMod.Scout.SkillStates
         {
             RefreshState();
             base.OnEnter();
-            if (this.characterBody.HasBuff(ScoutBuffs.atomicBuff))
+            if (this.characterBody.HasBuff(ScoutBuffs.scoutAtomicBuff))
             {
                 if(this.skillLocator.utility.stock < this.skillLocator.utility.maxStock) this.skillLocator.utility.AddOneStock();
                 return;
@@ -57,7 +57,7 @@ namespace ScoutMod.Scout.SkillStates
                         {
                             origin = this.transform.position + (Vector3.up * 1.8f),
                             rotation = Quaternion.identity,
-                            scale = 1f
+                            scale = 3f
                         }, false);
                     }
                 }

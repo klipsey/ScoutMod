@@ -18,6 +18,7 @@ namespace ScoutMod.Scout.Components
         private CharacterModel characterModel;
         private Animator animator;
         private SkillLocator skillLocator;
+        private GameObject scoutTrail;
 
         public DamageAPI.ModdedDamageType ModdedDamageType = DamageTypes.Default;
 
@@ -54,7 +55,6 @@ namespace ScoutMod.Scout.Components
             this.animator = modelLocator.modelBaseTransform.GetComponentInChildren<Animator>();
             this.characterModel = modelLocator.modelBaseTransform.GetComponentInChildren<CharacterModel>();
             this.skillLocator = this.GetComponent<SkillLocator>();
-
             this.skinController = modelLocator.modelTransform.gameObject.GetComponent<ModelSkinController>();
         }
         private void Start()
@@ -80,6 +80,8 @@ namespace ScoutMod.Scout.Components
             }
 
             new SyncAtomic(networkIdentity.netId, (ulong)(this.atomicGauge * 100f)).Send(R2API.Networking.NetworkDestination.Clients);
+
+            this.onAtomicChange?.Invoke();
         }
         private void InitShells()
         {
@@ -124,7 +126,10 @@ namespace ScoutMod.Scout.Components
 
         public void ActivateAtomic()
         {
-            if (NetworkServer.active) this.characterBody.AddBuff(ScoutBuffs.atomicBuff);
+            if (NetworkServer.active) this.characterBody.AddBuff(ScoutBuffs.scoutAtomicBuff);
+            if (scoutTrail) UnityEngine.Object.Destroy(scoutTrail);
+            Transform scoutTransform = this.childLocator.FindChild("Chest").transform;
+            scoutTrail = GameObject.Instantiate(ScoutAssets.scoutZoom, scoutTransform);
             atomicDraining = true;
             this.ModdedDamageType = DamageTypes.MiniCrit;
             playID1 = Util.PlaySound("sfx_scout_atomic_on", this.gameObject);
@@ -132,10 +137,11 @@ namespace ScoutMod.Scout.Components
         }
         public void DeactivateAtomic()
         {
+            if(scoutTrail) UnityEngine.Object.Destroy(scoutTrail);
             AkSoundEngine.StopPlayingID(this.playID1);
             AkSoundEngine.StopPlayingID(this.playID2);
             Util.PlaySound("sfx_scout_atomic_off", base.gameObject);
-            if (NetworkServer.active) this.characterBody.RemoveBuff(ScoutBuffs.atomicBuff);
+            if (NetworkServer.active) this.characterBody.RemoveBuff(ScoutBuffs.scoutAtomicBuff);
             atomicDraining = false;
             atomicGauge = 0f;
             this.ModdedDamageType = DamageTypes.Default;

@@ -16,6 +16,7 @@ namespace ScoutMod.Scout.SkillStates
             Util.PlaySound("sfx_scout_swap_weapon", this.gameObject);
             if (this.skillLocator.secondary.skillNameToken == ScoutSurvivor.SCOUT_PREFIX + "SECONDARY_SPIKEDBALL_NAME")
             {
+                PlayAnimation("Gesture, Override", "SwapToGun", "Cleaver.playbackRate", 0.5f / base.characterBody.attackSpeed);
                 this.scoutController.SwitchLayer("");
                 this.skillLocator.primary.UnsetSkillOverride(this.gameObject, ScoutSurvivor.batSkillDef, GenericSkill.SkillOverridePriority.Network);
                 this.skillLocator.secondary.UnsetSkillOverride(this.gameObject, ScoutSurvivor.spikeBallSkillDef, GenericSkill.SkillOverridePriority.Network);
@@ -31,6 +32,7 @@ namespace ScoutMod.Scout.SkillStates
             }
             else
             {
+                PlayAnimation("Gesture, Override", "SwapToBat", "Cleaver.playbackRate", 0.5f / base.characterBody.attackSpeed);
                 this.scoutController.SwitchLayer("Body, Bat");
                 this.skillLocator.primary.SetSkillOverride(this.gameObject, ScoutSurvivor.batSkillDef, GenericSkill.SkillOverridePriority.Network);
                 this.skillLocator.secondary.SetSkillOverride(this.gameObject, ScoutSurvivor.spikeBallSkillDef, GenericSkill.SkillOverridePriority.Network);

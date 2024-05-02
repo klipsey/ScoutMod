@@ -42,6 +42,7 @@ namespace ScoutMod.Scout.Content
 
         private static void SetStateOnHurt_OnTakeDamageServer(On.RoR2.SetStateOnHurt.orig_OnTakeDamageServer orig, SetStateOnHurt self, DamageReport damageReport)
         {
+            if (!NetworkServer.active) return;
             orig.Invoke(self, damageReport);
             DamageInfo damageInfo = damageReport.damageInfo;
             GameObject inflictorObject = damageInfo.inflictor;
@@ -86,6 +87,10 @@ namespace ScoutMod.Scout.Content
                 {
                     attackerBody.GetComponent<ScoutController>().FillAtomic(2f, damageInfo.crit);
                     attackerBody.RecalculateStats();
+                }
+                if(damageInfo.HasModdedDamageType(BallStun))
+                {
+                    damageReport.victimBody.AddTimedBuff(ScoutBuffs.scoutStunMarker, inflictorObject.GetComponent<DistanceLobController>().timer * 2f + 1.5f);
                 }
             }
         }

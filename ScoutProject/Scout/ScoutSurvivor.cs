@@ -134,7 +134,7 @@ namespace ScoutMod.Scout
         private void AdditionalBodySetup()
         {
             AddHitboxes();
-            bool tempAdd(CharacterBody body) => body.HasBuff(ScoutBuffs.atomicBuff);
+            bool tempAdd(CharacterBody body) => body.HasBuff(ScoutBuffs.scoutAtomicBuff);
             float pee(CharacterBody body) => 2f * body.radius;
             bodyPrefab.AddComponent<ScoutController>();
             TempVisualEffectAPI.AddTemporaryVisualEffect(ScoutAssets.atomicEffect, pee, tempAdd);
@@ -489,6 +489,7 @@ namespace ScoutMod.Scout
             On.RoR2.UI.LoadoutPanelController.Rebuild += LoadoutPanelController_Rebuild;
             On.RoR2.HealthComponent.TakeDamage += new On.RoR2.HealthComponent.hook_TakeDamage(HealthComponent_TakeDamage);
         }
+
         private static void LoadoutPanelController_Rebuild(On.RoR2.UI.LoadoutPanelController.orig_Rebuild orig, LoadoutPanelController self)
         {
             orig(self);
@@ -515,10 +516,12 @@ namespace ScoutMod.Scout
             }
             if (damageInfo.HasModdedDamageType(DamageTypes.CleaverBonus))
             {
-                if (victimMachine && victimMachine.state is EntityStates.StunState)
+                if (victimMachine && (victimMachine.state is EntityStates.StunState || victimBody.HasBuff(ScoutBuffs.scoutStunMarker)))
                 {
                     damageInfo.crit = true;
                     damageInfo.damageType |= DamageType.PoisonOnHit;
+                    damageInfo.damageType &= DamageType.BlightOnHit;
+                    Util.PlaySound("sfx_driver_blood_gurgle", self.gameObject);
                 }
             }
             if (damageInfo.HasModdedDamageType(DamageTypes.MiniCrit))
@@ -539,14 +542,14 @@ namespace ScoutMod.Scout
             ScoutController s = self.GetComponent<ScoutController>();
             HealthComponent healthComponent = self.GetComponent<HealthComponent>();
             SkillLocator skillLocator = self.GetComponent<SkillLocator>();
-            if(s && healthComponent && !self.HasBuff(ScoutBuffs.atomicBuff))
+            if(s && healthComponent && !self.HasBuff(ScoutBuffs.scoutAtomicBuff))
             {
                 if(s.atomicGauge > 0)
                 {
                     self.moveSpeed += Util.Remap(s.atomicGauge, 0f, s.maxAtomicGauge, 0f, 3f);
                 }
             }
-            else if (self.HasBuff(ScoutBuffs.atomicBuff))
+            else if (self.HasBuff(ScoutBuffs.scoutAtomicBuff))
             {
                 self.moveSpeed += 3f;
                 self.attackSpeed += 1f;

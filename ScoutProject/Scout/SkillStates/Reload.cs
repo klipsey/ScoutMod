@@ -6,18 +6,25 @@ namespace ScoutMod.Scout.SkillStates
 {
     public class Reload : BaseScoutSkillState
     {
-        public float duration = 1.75f;
+        public static float baseDuration = 1.75f;
+        public float duration;
         public float startReload = 0.08f;
         public bool startReloadPlayed = false;
         public float startShell = 0.1f;
         public bool startReloadShell = false;
         public float shellsIn = 1f;
         public bool endReloadShell = false;
-
+        public bool dontPlay = false;
         public override void OnEnter()
         {
             base.OnEnter();
-
+            this.duration = baseDuration * skillLocator.primary.cooldownScale - skillLocator.primary.flatCooldownReduction;
+            dontPlay = this.skillLocator.secondary.skillNameToken == ScoutSurvivor.SCOUT_PREFIX + "SECONDARY_SPIKEDBALL_NAME";
+            if (dontPlay && base.isAuthority)
+            {
+                this.outer.SetNextStateToMain();
+                return;
+            }
             base.PlayAnimation("Gesture, Override", "ReloadShotgun", "Shoot.playbackRate", this.duration);
             Util.PlaySound("sfx_scout_start_reload", base.gameObject);
         }
@@ -25,7 +32,11 @@ namespace ScoutMod.Scout.SkillStates
         public override void FixedUpdate()
         {
             base.FixedUpdate();
-
+            if (dontPlay && base.isAuthority)
+            {
+                this.outer.SetNextStateToMain();
+                return;
+            }
             if(base.fixedAge >= startReload && !startReloadPlayed)
             {
                 startReloadPlayed = true;

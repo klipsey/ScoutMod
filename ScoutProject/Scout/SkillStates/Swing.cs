@@ -36,7 +36,7 @@ namespace ScoutMod.Scout.SkillStates
             swingSoundString = "sfx_driver_swing";
             hitSoundString = "";
             muzzleString = swingIndex % 2 == 0 ? "SwingMuzzle1" : "SwingMuzzle2";
-            playbackRateParam = "Slash.playbackRate";
+            playbackRateParam = "Swing.playbackRate";
             swingEffectPrefab = this.isAtomic ? ScoutAssets.atomicSwingEffect : ScoutAssets.batSwingEffect;
             if (this.isAtomic) moddedDamageTypeHolder.Add(this.scoutController.ModdedDamageType);
             moddedDamageTypeHolder.Add(DamageTypes.FillAtomic);
@@ -79,7 +79,7 @@ namespace ScoutMod.Scout.SkillStates
 
         protected override void PlayAttackAnimation()
         {
-            PlayCrossfade("Gesture, Override", "BatSwing" + (1 + swingIndex), playbackRateParam, duration, 0.05f);
+            PlayCrossfade("Gesture, Override", "BatSwing" + (1 + swingIndex), playbackRateParam, duration * 1.2f, 0.05f);
         }
     }
 }

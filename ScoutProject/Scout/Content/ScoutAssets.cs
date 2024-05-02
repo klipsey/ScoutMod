@@ -15,6 +15,7 @@ using System.Collections.Generic;
 using UnityEngine.UIElements;
 using System.IO;
 using System.Reflection;
+using static UnityEngine.ParticleSystem.PlaybackState;
 
 namespace ScoutMod.Scout.Content
 {
@@ -43,6 +44,7 @@ namespace ScoutMod.Scout.Content
         internal static GameObject atomicSwingEffect;
         internal static GameObject batHitEffect;
 
+        internal static GameObject scoutZoom;
         //Models
         internal static GameObject shotgunShell;
         internal static GameObject cleaverPrefab;
@@ -95,12 +97,29 @@ namespace ScoutMod.Scout.Content
         private static void CreateEffects()
         {
             batHitEffect = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Loader/OmniImpactVFXLoader.prefab").WaitForCompletion().InstantiateClone("BatHitEffect");
+            batHitEffect.AddComponent<NetworkIdentity>();
             ScoutMod.Modules.Content.CreateAndAddEffectDef(batHitEffect);
             batSwingEffect = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Merc/MercSwordSlash.prefab").WaitForCompletion().InstantiateClone("ScoutBatSwing", false);
             batSwingEffect.transform.GetChild(0).GetComponent<ParticleSystemRenderer>().material = Addressables.LoadAssetAsync<Material>("RoR2/Base/Huntress/matHuntressSwingTrail.mat").WaitForCompletion();
-
+            var swing = batSwingEffect.transform.GetChild(0).GetComponent<ParticleSystem>().main;
+            swing.startLifetimeMultiplier *= 2f;
             atomicSwingEffect = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Merc/MercSwordSlash.prefab").WaitForCompletion().InstantiateClone("ScoutAtomicSwing", false);
             atomicSwingEffect.transform.GetChild(0).GetComponent<ParticleSystemRenderer>().material = Addressables.LoadAssetAsync<Material>("RoR2/Base/Parent/matParentMeleeSwing.mat").WaitForCompletion();
+            swing = atomicSwingEffect.transform.GetChild(0).GetComponent<ParticleSystem>().main;
+            swing.startLifetimeMultiplier *= 2f;
+            GameObject wtf = new GameObject();
+            scoutZoom = wtf.InstantiateClone("ScoutTrail", false);
+            TrailRenderer pingus = scoutZoom.AddComponent<TrailRenderer>();
+            pingus.startWidth = 4f;
+            pingus.endWidth = 1f;
+            pingus.time = 0.3f;
+            pingus.emitting = true;
+            pingus.numCornerVertices = 0;
+            pingus.numCapVertices = 0;
+            pingus.material = Addressables.LoadAssetAsync<Material>("RoR2/Base/Beetle/matBeetleSpitTrail2.mat").WaitForCompletion();
+            pingus.startColor = new Color(184f / 255f, 226f / 255f, 61f / 255f, 0.5f);
+            pingus.endColor = Color.white;
+            pingus.alignment = LineAlignment.TransformZ;
 
             shotgunTracer = RoR2.LegacyResourcesAPI.Load<GameObject>("Prefabs/Effects/Tracers/TracerCommandoShotgun").InstantiateClone("ScoutShotgunTracer", true);
 
@@ -142,7 +161,7 @@ namespace ScoutMod.Scout.Content
             Modules.Content.CreateAndAddEffectDef(shotgunTracer);
             Modules.Content.CreateAndAddEffectDef(shotgunTracerCrit);
 
-            atomicEffect = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/KillEliteFrenzy/NoCooldownEffect.prefab").WaitForCompletion().InstantiateClone("AtomicEffect");
+            atomicEffect = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/KillEliteFrenzy/NoCooldownEffect.prefab").WaitForCompletion().InstantiateClone("ScoutAtomicEffect");
             atomicEffect.AddComponent<NetworkIdentity>();
             atomicEffect.transform.GetChild(0).GetChild(0).gameObject.GetComponent<ParticleSystemRenderer>().material.SetColor("_TintColor", new Color(85f / 255f, 188f / 255f, 0f));
             atomicEffect.transform.GetChild(0).GetChild(1).gameObject.GetComponent<ParticleSystemRenderer>().material.SetColor("_TintColor", new Color(85f / 255f, 188f / 255f, 0f));
@@ -151,7 +170,7 @@ namespace ScoutMod.Scout.Content
             var what = main.startColor;
             what.m_Mode = ParticleSystemGradientMode.Color;
 
-            atomicEndEffect = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/LunarSkillReplacements/LunarDetonatorConsume.prefab").WaitForCompletion().InstantiateClone("AtomicEnd");
+            atomicEndEffect = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/LunarSkillReplacements/LunarDetonatorConsume.prefab").WaitForCompletion().InstantiateClone("ScoutAtomicEnd");
             atomicEndEffect.AddComponent<NetworkIdentity>();
             var fart = atomicEndEffect.transform.GetChild(0).gameObject.GetComponent<ParticleSystem>().main;
             fart.startColor = Color.yellow;
@@ -168,7 +187,7 @@ namespace ScoutMod.Scout.Content
 
             atomicImpactEffect = CreateImpactExplosionEffect("ScoutAtomicBlast", Addressables.LoadAssetAsync<Material>("RoR2/Base/Beetle/matBeetleSpitShockwave.mat").WaitForCompletion(), Addressables.LoadAssetAsync<Material>("RoR2/Base/Beetle/matBeetleQueenAcidDecal.mat").WaitForCompletion(), 2);
 
-            bloodSplatterEffect = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Brother/BrotherSlamImpact.prefab").WaitForCompletion().InstantiateClone("Splat", true);
+            bloodSplatterEffect = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Brother/BrotherSlamImpact.prefab").WaitForCompletion().InstantiateClone("ScoutSplat", true);
             bloodSplatterEffect.AddComponent<NetworkIdentity>();
             bloodSplatterEffect.transform.GetChild(0).gameObject.SetActive(false);
             bloodSplatterEffect.transform.GetChild(1).gameObject.SetActive(false);
@@ -196,22 +215,35 @@ namespace ScoutMod.Scout.Content
         #region projectiles
         private static void CreateProjectiles()
         {
-            cleaverPrefab = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Bandit2/Bandit2ShivProjectile.prefab").WaitForCompletion().InstantiateClone("Cleaver");
-
+            cleaverPrefab = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Bandit2/Bandit2ShivProjectile.prefab").WaitForCompletion().InstantiateClone("ScoutCleaver");
+            cleaverPrefab.AddComponent<NetworkIdentity>();
             cleaverPrefab.GetComponent<ProjectileSingleTargetImpact>().hitSoundString = "sfx_scout_cleaver_miss";
             cleaverPrefab.GetComponent<ProjectileSingleTargetImpact>().enemyHitSoundString = "sfx_scout_cleaver_hit";
 
             cleaverPrefab.GetComponent<ProjectileDamage>().damageType = DamageType.BlightOnHit;
             DamageAPI.ModdedDamageTypeHolderComponent moddedDamage = cleaverPrefab.AddComponent<DamageAPI.ModdedDamageTypeHolderComponent>();
             moddedDamage.Add(DamageTypes.CleaverBonus);
+            moddedDamage.Add(DamageTypes.FillAtomic);
 
-            cleaverPrefab.GetComponent<ProjectileController>().ghostPrefab = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Bandit2/Bandit2ShivGhostAlt.prefab").WaitForCompletion().InstantiateClone("CleaverGhost");
-
+            cleaverPrefab.GetComponent<ProjectileController>().ghostPrefab = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Bandit2/Bandit2ShivGhostAlt.prefab").WaitForCompletion().InstantiateClone("ScoutCleaverGhost");
+            cleaverPrefab.GetComponent<ProjectileController>().ghostPrefab.AddComponent<NetworkIdentity>();
             cleaverPrefab.GetComponent<ProjectileSimple>().desiredForwardSpeed = 120f;
+            TrailRenderer trail = cleaverPrefab.AddComponent<TrailRenderer>();
+            trail.startWidth = 0.5f;
+            trail.endWidth = 0.1f;
+            trail.time = 0.5f;
+            trail.emitting = true;
+            trail.numCornerVertices = 0;
+            trail.numCapVertices = 0;
+            trail.material = Addressables.LoadAssetAsync<Material>("RoR2/Base/Common/VFX/matSmokeTrail.mat").WaitForCompletion();
+            trail.startColor = Color.white;
+            trail.endColor = Color.gray;
+            trail.alignment = LineAlignment.TransformZ;
+
             Modules.Content.AddProjectilePrefab(cleaverPrefab);
 
-            baseballPrefab = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Bandit2/Bandit2ShivProjectile.prefab").WaitForCompletion().InstantiateClone("Baseball");
-
+            baseballPrefab = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Bandit2/Bandit2ShivProjectile.prefab").WaitForCompletion().InstantiateClone("ScoutBaseball");
+            baseballPrefab.AddComponent<NetworkIdentity>();
             baseballPrefab.GetComponent <ProjectileStickOnImpact>().enabled = false;
 
             baseballPrefab.GetComponent<DelayedEvent>().enabled = false;
@@ -223,13 +255,30 @@ namespace ScoutMod.Scout.Content
             baseballPrefab.GetComponent<ProjectileDamage>().damageType = DamageType.Generic;
             DamageAPI.ModdedDamageTypeHolderComponent moddedDamage2 = baseballPrefab.AddComponent<DamageAPI.ModdedDamageTypeHolderComponent>();
             moddedDamage2.Add(DamageTypes.BallStun);
+            moddedDamage2.Add(DamageTypes.FillAtomic);
 
             baseballPrefab.GetComponent<ProjectileSimple>().desiredForwardSpeed = 120f;
 
             baseballPrefab.AddComponent<DistanceLobController>();
 
-            baseballPrefab.GetComponent<ProjectileController>().ghostPrefab = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Bell/BellBallSmallGhost.prefab").WaitForCompletion().InstantiateClone("BaseballGhost");
+            baseballPrefab.GetComponent<ProjectileController>().ghostPrefab = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Bell/BellBallSmallGhost.prefab").WaitForCompletion().InstantiateClone("ScoutBaseballGhost");
+            baseballPrefab.GetComponent<ProjectileController>().ghostPrefab.AddComponent<NetworkIdentity>();
+            Object.Destroy(baseballPrefab.transform.GetChild(0).GetChild(0).gameObject);
+            Object.Destroy(baseballPrefab.transform.GetChild(0).GetChild(1).gameObject);
 
+            TrailRenderer trail2 = baseballPrefab.AddComponent<TrailRenderer>();
+            trail2.startWidth = 0.5f;
+            trail2.endWidth = 0.1f;
+            trail2.time = 0.5f;
+            trail2.emitting = true;
+            trail2.numCornerVertices = 0;
+            trail2.numCapVertices = 0;
+            trail2.material = Addressables.LoadAssetAsync<Material>("RoR2/Base/Common/VFX/matSmokeTrail.mat").WaitForCompletion();
+            trail2.startColor = Color.white;
+            trail2.endColor = Color.gray;
+            trail2.alignment = LineAlignment.TransformZ;
+
+            Modules.Content.AddProjectilePrefab(baseballPrefab);
         }
         #endregion
 

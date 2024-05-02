@@ -24,11 +24,11 @@ namespace ScoutMod.Scout.Content
             string prefix = ScoutSurvivor.SCOUT_PREFIX;
 
             string desc = "The Scout" + Environment.NewLine + Environment.NewLine
-             + "< ! > Use your Scatterguns knockback to reach high locations!" + Environment.NewLine + Environment.NewLine
+             + "< ! > Use your Splatterguns knockback to reach high locations!" + Environment.NewLine + Environment.NewLine
              + "< ! > Comboing your Baseball and Cleaver can deal massive damage." + Environment.NewLine + Environment.NewLine
              + "< ! > Charge up Atomic to gain tons of minicrits and speed buffs." + Environment.NewLine + Environment.NewLine
-             + "< ! > Glimpse of Corruption is a great way to boost your damage but be wary of where you leave your Heart." + Environment.NewLine + Environment.NewLine
-             + "< ! > Use and retrieve your Sentient weapon often to keep up a balance of damage and mobility." + Environment.NewLine + Environment.NewLine;
+             + "< ! > Bat benefits the most from attackspeed. Use it when Atomic Blast activates!" + Environment.NewLine + Environment.NewLine
+             + "< ! > Cooldown reduction lowers Scouts primary reload speed!" + Environment.NewLine + Environment.NewLine;
 
             /*
              * its not really shown yet in the anims but the panel on the top of the robe/heart area opens up to her artificial heart. 
@@ -77,7 +77,6 @@ namespace ScoutMod.Scout.Content
             Language.Add(prefix + "SECONDARY_SPIKEDBALL_DESCRIPTION", $"{Tokens.agilePrefix}. Hit your baseball <style=cIsUtility>stunning</style> and dealing <style=cIsDamage>{100f * ScoutStaticValues.baseballDamageCoefficient}% damage </style>. " +
                 "<style=cIsUtility>Stun</style> duration scales with distance traveled.");
 
-
             #endregion
 
             #region Utility 
@@ -98,7 +97,7 @@ namespace ScoutMod.Scout.Content
             Language.Add(Tokens.GetAchievementDescriptionToken(ScoutMasteryAchievement.identifier), "As Scout, beat the game or obliterate on Monsoon.");
 
             Language.Add(Tokens.GetAchievementNameToken(ScoutUnlockAchievement.identifier), "Batter Up");
-            Language.Add(Tokens.GetAchievementDescriptionToken(ScoutUnlockAchievement.identifier), "Defeat a teleporter boss with bleed.");
+            Language.Add(Tokens.GetAchievementDescriptionToken(ScoutUnlockAchievement.identifier), "Beat the stage one teleporter within 3 minutes without picking up a single item.");
 
             #endregion
 

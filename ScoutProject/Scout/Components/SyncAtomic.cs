@@ -36,10 +36,11 @@ namespace ScoutMod.Scout.Components
             }
 
             ScoutController scoutController = bodyObject.GetComponent<ScoutController>();
+
             if (scoutController)
             {
                 scoutController.atomicGauge = this.gauge * 0.01f;
-                scoutController.onAtomicChange.Invoke();
+
             }
         }
 

@@ -28,7 +28,7 @@ namespace ScoutMod.Scout.SkillStates
             base.damageCoefficient = damageCoefficient;
             base.force = 120f;
 
-            base.projectilePitchBonus = -7.5f;
+            base.projectilePitchBonus = -3.5f;
 
             base.recoilAmplitude = 0.1f;
             base.bloom = 10;
@@ -44,11 +44,9 @@ namespace ScoutMod.Scout.SkillStates
                 Ray aimRay = base.GetAimRay();
                 aimRay = this.ModifyProjectileAimRay(aimRay);
                 aimRay.direction = Util.ApplySpread(aimRay.direction, 0f, 0f, 1f, 1f, 0f, this.projectilePitchBonus);
-                Vector3 lol = aimRay.origin;
-                lol.y -= 2f;
                 DamageAPI.ModdedDamageTypeHolderComponent moddedDamage = ballPrefab.GetComponent<DamageAPI.ModdedDamageTypeHolderComponent>();
                 if (scoutController.ModdedDamageType == DamageTypes.MiniCrit) moddedDamage.Add(DamageTypes.MiniCrit);
-                ProjectileManager.instance.FireProjectile(ballPrefab, lol, Util.QuaternionSafeLookRotation(aimRay.direction), this.gameObject, this.damageStat * ScoutStaticValues.cleaverDamageCoefficient, this.force, this.RollCrit(), scoutController.atomicDraining ? DamageColorIndex.Item : DamageColorIndex.Default, null, -1f);
+                ProjectileManager.instance.FireProjectile(ballPrefab, aimRay.origin, Util.QuaternionSafeLookRotation(aimRay.direction), this.gameObject, this.damageStat * ScoutStaticValues.cleaverDamageCoefficient, this.force, this.RollCrit(), scoutController.atomicDraining ? DamageColorIndex.Item : DamageColorIndex.Default, null, -1f);
             }
         }
 

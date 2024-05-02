@@ -58,7 +58,7 @@ namespace RobDriver.Modules.Components
                 this.durationDisplay.SetActive(true);
                 this.targetText.token = string.Empty;
 
-                if (this.scoutController.atomicGauge < 99f) this.durationBar.color = new Color(85f / 255f, 188f / 255f, 0f);
+                if (this.scoutController.atomicGauge <=  99f) this.durationBar.color = new Color(85f / 255f, 188f / 255f, 0f);
                 else this.durationBar.color = Color.red;
             }
             else

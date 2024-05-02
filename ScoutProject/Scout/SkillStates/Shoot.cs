@@ -12,7 +12,7 @@ namespace ScoutMod.Scout.SkillStates
     {
         public static float damageCoefficient = ScoutStaticValues.shotgunDamageCoefficient;
         public static float procCoefficient = 0.7f;
-        public float baseDuration = 1.6f; // the base skill duration. i.e. attack speed
+        public float baseDuration = 1.2f; // the base skill duration. i.e. attack speed
         public static int bulletCount = 12;
         public static float bulletSpread = 8f;
         public static float bulletRecoil = 40f;
@@ -35,7 +35,7 @@ namespace ScoutMod.Scout.SkillStates
             this.hasFired = false;
             this.duration = this.baseDuration / this.attackSpeedStat;
             this.isCrit = base.RollCrit();
-            this.earlyExitTime = 0.5f * this.duration;
+            this.earlyExitTime = 0.75f * this.duration;
 
             if (this.isCrit) Util.PlaySound("sfx_scout_shoot_crit", base.gameObject);
             else Util.PlaySound("sfx_scout_shoot", base.gameObject);
