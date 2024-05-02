@@ -24,7 +24,7 @@ namespace ScoutMod
         //   this shouldn't even have to be said
         public const string MODUID = "com.kenko.Scout";
         public const string MODNAME = "Scout";
-        public const string MODVERSION = "0.5.0";
+        public const string MODVERSION = "0.6.0";
 
         // a prefix for name tokens to prevent conflicts- please capitalize all name tokens for convention
         public const string DEVELOPER_PREFIX = "KENKO";

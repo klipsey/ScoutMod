@@ -1,9 +1,9 @@
 {
     "name": "Scout",
     "author": "tsuyoikenko",
-    "version_number": "0.5.1",
+    "version_number": "0.6.0",
     "website_url": "https://github.com/klipsey/ScoutMod",
-    "description": "Say goodbye to your kneecaps chucklehead!",
+    "description": "Say goodbye to your kneecaps chucklehead! Multiplayer compatible!",
     "dependencies": [
         "bbepis-BepInExPack-5.4.1905",
         "RiskofThunder-R2API_Core-5.0.3",

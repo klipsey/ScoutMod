@@ -57,10 +57,6 @@ Original Concept by vo1dstud1os - discord https://codenamecrisis.carrd.co/ - car
 
 This character was made in 24 hours! This release was made afterward with some polishing.
 
-Will add proper secondary icon and polished animations eventually.
-
-Not sure if it's networked but it should be.
-
 [![Scout Video](https://img.youtube.com/vi/-vVGdieXHz8/0.jpg)](https://www.youtube.com/watch?v=-vVGdieXHz8)
 
 Contact me on Discord: https://discord.gg/3NaMEsvYeD
