@@ -34,12 +34,6 @@ namespace ScoutMod.Scout.Components
 
         public Action onAtomicChange;
 
-        public float primary1CdTimer = 0f;
-        public float primary1Cd = 2.5f;
-        public int maxPrimary1Stock = 2;
-        public int currentPrimary1Stock = 2;
-
-
         public float secondary1CdTimer = 0f;
         public float secondary1Cd = 6f;
         public int maxSecondary1Stock = 1;
@@ -68,7 +62,6 @@ namespace ScoutMod.Scout.Components
             InitShells();
             SetupStockSecondary1();
             SetupStockPrimary2();
-            SetupStockPrimary1();
         }
         public void FillAtomic(float amount, bool isCrit)
         {
@@ -140,7 +133,7 @@ namespace ScoutMod.Scout.Components
             Transform scoutTransform = this.childLocator.FindChild("Chest").transform;
             scoutTrail = GameObject.Instantiate(ScoutAssets.scoutZoom, scoutTransform);
             atomicDraining = true;
-            this.ModdedDamageType = DamageTypes.MiniCrit;
+            this.ModdedDamageType = DamageTypes.AtomicCrits;
             AkSoundEngine.StopPlayingID(this.playID1);
             AkSoundEngine.StopPlayingID(this.playID2);
             playID1 = Util.PlaySound("sfx_scout_atomic_on", this.gameObject);
@@ -193,18 +186,11 @@ namespace ScoutMod.Scout.Components
             currentSecondary1Stock = this.skillLocator.secondary.stock;
             maxSecondary1Stock = this.skillLocator.secondary.maxStock;
         }
-        public void SetupStockPrimary1()
-        {
-            primary1CdTimer = this.skillLocator.primary.rechargeStopwatch;
-            primary1Cd = this.skillLocator.primary.finalRechargeInterval;
-            currentPrimary1Stock = this.skillLocator.primary.stock;
-            maxPrimary1Stock = this.skillLocator.primary.maxStock;
-        }
         private void FixedUpdate()
         {
             if(atomicDraining) 
             {
-                atomicGauge -= maxAtomicGauge / 400f;
+                atomicGauge -= maxAtomicGauge / (400f + (100f * this.skillLocator.utility.maxStock - 1));
                 onAtomicChange?.Invoke();
                 if(atomicGauge <= 0) DeactivateAtomic();
             }
@@ -227,15 +213,6 @@ namespace ScoutMod.Scout.Components
             {
                 secondary1CdTimer = 0f;
                 currentSecondary1Stock++;
-            }
-
-            if(primary1CdTimer < primary1Cd)
-            {
-                primary1CdTimer += Time.fixedDeltaTime;
-            }
-            else if(primary1CdTimer >= primary1Cd && currentPrimary1Stock < maxPrimary1Stock)
-            {
-                currentPrimary1Stock = maxPrimary1Stock;
             }
         }
     }

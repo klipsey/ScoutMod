@@ -16,6 +16,7 @@ namespace ScoutMod.Scout.Content
             Modules.Content.AddEntityState(typeof(ActivateAtomic));
             Modules.Content.AddEntityState(typeof(Swing));
             Modules.Content.AddEntityState(typeof(SwapWeapon));
+            Modules.Content.AddEntityState(typeof(EnterReload));
             Modules.Content.AddEntityState(typeof(Reload));
         }
     }

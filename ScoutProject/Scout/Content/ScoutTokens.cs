@@ -26,8 +26,8 @@ namespace ScoutMod.Scout.Content
             string desc = "The Scout is an extremely mobile, burst damage survivor that can focus down singular enemies with ease.<color=#CCD3E0>" + Environment.NewLine + Environment.NewLine;
             desc = desc + "< ! > Use your Splatterguns knockback to reach high locations or to avoid enemy attacks." + Environment.NewLine + Environment.NewLine;
             desc = desc + "< ! > Comboing your Baseball and Cleaver can deal massive damage from far away." + Environment.NewLine + Environment.NewLine;
-            desc = desc + "< ! > Scouts primary reloads quicker with cooldown reduction effectively increasing your damage per second." + Environment.NewLine + Environment.NewLine;
-            desc = desc + "< ! > Bat benefits the most from attack speed making it extremely effective when Atomic Blast activates." + Environment.NewLine + Environment.NewLine;
+            desc = desc + "< ! > Bat can gain the most Atomic Core charge if there are large groups of enemies." + Environment.NewLine + Environment.NewLine;
+            desc = desc + "< ! > Extra stocks for Atomic Blast increase its duration while cooldown reduction increases Atomic Core chargeup speed." + Environment.NewLine + Environment.NewLine;
 
             /*
              * its not really shown yet in the anims but the panel on the top of the robe/heart area opens up to her artificial heart. 
@@ -63,31 +63,31 @@ namespace ScoutMod.Scout.Content
             Language.Add(prefix + "PRIMARY_SPLATTERGUN_NAME", "Splattergun");
             Language.Add(prefix + "PRIMARY_SPLATTERGUN_DESCRIPTION", $"{Tokens.agilePrefix}. Fire a scattergun burst for <style=cIsDamage>12x{100f * ScoutStaticValues.shotgunDamageCoefficient}% damage</style>.");
 
-            Language.Add(prefix + "PRIMARY_BONK_NAME", "Bonk");
+            Language.Add(prefix + "PRIMARY_BONK_NAME", "Elephants Foot");
             Language.Add(prefix + "PRIMARY_BONK_DESCRIPTION", $"{Tokens.agilePrefix}. Swing your bat for <style=cIsDamage>{100f * ScoutStaticValues.baseballDamageCoefficient}% damage</style>.");
             #endregion
 
             #region Secondary
             Language.Add(prefix + "SECONDARY_CLEAVER_NAME", "Toxic Cleaver");
-            Language.Add(prefix + "SECONDARY_CLEAVER_DESCRIPTION", $"{Tokens.agilePrefix}. Throw your cleaver <style=cIsDamage>blighting</style> and dealing <style=cIsDamage>{100f * ScoutStaticValues.cleaverDamageCoefficient}% damage</style>. " +
-                $"<style=cIsDamage>Critically Strikes</style> and <style=cIsHealing>poisons</style> <style=cIsDamage>stunned</style> enemies.");
+            Language.Add(prefix + "SECONDARY_CLEAVER_DESCRIPTION", $"{Tokens.agilePrefix}. Throw your cleaver <style=cIsDamage>Blighting</style> and dealing <style=cIsDamage>{100f * ScoutStaticValues.cleaverDamageCoefficient}% damage</style>. " +
+                $"<style=cIsDamage>Critically Strikes</style> and <style=cIsHealing>Poisons</style> <style=cIsDamage>Stunned</style> enemies.");
 
             Language.Add(prefix + "SECONDARY_SPIKEDBALL_NAME", "Spike Ball");
-            Language.Add(prefix + "SECONDARY_SPIKEDBALL_DESCRIPTION", $"{Tokens.agilePrefix}. Hit your baseball <style=cIsDamage>stunning</style> and dealing <style=cIsDamage>{100f * ScoutStaticValues.baseballDamageCoefficient}% damage </style>. " +
+            Language.Add(prefix + "SECONDARY_SPIKEDBALL_DESCRIPTION", $"{Tokens.agilePrefix}. Hit your baseball <style=cIsDamage>Stunning</style> and dealing <style=cIsDamage>{100f * ScoutStaticValues.baseballDamageCoefficient}% damage </style>. " +
                 "<style=cIsDamage>Stun</style> duration scales with distance traveled.");
             #endregion
 
             #region Utility 
             Language.Add(prefix + "UTILITY_ATOMICBLAST_NAME", "Atomic Blast");
-            Language.Add(prefix + "UTILITY_ATOMICBLAST_DESCRIPTION", $"{Tokens.agilePrefix}. Drain your <style=cHumanObjective>Atomic Core</style> gaining " +
-                $"<style=cIsDamage>mini crits</style>, <style=cIsDamage>attack speed</style>, and <style=cIsUtility>movement speed</style>. " +
+            Language.Add(prefix + "UTILITY_ATOMICBLAST_DESCRIPTION", $"Drain your <style=cHumanObjective>Atomic Core</style> gaining " +
+                $"<style=cIsDamage>Atomic Crits</style>, <style=cIsDamage>attack speed</style>, and <style=cIsUtility>movement speed</style>. " +
                 $"If drained at max charge, deal <style=cIsDamage>{100f * ScoutStaticValues.atomicBlastDamageCoefficient}% damage</style> around you.");
 
             #endregion
 
             #region Special
             Language.Add(prefix + "SPECIAL_SWAP_NAME", "Swap");
-            Language.Add(prefix + "SPECIAL_SWAP_DESCRIPTION", $"{Tokens.agilePrefix}. Swap to your bat.");
+            Language.Add(prefix + "SPECIAL_SWAP_DESCRIPTION", $" Swap to your bat.");
             #endregion
 
             #region Achievements

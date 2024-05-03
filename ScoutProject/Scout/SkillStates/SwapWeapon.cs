@@ -23,17 +23,12 @@ namespace ScoutMod.Scout.SkillStates
                 this.skillLocator.secondary.UnsetSkillOverride(this.gameObject, ScoutSurvivor.spikeBallSkillDef, GenericSkill.SkillOverridePriority.Network);
                 if (base.isAuthority)
                 {
-                    this.skillLocator.primary.RemoveAllStocks();
                     this.skillLocator.secondary.RemoveAllStocks();
                     for (int i = 0; i < this.scoutController.currentSecondary1Stock; i++) this.skillLocator.secondary.AddOneStock();
                 }
                 if (this.skillLocator.secondary.stock < this.skillLocator.secondary.maxStock)
                 {
                     this.skillLocator.secondary.rechargeStopwatch = this.scoutController.secondary1CdTimer;
-                }
-                if (this.skillLocator.primary.stock < this.skillLocator.primary.maxStock)
-                {
-                    this.skillLocator.primary.rechargeStopwatch = this.scoutController.primary1CdTimer;
                 }
             }
             else
@@ -47,7 +42,6 @@ namespace ScoutMod.Scout.SkillStates
                 {
                     this.skillLocator.secondary.RemoveAllStocks();
                     for (int i = 0; i < this.scoutController.currentSecondary2Stock; i++) this.skillLocator.secondary.AddOneStock();
-                    for (int i = 0; i < this.scoutController.currentPrimary1Stock; i++) this.skillLocator.primary.AddOneStock();
                 }
                 if (this.skillLocator.secondary.stock < this.skillLocator.secondary.maxStock)
                 {

@@ -215,7 +215,7 @@ namespace ScoutMod.Scout
 
         private void AddPrimarySkills()
         {
-            SkillDef Shoot = Skills.CreateSkillDef(new SkillDefInfo
+            ReloadSkillDef Shoot = Skills.CreateReloadSkillDef(new ReloadSkillDefInfo
             {
                 skillName = "SplatterGun",
                 skillNameToken = SCOUT_PREFIX + "PRIMARY_SPLATTERGUN_NAME",
@@ -224,17 +224,20 @@ namespace ScoutMod.Scout
                 skillIcon = assetBundle.LoadAsset<Sprite>("texShotgunIcon"),
 
                 activationState = new EntityStates.SerializableEntityStateType(typeof(Shoot)),
+                reloadState = new SerializableEntityStateType(typeof(EnterReload)),
 
                 activationStateMachineName = "Weapon",
-                interruptPriority = EntityStates.InterruptPriority.Skill,
+                interruptPriority = InterruptPriority.Skill,
+                reloadInterruptPriority = InterruptPriority.Any,
 
                 baseMaxStock = 2,
-                baseRechargeInterval = 2.5f,
-                rechargeStock = 2,
+                baseRechargeInterval = 0f,
+                rechargeStock = 0,
                 requiredStock = 1,
                 stockToConsume = 1,
+                graceDuration = 0.1f,
 
-                resetCooldownTimerOnUse = true,
+                resetCooldownTimerOnUse = false,
                 fullRestockOnAssign = false,
                 dontAllowPastMaxStocks = false,
                 beginSkillCooldownOnSkillEnd = false,
@@ -273,7 +276,7 @@ namespace ScoutMod.Scout
 
                 activationState = new EntityStates.SerializableEntityStateType(typeof(ThrowCleaver)),
 
-                activationStateMachineName = "Weapon2",
+                activationStateMachineName = "Weapon",
                 interruptPriority = EntityStates.InterruptPriority.Skill,
 
                 baseMaxStock = 1,
@@ -306,7 +309,7 @@ namespace ScoutMod.Scout
 
                 activationState = new EntityStates.SerializableEntityStateType(typeof(HitBaseball)),
 
-                activationStateMachineName = "Weapon",
+                activationStateMachineName = "Weapon2",
                 interruptPriority = EntityStates.InterruptPriority.Skill,
 
                 baseMaxStock = 1,
@@ -342,15 +345,15 @@ namespace ScoutMod.Scout
                 activationStateMachineName = "Weapon2",
                 interruptPriority = EntityStates.InterruptPriority.PrioritySkill,
 
-                baseRechargeInterval = 8f,
+                baseRechargeInterval = 0f,
                 baseMaxStock = 1,
 
                 rechargeStock = 1,
-                requiredStock = 1,
-                stockToConsume = 1,
+                requiredStock = 0,
+                stockToConsume = 0,
 
                 resetCooldownTimerOnUse = false,
-                fullRestockOnAssign = false,
+                fullRestockOnAssign = true,
                 dontAllowPastMaxStocks = false,
                 mustKeyPress = true,
                 beginSkillCooldownOnSkillEnd = false,
@@ -376,7 +379,7 @@ namespace ScoutMod.Scout
                 skillIcon = assetBundle.LoadAsset<Sprite>("texSwapIcon"),
 
                 activationState = new EntityStates.SerializableEntityStateType(typeof(SwapWeapon)),
-                activationStateMachineName = "Weapon2",
+                activationStateMachineName = "Weapon",
                 interruptPriority = EntityStates.InterruptPriority.PrioritySkill,
 
                 baseRechargeInterval = 0.5f,
@@ -520,6 +523,11 @@ namespace ScoutMod.Scout
             {
                 victimBody.GetComponent<ScoutController>().FillAtomic(-10f, false);
             }
+            if (damageInfo.HasModdedDamageType(DamageTypes.AtomicCrits))
+            {
+                damageInfo.damage *= 1.25f;
+                damageInfo.damageType |= DamageType.WeakOnHit;
+            }
             if (damageInfo.HasModdedDamageType(DamageTypes.CleaverBonus))
             {
                 if (victimMachine && (victimMachine.state is EntityStates.StunState || victimBody.HasBuff(ScoutBuffs.scoutStunMarker)))
@@ -529,10 +537,6 @@ namespace ScoutMod.Scout
                     damageInfo.damageType |= DamageType.PoisonOnHit;
                     Util.PlaySound("sfx_driver_blood_gurgle", self.gameObject);
                 }
-            }
-            if (damageInfo.HasModdedDamageType(DamageTypes.MiniCrit))
-            {
-                damageInfo.damage *= 1.5f;
             }
             orig.Invoke(self, damageInfo);
             if (victimBody && victimBody.baseNameToken == "KENKO_SCOUT_NAME") victimBody.RecalculateStats();

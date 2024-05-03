@@ -12,6 +12,7 @@ namespace ScoutMod.Scout.SkillStates
     {
         public override void OnEnter()
         {
+            RefreshState();
             hitboxGroupName = "Bat";
 
             damageType = DamageType.Generic;
@@ -38,7 +39,11 @@ namespace ScoutMod.Scout.SkillStates
             muzzleString = swingIndex % 2 == 0 ? "SwingMuzzle1" : "SwingMuzzle2";
             playbackRateParam = "Swing.playbackRate";
             swingEffectPrefab = this.isAtomic ? ScoutAssets.atomicSwingEffect : ScoutAssets.batSwingEffect;
-            if (this.isAtomic) moddedDamageTypeHolder.Add(this.scoutController.ModdedDamageType);
+            if (this.isAtomic)
+            {
+                moddedDamageTypeHolder.Add(this.scoutController.ModdedDamageType);
+                damageType |= DamageType.WeakOnHit;
+            }
             moddedDamageTypeHolder.Add(DamageTypes.FillAtomic);
             hitEffectPrefab = ScoutAssets.batHitEffect;
 

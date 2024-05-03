@@ -20,7 +20,7 @@ namespace ScoutMod.Scout.Content
         public static DamageAPI.ModdedDamageType Default;
         public static DamageAPI.ModdedDamageType FillAtomic;
         public static DamageAPI.ModdedDamageType FillAtomicShotgun;
-        public static DamageAPI.ModdedDamageType MiniCrit;
+        public static DamageAPI.ModdedDamageType AtomicCrits;
         public static DamageAPI.ModdedDamageType BallStun;
         public static DamageAPI.ModdedDamageType CleaverBonus; 
         internal static void Init()
@@ -29,7 +29,7 @@ namespace ScoutMod.Scout.Content
             FillAtomic = DamageAPI.ReserveDamageType();
             FillAtomicShotgun = DamageAPI.ReserveDamageType();
             CleaverBonus = DamageAPI.ReserveDamageType();
-            MiniCrit = DamageAPI.ReserveDamageType();
+            AtomicCrits = DamageAPI.ReserveDamageType();
             BallStun = DamageAPI.ReserveDamageType();
             Hook();
         }
@@ -80,12 +80,12 @@ namespace ScoutMod.Scout.Content
             {
                 if(damageInfo.HasModdedDamageType(FillAtomic))
                 {
-                    attackerBody.GetComponent<ScoutController>().FillAtomic(5f, damageInfo.crit);
+                    attackerBody.GetComponent<ScoutController>().FillAtomic(5f / attackerBody.skillLocator.utility.cooldownScale + attackerBody.skillLocator.utility.flatCooldownReduction, damageInfo.crit);
                     attackerBody.RecalculateStats();
                 }
                 else if(damageInfo.HasModdedDamageType(FillAtomicShotgun))
                 {
-                    attackerBody.GetComponent<ScoutController>().FillAtomic(2f, damageInfo.crit);
+                    attackerBody.GetComponent<ScoutController>().FillAtomic(1f / attackerBody.skillLocator.utility.cooldownScale + attackerBody.skillLocator.utility.flatCooldownReduction, damageInfo.crit);
                     attackerBody.RecalculateStats();
                 }
                 if(damageInfo.HasModdedDamageType(BallStun))

@@ -44,8 +44,6 @@ namespace ScoutMod.Scout.SkillStates
             base.PlayAnimation("Gesture, Override", "FireShotgun", "Shoot.playbackRate", this.duration);
 
             this.fireDuration = 0;
-
-            this.scoutController.SetupStockPrimary1();
         }
 
         public virtual void FireBullet()

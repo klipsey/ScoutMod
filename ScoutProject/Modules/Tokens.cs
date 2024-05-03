@@ -8,7 +8,7 @@ namespace ScoutMod.Modules
 
         public static string agileKeyword = KeywordText("Agile", "The skill can be used while sprinting.");
 
-        public static string miniCritsKeyword = KeywordText("Mini Crits", "Damage is increased by 150%.");
+        public static string miniCritsKeyword = KeywordText("Atomic Crits", "Damage is increased by 125% and all attacks apply Weaken.");
 
         public static string DamageText(string text)
         {

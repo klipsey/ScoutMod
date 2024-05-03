@@ -17,6 +17,8 @@ Original Concept by vo1dstud1os - discord https://codenamecrisis.carrd.co/ - car
 
 - Scout can double jump. Deal damage to build up Atomic Core. Taking damage reduces Atomic Core. Atomic Core increases movement speed.
 
+[![](https://i.postimg.cc/bwmgR9TT/Scout-Atomic-Core.gif)]()
+
 ## Primary: **Splattergun**
 
 - Agile. Fire a scattergun burst for 12x50% damage.
@@ -31,34 +33,35 @@ Original Concept by vo1dstud1os - discord https://codenamecrisis.carrd.co/ - car
 
 ## Secondary: **Toxic Cleaver**
 
-- Agile. Throw your cleaver blighting and dealing 350% damage. Crits and poisons stunned enemies.
+- Agile. Throw your cleaver Blighting and dealing 350% damage. Crits and Poisons stunned enemies.
 
 ## Secondary Swap: **Spike Ball**
 
-- Agile. Hit your baseball stunning and dealing 240% damage. Stun duration scales with distance traveled.
+- Agile. Hit your baseball Stunning and dealing 240% damage. Stun duration scales with distance traveled.
 
 [![](https://i.postimg.cc/XqYQbTt4/Scout-Ball-Cleaver.gif)]()
 
 ## Utility: **Atomic Blast**
 
-- Agile. Drain your Atomic Core gaining mini crits, attack speed, and movement speed. If drained at max charge, deal 1500% damage around you.
+- Drain your Atomic Core gaining Atomic Crits, attack speed, and movement speed. If drained at max charge, deal 1500% damage around you.
 
 [![](https://i.postimg.cc/bNtpcWPQ/Scout-Atomic-Minicrits.gif)]()
 
 ## Special: **Swap**
 
-- Agile. Swap to your bat.
+- Swap to your bat.
+
+[![](https://i.postimg.cc/KzDRnJ7c/Scout-Swap.gif)]()
 
 # Keywords
 
-## **Mini Crits**:
+## **Atomic Crits**:
 
-- Damage is increased by 150%.
+- Damage is increased by 125% and all attacks apply Weaken.
 
 This character was made in 24 hours! This release was made afterward with some polishing.
 
 [![Scout Video](https://img.youtube.com/vi/-vVGdieXHz8/0.jpg)](https://www.youtube.com/watch?v=-vVGdieXHz8)
-
 
 Download other tf2 akin characters: 
 
@@ -68,13 +71,15 @@ https://thunderstore.io/package/EnforcerGang/Rocket/
 
 https://thunderstore.io/package/EnforcerGang/Enforcer/ (Nemforcer)
 
+https://thunderstore.io/package/PopcornFactory/Arsonist_Mod/ 
+
 Contact me on Discord: https://discord.gg/3NaMEsvYeD
 
 # Credits
 
 tsuyoikenko - Code, model, animations.
 
-vo1dstud1os - Concept art.
+vo1dstud1os - Concept art, icon art.
 
 TheTimeSweeper - Incredible new Henry template.
 

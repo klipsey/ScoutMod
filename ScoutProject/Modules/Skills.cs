@@ -139,6 +139,11 @@ namespace ScoutMod.Modules
             return CreateSkillDef<SkillDef>(skillDefInfo);
         }
 
+        public static ReloadSkillDef CreateReloadSkillDef(ReloadSkillDefInfo skillDefInfo)
+        {
+            return CreateReloadSkillDef<ReloadSkillDef>(skillDefInfo);
+        }
+
         public static T CreateSkillDef<T>(SkillDefInfo skillDefInfo) where T : SkillDef
         {
             //pass in a type for a custom skilldef, e.g. HuntressTrackingSkillDef
@@ -177,6 +182,49 @@ namespace ScoutMod.Modules
 
 
             return skillDef;
+        }
+
+        public static T CreateReloadSkillDef<T>(ReloadSkillDefInfo skillDefInfo) where T : ReloadSkillDef
+        {
+            //pass in a type for a custom skilldef, e.g. HuntressTrackingSkillDef
+            T reloadSkillDef = ScriptableObject.CreateInstance<T>();
+
+            reloadSkillDef.skillName = skillDefInfo.skillName;
+            (reloadSkillDef as ScriptableObject).name = skillDefInfo.skillName;
+            reloadSkillDef.skillNameToken = skillDefInfo.skillNameToken;
+            reloadSkillDef.skillDescriptionToken = skillDefInfo.skillDescriptionToken;
+            reloadSkillDef.icon = skillDefInfo.skillIcon;
+
+            reloadSkillDef.activationState = skillDefInfo.activationState;
+            reloadSkillDef.reloadState = skillDefInfo.reloadState;
+            reloadSkillDef.activationStateMachineName = skillDefInfo.activationStateMachineName;
+            reloadSkillDef.interruptPriority = skillDefInfo.interruptPriority;
+            reloadSkillDef.reloadInterruptPriority = skillDefInfo.reloadInterruptPriority;
+
+            reloadSkillDef.baseMaxStock = skillDefInfo.baseMaxStock;
+            reloadSkillDef.baseRechargeInterval = skillDefInfo.baseRechargeInterval;
+            reloadSkillDef.graceDuration = skillDefInfo.graceDuration;
+
+            reloadSkillDef.rechargeStock = skillDefInfo.rechargeStock;
+            reloadSkillDef.requiredStock = skillDefInfo.requiredStock;
+            reloadSkillDef.stockToConsume = skillDefInfo.stockToConsume;
+
+            reloadSkillDef.dontAllowPastMaxStocks = skillDefInfo.dontAllowPastMaxStocks;
+            reloadSkillDef.beginSkillCooldownOnSkillEnd = skillDefInfo.beginSkillCooldownOnSkillEnd;
+            reloadSkillDef.canceledFromSprinting = skillDefInfo.canceledFromSprinting;
+            reloadSkillDef.forceSprintDuringState = skillDefInfo.forceSprintDuringState;
+            reloadSkillDef.fullRestockOnAssign = skillDefInfo.fullRestockOnAssign;
+            reloadSkillDef.resetCooldownTimerOnUse = skillDefInfo.resetCooldownTimerOnUse;
+            reloadSkillDef.isCombatSkill = skillDefInfo.isCombatSkill;
+            reloadSkillDef.mustKeyPress = skillDefInfo.mustKeyPress;
+            reloadSkillDef.cancelSprintingOnActivation = skillDefInfo.cancelSprintingOnActivation;
+
+            reloadSkillDef.keywordTokens = skillDefInfo.keywordTokens;
+
+            ScoutMod.Modules.Content.AddSkillDef(reloadSkillDef);
+
+
+            return reloadSkillDef;
         }
         #endregion skilldefs
     }
@@ -248,5 +296,74 @@ namespace ScoutMod.Modules
 
         }
         #endregion construction complete
+    }
+    internal class ReloadSkillDefInfo
+    {
+        public string skillName;
+        public string skillNameToken;
+        public string skillDescriptionToken;
+        public string[] keywordTokens = new string[0];
+        public Sprite skillIcon;
+
+        public SerializableEntityStateType activationState;
+        public SerializableEntityStateType reloadState;
+        public string activationStateMachineName;
+        public InterruptPriority interruptPriority;
+        public InterruptPriority reloadInterruptPriority;
+
+        public int baseMaxStock = 1;
+        public float baseRechargeInterval;
+        public float graceDuration;
+
+        public int rechargeStock = 1;
+        public int requiredStock = 1;
+        public int stockToConsume = 1;
+
+        public bool resetCooldownTimerOnUse = false;
+        public bool fullRestockOnAssign = true;
+        public bool dontAllowPastMaxStocks = false;
+        public bool beginSkillCooldownOnSkillEnd = false;
+        public bool mustKeyPress = false;
+
+        public bool isCombatSkill = true;
+        public bool canceledFromSprinting = false;
+        public bool cancelSprintingOnActivation = true;
+        public bool forceSprintDuringState = false;
+
+        public ReloadSkillDefInfo() { }
+        /// <summary>
+        /// Creates a skilldef for a typical primary.
+        /// <para>combat skill, cooldown: 0, required stock: 0, InterruptPriority: Any</para>
+        /// </summary>
+        public ReloadSkillDefInfo(string skillName,
+                            string skillNameToken,
+                            string skillDescriptionToken,
+                            Sprite skillIcon,
+
+                            SerializableEntityStateType activationState,
+                            SerializableEntityStateType reloadState,
+                            string activationStateMachineName = "Weapon")
+        {
+            this.skillName = skillName;
+            this.skillNameToken = skillNameToken;
+            this.skillDescriptionToken = skillDescriptionToken;
+            this.skillIcon = skillIcon;
+
+            this.activationState = activationState;
+            this.reloadState = reloadState;
+            this.activationStateMachineName = activationStateMachineName;
+
+            this.cancelSprintingOnActivation = false;
+
+            this.keywordTokens = new string[] { Tokens.agileKeyword };
+            this.interruptPriority = InterruptPriority.Any;
+            this.reloadInterruptPriority = InterruptPriority.Any;
+            this.isCombatSkill = true;
+            this.baseRechargeInterval = 0;
+
+            this.requiredStock = 0;
+            this.stockToConsume = 0;
+
+        }
     }
 }

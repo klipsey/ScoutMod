@@ -1,3 +1,15 @@
+# 0.7.0
+
+- Reload is now tied to attackspeed
+- Buffed reload time from 2.5 sec -> 2.0 sec
+- Atomic Blast now has 0 cooldown
+- Atomic Blast duration scales with stock
+- Atomic Core buildup rate increases with Atomic Blasts cooldown reduction
+- Mini Crits name changed to Atomic Crits
+- Atomic Crits nerfed to deal 125% damage
+- Atomic Crits buffed to apply weaken
+- Updated Tokens
+
 # 0.6.2
 
 - Cleaver model added
