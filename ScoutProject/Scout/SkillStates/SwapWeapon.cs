@@ -14,6 +14,7 @@ namespace ScoutMod.Scout.SkillStates
         {
             base.OnEnter();
             Util.PlaySound("sfx_scout_swap_weapon", this.gameObject);
+            //return to gun
             if (this.skillLocator.secondary.skillNameToken == ScoutSurvivor.SCOUT_PREFIX + "SECONDARY_SPIKEDBALL_NAME")
             {
                 PlayAnimation("Gesture, Override", "SwapToGun", "Cleaver.playbackRate", 0.5f / base.characterBody.attackSpeed);
@@ -22,16 +23,22 @@ namespace ScoutMod.Scout.SkillStates
                 this.skillLocator.secondary.UnsetSkillOverride(this.gameObject, ScoutSurvivor.spikeBallSkillDef, GenericSkill.SkillOverridePriority.Network);
                 if (base.isAuthority)
                 {
+                    this.skillLocator.primary.RemoveAllStocks();
                     this.skillLocator.secondary.RemoveAllStocks();
-                    for (int i = 0; i < this.scoutController.currentCleaverStock; i++) this.skillLocator.secondary.AddOneStock();
+                    for (int i = 0; i < this.scoutController.currentSecondary1Stock; i++) this.skillLocator.secondary.AddOneStock();
                 }
                 if (this.skillLocator.secondary.stock < this.skillLocator.secondary.maxStock)
                 {
-                    this.skillLocator.secondary.rechargeStopwatch = this.scoutController.cleaverCdTimer;
+                    this.skillLocator.secondary.rechargeStopwatch = this.scoutController.secondary1CdTimer;
+                }
+                if (this.skillLocator.primary.stock < this.skillLocator.primary.maxStock)
+                {
+                    this.skillLocator.primary.rechargeStopwatch = this.scoutController.primary1CdTimer;
                 }
             }
             else
             {
+                //swap to bat
                 PlayAnimation("Gesture, Override", "SwapToBat", "Cleaver.playbackRate", 0.5f / base.characterBody.attackSpeed);
                 this.scoutController.SwitchLayer("Body, Bat");
                 this.skillLocator.primary.SetSkillOverride(this.gameObject, ScoutSurvivor.batSkillDef, GenericSkill.SkillOverridePriority.Network);
@@ -39,11 +46,12 @@ namespace ScoutMod.Scout.SkillStates
                 if(base.isAuthority)
                 {
                     this.skillLocator.secondary.RemoveAllStocks();
-                    for (int i = 0; i < this.scoutController.currentBallStock; i++) this.skillLocator.secondary.AddOneStock();
+                    for (int i = 0; i < this.scoutController.currentSecondary2Stock; i++) this.skillLocator.secondary.AddOneStock();
+                    for (int i = 0; i < this.scoutController.currentPrimary1Stock; i++) this.skillLocator.primary.AddOneStock();
                 }
                 if (this.skillLocator.secondary.stock < this.skillLocator.secondary.maxStock)
                 {
-                    this.skillLocator.secondary.rechargeStopwatch = this.scoutController.ballCdTimer;
+                    this.skillLocator.secondary.rechargeStopwatch = this.scoutController.secondary2CdTimer;
                 }
             }
 

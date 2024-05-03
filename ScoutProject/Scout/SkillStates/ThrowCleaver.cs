@@ -29,7 +29,7 @@ namespace ScoutMod.Scout.SkillStates
             base.projectilePitchBonus = -3.5f;
 
             base.OnEnter();
-            this.scoutController.SetupStockCleaver();
+            this.scoutController.SetupStockSecondary1();
         }
 
         public override void FireProjectile()

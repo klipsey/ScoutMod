@@ -34,15 +34,21 @@ namespace ScoutMod.Scout.Components
 
         public Action onAtomicChange;
 
-        public float ballCdTimer = 0f;
-        public float ballCd = 6f;
-        public int maxBallStock = 1;
-        public int currentBallStock = 1;
+        public float primary1CdTimer = 0f;
+        public float primary1Cd = 2.5f;
+        public int maxPrimary1Stock = 2;
+        public int currentPrimary1Stock = 2;
 
-        public float cleaverCdTimer = 0f;
-        public float cleaverCd = 6f;
-        public int maxCleaverStock = 1;
-        public int currentCleaverStock = 1;
+
+        public float secondary1CdTimer = 0f;
+        public float secondary1Cd = 6f;
+        public int maxSecondary1Stock = 1;
+        public int currentSecondary1Stock = 1;
+
+        public float secondary2CdTimer = 0f;
+        public float secondary2Cd = 6f;
+        public int maxSecondary2Stock = 1;
+        public int currentSecondary2Stock = 1;
 
         private uint playID1;
         private uint playID2;
@@ -60,6 +66,9 @@ namespace ScoutMod.Scout.Components
         private void Start()
         {
             InitShells();
+            SetupStockSecondary1();
+            SetupStockPrimary2();
+            SetupStockPrimary1();
         }
         public void FillAtomic(float amount, bool isCrit)
         {
@@ -132,6 +141,8 @@ namespace ScoutMod.Scout.Components
             scoutTrail = GameObject.Instantiate(ScoutAssets.scoutZoom, scoutTransform);
             atomicDraining = true;
             this.ModdedDamageType = DamageTypes.MiniCrit;
+            AkSoundEngine.StopPlayingID(this.playID1);
+            AkSoundEngine.StopPlayingID(this.playID2);
             playID1 = Util.PlaySound("sfx_scout_atomic_on", this.gameObject);
             playID2 = Util.PlaySound("sfx_scout_atomic_duration", this.gameObject);
         }
@@ -168,19 +179,26 @@ namespace ScoutMod.Scout.Components
                 this.animator.SetLayerWeight(this.animator.GetLayerIndex(layerName), 1f);
             }
         }
-        public void SetupStockBaseball()
+        public void SetupStockPrimary2()
         {
-            ballCdTimer = this.skillLocator.secondary.rechargeStopwatch;
-            ballCd = this.skillLocator.secondary.finalRechargeInterval;
-            currentBallStock = this.skillLocator.secondary.stock;
-            maxBallStock = this.skillLocator.secondary.maxStock;
+            secondary2CdTimer = this.skillLocator.secondary.rechargeStopwatch;
+            secondary2Cd = this.skillLocator.secondary.finalRechargeInterval;
+            currentSecondary2Stock = this.skillLocator.secondary.stock;
+            maxSecondary2Stock = this.skillLocator.secondary.maxStock;
         }
-        public void SetupStockCleaver()
+        public void SetupStockSecondary1()
         {
-            cleaverCdTimer = this.skillLocator.secondary.rechargeStopwatch;
-            cleaverCd = this.skillLocator.secondary.finalRechargeInterval;
-            currentCleaverStock = this.skillLocator.secondary.stock;
-            maxCleaverStock = this.skillLocator.secondary.maxStock;
+            secondary1CdTimer = this.skillLocator.secondary.rechargeStopwatch;
+            secondary1Cd = this.skillLocator.secondary.finalRechargeInterval;
+            currentSecondary1Stock = this.skillLocator.secondary.stock;
+            maxSecondary1Stock = this.skillLocator.secondary.maxStock;
+        }
+        public void SetupStockPrimary1()
+        {
+            primary1CdTimer = this.skillLocator.primary.rechargeStopwatch;
+            primary1Cd = this.skillLocator.primary.finalRechargeInterval;
+            currentPrimary1Stock = this.skillLocator.primary.stock;
+            maxPrimary1Stock = this.skillLocator.primary.maxStock;
         }
         private void FixedUpdate()
         {
@@ -191,24 +209,33 @@ namespace ScoutMod.Scout.Components
                 if(atomicGauge <= 0) DeactivateAtomic();
             }
 
-            if (ballCdTimer < ballCd)
+            if (secondary2CdTimer < secondary2Cd)
             {
-                ballCdTimer += Time.fixedDeltaTime;
+                secondary2CdTimer += Time.fixedDeltaTime;
             }
-            else if (ballCdTimer >= ballCd && currentBallStock < maxBallStock)
+            else if (secondary2CdTimer >= secondary2Cd && currentSecondary2Stock < maxSecondary2Stock)
             {
-                ballCdTimer = 0f;
-                currentBallStock++;
+                secondary2CdTimer = 0f;
+                currentSecondary2Stock++;
             }
 
-            if (cleaverCdTimer < cleaverCd)
+            if (secondary1CdTimer < secondary1Cd)
             {
-                cleaverCdTimer += Time.fixedDeltaTime;
+                secondary1CdTimer += Time.fixedDeltaTime;
             }
-            else if (cleaverCdTimer >= cleaverCd && currentCleaverStock < maxCleaverStock)
+            else if (secondary1CdTimer >= secondary1Cd && currentSecondary1Stock < maxSecondary1Stock)
             {
-                cleaverCdTimer = 0f;
-                currentCleaverStock++;
+                secondary1CdTimer = 0f;
+                currentSecondary1Stock++;
+            }
+
+            if(primary1CdTimer < primary1Cd)
+            {
+                primary1CdTimer += Time.fixedDeltaTime;
+            }
+            else if(primary1CdTimer >= primary1Cd && currentPrimary1Stock < maxPrimary1Stock)
+            {
+                currentPrimary1Stock = maxPrimary1Stock;
             }
         }
     }

@@ -18,6 +18,7 @@ using ScoutMod.Scout.Content;
 using ScoutMod.Scout.SkillStates;
 using RobDriver.Modules.Components;
 using HG;
+using EntityStates;
 
 namespace ScoutMod.Scout
 {
@@ -44,7 +45,7 @@ namespace ScoutMod.Scout
             subtitleNameToken = SCOUT_PREFIX + "SUBTITLE",
 
             characterPortrait = assetBundle.LoadAsset<Texture>("texScoutIcon"),
-            bodyColor = new Color(85f / 255f, 188f / 255f, 0f),
+            bodyColor = new Color(184f / 255f, 226f / 255f, 61f / 255f),
             sortPosition = 5.99f,
 
             crosshair = Assets.LoadCrosshair("SimpleDot"),
@@ -63,7 +64,11 @@ namespace ScoutMod.Scout
 
         public override CustomRendererInfo[] customRendererInfos => new CustomRendererInfo[]
         {
-
+                new CustomRendererInfo
+                {
+                    childName = "Model",
+                    material = assetBundle.LoadMaterial("matScout"),
+                },
                 new CustomRendererInfo
                 {
                     childName = "ScatterGunMesh",
@@ -281,7 +286,7 @@ namespace ScoutMod.Scout
                 fullRestockOnAssign = false,
                 dontAllowPastMaxStocks = false,
                 beginSkillCooldownOnSkillEnd = false,
-                mustKeyPress = true,
+                mustKeyPress = false,
 
                 isCombatSkill = true,
                 canceledFromSprinting = false,
@@ -314,7 +319,7 @@ namespace ScoutMod.Scout
                 fullRestockOnAssign = false,
                 dontAllowPastMaxStocks = false,
                 beginSkillCooldownOnSkillEnd = false,
-                mustKeyPress = true,
+                mustKeyPress = false,
 
                 isCombatSkill = true,
                 canceledFromSprinting = false,
@@ -335,7 +340,7 @@ namespace ScoutMod.Scout
 
                 activationState = new EntityStates.SerializableEntityStateType(typeof(ActivateAtomic)),
                 activationStateMachineName = "Weapon2",
-                interruptPriority = EntityStates.InterruptPriority.Skill,
+                interruptPriority = EntityStates.InterruptPriority.PrioritySkill,
 
                 baseRechargeInterval = 8f,
                 baseMaxStock = 1,
@@ -372,7 +377,7 @@ namespace ScoutMod.Scout
 
                 activationState = new EntityStates.SerializableEntityStateType(typeof(SwapWeapon)),
                 activationStateMachineName = "Weapon2",
-                interruptPriority = EntityStates.InterruptPriority.Skill,
+                interruptPriority = EntityStates.InterruptPriority.PrioritySkill,
 
                 baseRechargeInterval = 0.5f,
                 baseMaxStock = 1,
@@ -520,7 +525,7 @@ namespace ScoutMod.Scout
                 if (victimMachine && (victimMachine.state is EntityStates.StunState || victimBody.HasBuff(ScoutBuffs.scoutStunMarker)))
                 {
                     damageInfo.crit = true;
-                    damageInfo.damageType &= DamageType.BlightOnHit;
+                    damageInfo.damageType &= ~DamageType.BlightOnHit;
                     damageInfo.damageType |= DamageType.PoisonOnHit;
                     Util.PlaySound("sfx_driver_blood_gurgle", self.gameObject);
                 }

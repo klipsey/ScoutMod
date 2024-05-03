@@ -35,14 +35,17 @@ namespace ScoutMod.Scout.SkillStates
             this.hasFired = false;
             this.duration = this.baseDuration / this.attackSpeedStat;
             this.isCrit = base.RollCrit();
-            this.earlyExitTime = 0.75f * this.duration;
+            this.earlyExitTime = 0.5f * this.duration;
 
             if (this.isCrit) Util.PlaySound("sfx_scout_shoot_crit", base.gameObject);
             else Util.PlaySound("sfx_scout_shoot", base.gameObject);
 
+            base.PlayAnimation("AimPitch", "AimPitchShotgun");
             base.PlayAnimation("Gesture, Override", "FireShotgun", "Shoot.playbackRate", this.duration);
 
             this.fireDuration = 0;
+
+            this.scoutController.SetupStockPrimary1();
         }
 
         public virtual void FireBullet()
@@ -144,6 +147,7 @@ namespace ScoutMod.Scout.SkillStates
         public override void OnExit()
         {
             base.OnExit();
+            base.PlayAnimation("AimPitch", "AimPitch");
         }
 
         public override InterruptPriority GetMinimumInterruptPriority()

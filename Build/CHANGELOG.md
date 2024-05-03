@@ -1,3 +1,11 @@
+# 0.6.2
+
+- Cleaver model added
+- Added footsteps
+- Fixed sfx loop (hopefully)
+- Token fixes and quick buff icon fix
+- Fixed scout not going invisible for certain items/equipment
+
 # 0.6.1
 
 - Jump polish and some other vfx stuff

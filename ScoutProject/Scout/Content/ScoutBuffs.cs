@@ -11,7 +11,7 @@ namespace ScoutMod.Scout.Content
 
         public static void Init(AssetBundle assetBundle)
         {
-            scoutAtomicBuff = Modules.Content.CreateAndAddBuff("ScoutAtomicBuff", Addressables.LoadAssetAsync<Sprite>("RoR2/DLC1/VoidSurvivor/texBuffVoidSurvivorCorruptionIcon.tif").WaitForCompletion(),
+            scoutAtomicBuff = Modules.Content.CreateAndAddBuff("ScoutAtomicBuff", assetBundle.LoadAsset<Sprite>("texBuffAtomic"),
                 Color.yellow, false, false, false);
             scoutStunMarker = Modules.Content.CreateAndAddBuff("ScoutStunBuff", Addressables.LoadAssetAsync<Sprite>("RoR2/Base/UI/texSniperCharge.tif").WaitForCompletion(),
                 Color.white, false, false, false);

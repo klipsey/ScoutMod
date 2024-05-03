@@ -34,7 +34,7 @@ namespace ScoutMod.Scout.SkillStates
             base.bloom = 10;
 
             base.OnEnter();
-            this.scoutController.SetupStockBaseball();
+            this.scoutController.SetupStockPrimary2();
         }
 
         public override void FireProjectile()

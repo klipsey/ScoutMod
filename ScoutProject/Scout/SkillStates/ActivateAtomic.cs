@@ -14,9 +14,9 @@ namespace ScoutMod.Scout.SkillStates
         {
             RefreshState();
             base.OnEnter();
-            if (this.characterBody.HasBuff(ScoutBuffs.scoutAtomicBuff))
+            if (this.characterBody.HasBuff(ScoutBuffs.scoutAtomicBuff) || scoutController.atomicGauge < 1f)
             {
-                if(this.skillLocator.utility.stock < this.skillLocator.utility.maxStock) this.skillLocator.utility.AddOneStock();
+                if(this.skillLocator.utility.stock < 1f) this.skillLocator.utility.AddOneStock();
                 return;
             }
 

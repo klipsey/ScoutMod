@@ -16,6 +16,7 @@ using UnityEngine.UIElements;
 using System.IO;
 using System.Reflection;
 using static UnityEngine.ParticleSystem.PlaybackState;
+using Rewired.ComponentControls.Effects;
 
 namespace ScoutMod.Scout.Content
 {
@@ -240,6 +241,11 @@ namespace ScoutMod.Scout.Content
             trail.startColor = Color.white;
             trail.endColor = Color.gray;
             trail.alignment = LineAlignment.TransformZ;
+
+            cleaverPrefab.GetComponent<ProjectileController>().ghostPrefab.transform.GetChild(0).gameObject.GetComponent<MeshFilter>().mesh = mainAssetBundle.LoadAsset<GameObject>("scoutCleaver").GetComponent<MeshFilter>().mesh;
+            cleaverPrefab.GetComponent<ProjectileController>().ghostPrefab.transform.GetChild(0).localRotation = new Quaternion(90f, 0f, 90f, Quaternion.identity.w);
+            cleaverPrefab.GetComponent<ProjectileController>().ghostPrefab.transform.GetChild(0).localScale = Vector3.one * 0.015f;
+            cleaverPrefab.GetComponent<ProjectileController>().ghostPrefab.transform.GetChild(0).gameObject.GetComponent<MeshRenderer>().material = CreateMaterial("matScout");
 
             Modules.Content.AddProjectilePrefab(cleaverPrefab);
 
