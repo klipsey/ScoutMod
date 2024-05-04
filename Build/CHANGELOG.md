@@ -1,3 +1,7 @@
+# 0.7.1 
+
+- Atomic Crits was permanent on projectiles oops
+
 # 0.7.0
 
 - Reload is now tied to attackspeed

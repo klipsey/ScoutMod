@@ -215,5 +215,11 @@ namespace ScoutMod.Scout.Components
                 currentSecondary1Stock++;
             }
         }
+
+        private void OnDestroy()
+        {
+            AkSoundEngine.StopPlayingID(this.playID1);
+            AkSoundEngine.StopPlayingID(this.playID2);
+        }
     }
 }

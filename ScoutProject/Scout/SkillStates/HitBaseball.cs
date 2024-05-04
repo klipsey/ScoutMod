@@ -47,6 +47,7 @@ namespace ScoutMod.Scout.SkillStates
                 DamageAPI.ModdedDamageTypeHolderComponent moddedDamage = ballPrefab.GetComponent<DamageAPI.ModdedDamageTypeHolderComponent>();
                 if (scoutController.ModdedDamageType == DamageTypes.AtomicCrits) moddedDamage.Add(DamageTypes.AtomicCrits);
                 ProjectileManager.instance.FireProjectile(ballPrefab, aimRay.origin, Util.QuaternionSafeLookRotation(aimRay.direction), this.gameObject, this.damageStat * ScoutStaticValues.cleaverDamageCoefficient, this.force, this.RollCrit(), scoutController.atomicDraining ? DamageColorIndex.Item : DamageColorIndex.Default, null, -1f);
+                if (moddedDamage.Has(DamageTypes.AtomicCrits)) moddedDamage.Remove(DamageTypes.AtomicCrits);
             }
         }
 
