@@ -51,8 +51,6 @@ namespace ScoutMod.Scout.SkillStates
                             crit = base.RollCrit()
                         }.Fire();
 
-                        Util.PlaySound("sfx_driver_plasma_cannon_shoot", this.gameObject);
-
                         EffectManager.SpawnEffect(ScoutAssets.atomicImpactEffect, new EffectData
                         {
                             origin = this.transform.position + (Vector3.up * 1.8f),

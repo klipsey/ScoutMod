@@ -6,6 +6,7 @@ namespace ScoutMod.Scout.Content
     public static class ScoutConfig
     {
         public static ConfigEntry<bool> forceUnlock;
+        public static ConfigEntry<bool> gainAtomicGaugeDuringAtomicBlast;
 
         public static void Init()
         {
@@ -17,6 +18,12 @@ namespace ScoutMod.Scout.Content
                 "Unlock Scout",
                 false,
                 "Unlock Scout.", true);
+
+            gainAtomicGaugeDuringAtomicBlast = Config.BindAndOptions(
+                section,
+                "Gain Gauge During Atomic",
+                false,
+                "Lets you fill Atomic Core while it drains.", false);
         }
     }
 }

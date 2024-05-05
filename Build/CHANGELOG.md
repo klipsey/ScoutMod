@@ -1,3 +1,11 @@
+# 0.7.2
+
+- Hopefully fixed sound bug?
+- Added grace period when at max gauge
+- Added sfx and vfx when hitting max gauge
+- Lower cd for weapon swap for qol 
+- Config to gain charge while Atomic Charge drains
+
 # 0.7.1 
 
 - Atomic Crits was permanent on projectiles oops

@@ -12,6 +12,8 @@ namespace ScoutMod.Scout.Components
 {
     public class ScoutController : MonoBehaviour
     {
+
+        public bool atMaxGauge => atomicGauge >= maxAtomicGauge;
         private CharacterBody characterBody;
         private ModelSkinController skinController;
         private ChildLocator childLocator;
@@ -47,6 +49,9 @@ namespace ScoutMod.Scout.Components
         private uint playID1;
         private uint playID2;
 
+        private float graceTimer = 0f;
+        public bool hasGraced = false;
+
         private void Awake()
         {
             this.characterBody = this.GetComponent<CharacterBody>();
@@ -65,7 +70,9 @@ namespace ScoutMod.Scout.Components
         }
         public void FillAtomic(float amount, bool isCrit)
         {
-            if (atomicDraining) return;
+            if (atomicDraining && !ScoutConfig.gainAtomicGaugeDuringAtomicBlast.Value) return;
+            else if (atomicDraining && ScoutConfig.gainAtomicGaugeDuringAtomicBlast.Value) amount *= 0.25f;
+
             if (atomicGauge + amount <= maxAtomicGauge)
             {
                 atomicGauge += amount;
@@ -186,9 +193,15 @@ namespace ScoutMod.Scout.Components
             currentSecondary1Stock = this.skillLocator.secondary.stock;
             maxSecondary1Stock = this.skillLocator.secondary.maxStock;
         }
+        public bool InGracePeriod()
+        {
+            return graceTimer <= 2f && atMaxGauge;
+        }
         private void FixedUpdate()
         {
-            if(atomicDraining) 
+            graceTimer += Time.fixedDeltaTime;
+
+            if (atomicDraining) 
             {
                 atomicGauge -= maxAtomicGauge / (400f + (100f * this.skillLocator.utility.maxStock - 1));
                 onAtomicChange?.Invoke();
@@ -213,6 +226,19 @@ namespace ScoutMod.Scout.Components
             {
                 secondary1CdTimer = 0f;
                 currentSecondary1Stock++;
+            }
+
+            if(atMaxGauge && !hasGraced) 
+            {
+                graceTimer = 0f;
+                hasGraced = true;
+
+                Util.PlaySound("sfx_driver_plasma_cannon_shoot", this.gameObject);
+                EffectManager.SimpleMuzzleFlash(ScoutAssets.scoutMaxGauge, base.gameObject, "Chest", false);
+            }
+            else if(!atMaxGauge && hasGraced)
+            {
+                hasGraced = false;
             }
         }
 

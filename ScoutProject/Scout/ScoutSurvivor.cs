@@ -382,7 +382,7 @@ namespace ScoutMod.Scout
                 activationStateMachineName = "Weapon",
                 interruptPriority = EntityStates.InterruptPriority.PrioritySkill,
 
-                baseRechargeInterval = 0.5f,
+                baseRechargeInterval = 0.25f,
                 baseMaxStock = 1,
 
                 rechargeStock = 1,
@@ -521,7 +521,11 @@ namespace ScoutMod.Scout
             EntityStateMachine victimMachine = victimBody.GetComponent<EntityStateMachine>();
             if (victimBody && victimBody.baseNameToken == "KENKO_SCOUT_NAME")
             {
-                victimBody.GetComponent<ScoutController>().FillAtomic(-10f, false);
+                ScoutController scoutController = victimBody.GetComponent<ScoutController>();
+                if (!scoutController.InGracePeriod())
+                {
+                    scoutController.FillAtomic(-10f, false);
+                }
             }
             if (damageInfo.HasModdedDamageType(DamageTypes.AtomicCrits))
             {

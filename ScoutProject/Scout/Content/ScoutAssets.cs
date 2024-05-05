@@ -46,6 +46,7 @@ namespace ScoutMod.Scout.Content
         internal static GameObject batHitEffect;
 
         internal static GameObject scoutZoom;
+        internal static GameObject scoutMaxGauge;
         //Models
         internal static GameObject shotgunShell;
         internal static GameObject cleaverPrefab;
@@ -186,6 +187,11 @@ namespace ScoutMod.Scout.Content
             atomicEndEffect.transform.GetChild(6).gameObject.SetActive(false);
             Object.Destroy(atomicEndEffect.GetComponent<EffectComponent>());
 
+            scoutMaxGauge = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Engi/EngiGrenadeExplosion.prefab").WaitForCompletion().InstantiateClone("ScoutMaxGaugeEffect", true);
+            scoutMaxGauge.AddComponent<NetworkIdentity>();
+            scoutMaxGauge.transform.GetChild(0).GetChild(1).transform.localScale *= 2;
+            scoutMaxGauge.GetComponent<EffectComponent>().soundName = "";
+            Modules.Content.CreateAndAddEffectDef(scoutMaxGauge);
 
             atomicImpactEffect = CreateImpactExplosionEffect("ScoutAtomicBlast", Addressables.LoadAssetAsync<Material>("RoR2/Base/Beetle/matBeetleSpitShockwave.mat").WaitForCompletion(), Addressables.LoadAssetAsync<Material>("RoR2/Base/Beetle/matBeetleQueenAcidDecal.mat").WaitForCompletion(), 2);
 
