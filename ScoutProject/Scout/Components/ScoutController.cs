@@ -46,6 +46,8 @@ namespace ScoutMod.Scout.Components
         public int maxSecondary2Stock = 1;
         public int currentSecondary2Stock = 1;
 
+        public float stagedReload = 0f;
+
         private uint playID1;
         private uint playID2;
 

@@ -1,3 +1,7 @@
+# 0.7.3
+
+- Staged reloads
+
 # 0.7.2
 
 - Hopefully fixed sound bug?

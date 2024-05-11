@@ -2,12 +2,13 @@
 using UnityEngine;
 using ScoutMod.Modules.BaseStates;
 using EntityStates;
+using ScoutMod.Scout.Components;
 
 namespace ScoutMod.Scout.SkillStates
 {
     public class Reload : BaseScoutSkillState
     {
-        public static float baseDuration = 2f;
+        public static float baseDuration = 1.7f;
         private float duration;
         private float startReload;
         private bool startReloadPlayed = false;
@@ -21,9 +22,11 @@ namespace ScoutMod.Scout.SkillStates
         {
             base.OnEnter();
             this.duration = baseDuration / attackSpeedStat;
-            this.startReload = 0.08f / attackSpeedStat;
-            this.startShell = 0.1f / attackSpeedStat;
-            this.shellsIn = 1f / attackSpeedStat;
+            if (this.scoutController.stagedReload > 0f) this.duration = this.scoutController.stagedReload;
+            else this.scoutController.stagedReload = this.duration;
+            this.startReload = 0.04f * duration;
+            this.startShell = 0.05f * duration;
+            this.shellsIn = 0.5f * duration;
             dontPlay = this.skillLocator.secondary.skillNameToken == ScoutSurvivor.SCOUT_PREFIX + "SECONDARY_SPIKEDBALL_NAME";
             if (dontPlay && base.isAuthority)
             {
@@ -44,12 +47,14 @@ namespace ScoutMod.Scout.SkillStates
             }
             if(base.fixedAge >= startReload && !startReloadPlayed)
             {
+                this.scoutController.stagedReload = duration - startReload;
                 startReloadPlayed = true;
                 Util.PlayAttackSpeedSound("sfx_scout_start_reload", base.gameObject, 1);
             }
 
             if (base.fixedAge >= startShell && !startReloadShell)
             {
+                this.scoutController.stagedReload = duration - startShell;
                 startReloadShell = true;
                 Util.PlayAttackSpeedSound("sfx_scout_shells_out", base.gameObject, 1);
             }
@@ -57,6 +62,7 @@ namespace ScoutMod.Scout.SkillStates
 
             if (base.fixedAge >= shellsIn && !endReloadShell)
             {
+                this.scoutController.stagedReload = duration - shellsIn;
                 endReloadShell = true;
                 Util.PlayAttackSpeedSound("sfx_scout_shells_in", base.gameObject, 1);
             }
@@ -65,6 +71,7 @@ namespace ScoutMod.Scout.SkillStates
             {
                 Util.PlayAttackSpeedSound("sfx_scout_end_reload", base.gameObject, 1);
                 GiveStock();
+                this.scoutController.stagedReload = 0f;
                 this.outer.SetNextStateToMain();
             }
         }
