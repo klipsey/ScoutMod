@@ -1,3 +1,8 @@
+# 0.7.4
+
+- Fixed bone rotations for skins
+- Added log
+
 # 0.7.3
 
 - Staged reloads

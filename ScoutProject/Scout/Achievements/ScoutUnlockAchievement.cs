@@ -40,7 +40,7 @@ namespace ScoutMod.Scout.Achievements
             {
                 noItems = false;
             }
-            if (Run.instance.time <= 120f && noItems)
+            if (Run.instance.time <= 180f && noItems)
             {
                 base.Grant();
             }

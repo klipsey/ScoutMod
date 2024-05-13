@@ -382,7 +382,7 @@ namespace ScoutMod.Scout
                 activationStateMachineName = "Weapon",
                 interruptPriority = EntityStates.InterruptPriority.PrioritySkill,
 
-                baseRechargeInterval = 0.25f,
+                baseRechargeInterval = 0.1f,
                 baseMaxStock = 1,
 
                 rechargeStock = 1,
