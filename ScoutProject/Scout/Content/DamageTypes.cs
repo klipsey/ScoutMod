@@ -76,21 +76,25 @@ namespace ScoutMod.Scout.Content
             EntityStateMachine victimMachine = victimBody.GetComponent<EntityStateMachine>();
             CharacterBody attackerBody = damageReport.attackerBody;
             GameObject attackerObject = damageReport.attacker.gameObject;
+            ScoutController attackerScout = attackerBody.GetComponent<ScoutController>();
             if (NetworkServer.active)
             {
-                if(damageInfo.HasModdedDamageType(FillAtomic))
+                if(attackerScout)
                 {
-                    attackerBody.GetComponent<ScoutController>().FillAtomic(5f / attackerBody.skillLocator.utility.cooldownScale + attackerBody.skillLocator.utility.flatCooldownReduction, damageInfo.crit);
-                    attackerBody.RecalculateStats();
-                }
-                else if(damageInfo.HasModdedDamageType(FillAtomicShotgun))
-                {
-                    attackerBody.GetComponent<ScoutController>().FillAtomic(1f / attackerBody.skillLocator.utility.cooldownScale + attackerBody.skillLocator.utility.flatCooldownReduction, damageInfo.crit);
-                    attackerBody.RecalculateStats();
-                }
-                if(damageInfo.HasModdedDamageType(BallStun))
-                {
-                    damageReport.victimBody.AddTimedBuff(ScoutBuffs.scoutStunMarker, inflictorObject.GetComponent<DistanceLobController>().timer * 2f + 1.5f);
+                    if (damageInfo.HasModdedDamageType(FillAtomic))
+                    {
+                        attackerScout.FillAtomic(5f / attackerBody.skillLocator.utility.cooldownScale + attackerBody.skillLocator.utility.flatCooldownReduction, damageInfo.crit);
+                        attackerBody.RecalculateStats();
+                    }
+                    else if (damageInfo.HasModdedDamageType(FillAtomicShotgun))
+                    {
+                        attackerScout.FillAtomic(1f / attackerBody.skillLocator.utility.cooldownScale + attackerBody.skillLocator.utility.flatCooldownReduction, damageInfo.crit);
+                        attackerBody.RecalculateStats();
+                    }
+                    if (damageInfo.HasModdedDamageType(BallStun) && inflictorObject)
+                    {
+                        damageReport.victimBody.AddTimedBuff(ScoutBuffs.scoutStunMarker, inflictorObject.GetComponent<DistanceLobController>().timer * 2f + 1.5f);
+                    }
                 }
             }
         }

@@ -13,6 +13,8 @@ namespace ScoutMod.Modules.BaseStates
     {
         protected ScoutController scoutController;
 
+        protected ScoutPassive scoutPassive;
+
         protected bool isAtomic;
         public virtual void AddRecoil2(float x1, float x2, float y1, float y2)
         {
@@ -36,6 +38,10 @@ namespace ScoutMod.Modules.BaseStates
             if (scoutController)
             {
                 isAtomic = scoutController.atomicDraining;
+            }
+            if(!scoutPassive)
+            {
+                scoutPassive = base.GetComponent<ScoutPassive>();
             }
         }
     }

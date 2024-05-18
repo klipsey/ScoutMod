@@ -6,6 +6,8 @@ using System.Security;
 using System.Security.Permissions;
 using R2API.Networking;
 using ScoutMod.Modules;
+using ScoutMod.Scout.Content;
+using ShaderSwapper;
 
 [module: UnverifiableCode]
 [assembly: SecurityPermission(SecurityAction.RequestMinimum, SkipVerification = true)]
@@ -16,6 +18,7 @@ namespace ScoutMod
     [NetworkCompatibility(CompatibilityLevel.EveryoneMustHaveMod, VersionStrictness.EveryoneNeedSameModVersion)]
     [BepInPlugin(MODUID, MODNAME, MODVERSION)]
     [BepInDependency(NetworkingAPI.PluginGUID)]
+    [BepInDependency("com.weliveinasociety.CustomEmotesAPI", BepInDependency.DependencyFlags.SoftDependency)]
 
     public class ScoutPlugin : BaseUnityPlugin
     {
@@ -30,6 +33,7 @@ namespace ScoutMod
         public const string DEVELOPER_PREFIX = "KENKO";
 
         public static ScoutPlugin instance;
+        public static bool emotesInstalled => BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey("com.weliveinasociety.CustomEmotesAPI");
 
         void Awake()
         {
@@ -42,6 +46,9 @@ namespace ScoutMod
 
             // used when you want to properly set up language folders
             Modules.Language.Init();
+
+            ScoutAssets.Init(Assets.LoadAssetBundle("scout"));
+            StartCoroutine(ScoutAssets.mainAssetBundle.UpgradeStubbedShadersAsync());
 
             // character initialization
             new ScoutMod.Scout.ScoutSurvivor().Initialize();

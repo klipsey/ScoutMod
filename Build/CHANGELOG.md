@@ -1,3 +1,13 @@
+# 0.7.6
+
+- Added official emote support (might be broken until the unofficial support is removed)
+- Swapped skills show up in loadout now
+- Gave him stubbed shaders
+
+# 0.7.5
+
+- I forgor
+
 # 0.7.4
 
 - Fixed bone rotations for skins

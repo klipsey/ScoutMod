@@ -19,6 +19,8 @@ using ScoutMod.Scout.SkillStates;
 using RobDriver.Modules.Components;
 using HG;
 using EntityStates;
+using EmotesAPI;
+using System.Runtime.CompilerServices;
 
 namespace ScoutMod.Scout
 {
@@ -35,9 +37,6 @@ namespace ScoutMod.Scout
 
         internal static GameObject characterPrefab;
 
-        public static SteppedSkillDef batSkillDef;
-        public static SkillDef spikeBallSkillDef;
-
         public override BodyInfo bodyInfo => new BodyInfo
         {
             bodyName = bodyName,
@@ -48,7 +47,7 @@ namespace ScoutMod.Scout
             bodyColor = new Color(184f / 255f, 226f / 255f, 61f / 255f),
             sortPosition = 5.99f,
 
-            crosshair = Assets.LoadCrosshair("SimpleDot"),
+            crosshair = Modules.Assets.LoadCrosshair("SimpleDot"),
             podPrefab = RoR2.LegacyResourcesAPI.Load<GameObject>("Prefabs/NetworkedObjects/SurvivorPod"),
 
             maxHealth = 110f,
@@ -67,22 +66,27 @@ namespace ScoutMod.Scout
                 new CustomRendererInfo
                 {
                     childName = "Model",
-                    material = assetBundle.LoadMaterial("matScout"),
+                    dontHotpoo = true,
                 },
                 new CustomRendererInfo
                 {
                     childName = "ScatterGunMesh",
-                    material = assetBundle.LoadMaterial("matShotgun"),
+                    dontHotpoo = true,
                 },
                 new CustomRendererInfo
                 {
                     childName = "BatMesh",
-                    material = assetBundle.LoadMaterial("matScout"),
+                    dontHotpoo = true,
                 },
                 new CustomRendererInfo
                 {
                     childName = "BackBatMesh",
-                    material = assetBundle.LoadMaterial("matScout"),
+                    dontHotpoo = true,
+                },
+                new CustomRendererInfo
+                {
+                    childName = "EmissionsMesh",
+                    dontHotpoo = true,
                 }
 
         };
@@ -118,12 +122,16 @@ namespace ScoutMod.Scout
 
             base.InitializeCharacter();
 
+            ChildLocator childLocator = bodyPrefab.GetComponentInChildren<ChildLocator>();
+            childLocator.FindChild("BatMesh").gameObject.SetActive(false);
+
             DamageTypes.Init();
 
             ScoutStates.Init();
             ScoutTokens.Init();
 
-            ScoutAssets.Init(assetBundle);
+            ScoutAssets.InitAssets();
+
             ScoutBuffs.Init(assetBundle);
 
             InitializeEntityStateMachines();
@@ -215,6 +223,7 @@ namespace ScoutMod.Scout
 
         private void AddPrimarySkills()
         {
+            ScoutPassive passive = bodyPrefab.GetComponent<ScoutPassive>();
             ReloadSkillDef Shoot = Skills.CreateReloadSkillDef(new ReloadSkillDefInfo
             {
                 skillName = "SplatterGun",
@@ -251,7 +260,7 @@ namespace ScoutMod.Scout
 
             Skills.AddPrimarySkills(bodyPrefab, Shoot);
 
-            batSkillDef = Skills.CreateSkillDef<SteppedSkillDef>(new SkillDefInfo
+            passive.batSkillDef = Skills.CreateSkillDef<SteppedSkillDef>(new SkillDefInfo
                 (
                     "Bonk",
                     SCOUT_PREFIX + "PRIMARY_BONK_NAME",
@@ -260,12 +269,16 @@ namespace ScoutMod.Scout
                     new EntityStates.SerializableEntityStateType(typeof(SkillStates.Swing)),
                     "Weapon"
                 ));
-            batSkillDef.stepCount = 2;
-            batSkillDef.stepGraceDuration = 1f;
+            passive.batSkillDef.stepCount = 2;
+            passive.batSkillDef.stepGraceDuration = 1f;
+
+            Skills.AddAdditionalSkills(passive.batSkillSlot.skillFamily, passive.batSkillDef);
         }
 
         private void AddSecondarySkills()
         {
+            ScoutPassive passive = bodyPrefab.GetComponent<ScoutPassive>();
+
             SkillDef Cleaver = Skills.CreateSkillDef(new SkillDefInfo
             {
                 skillName = "Toxic Cleaver",
@@ -299,7 +312,7 @@ namespace ScoutMod.Scout
 
             Skills.AddSecondarySkills(bodyPrefab, Cleaver);
 
-            spikeBallSkillDef = Skills.CreateSkillDef(new SkillDefInfo
+            passive.ballSkillDef = Skills.CreateSkillDef(new SkillDefInfo
             {
                 skillName = "Atomic Spikeball",
                 skillNameToken = SCOUT_PREFIX + "SECONDARY_SPIKEDBALL_NAME",
@@ -329,6 +342,8 @@ namespace ScoutMod.Scout
                 cancelSprintingOnActivation = false,
                 forceSprintDuringState = false,
             });
+            Skills.AddAdditionalSkills(passive.ballSkillSlot.skillFamily, passive.ballSkillDef);
+
         }
 
         private void AddUtilitySkills()
@@ -497,8 +512,18 @@ namespace ScoutMod.Scout
             On.RoR2.CharacterBody.RecalculateStats += CharacterBody_RecalculateStats;
             On.RoR2.UI.LoadoutPanelController.Rebuild += LoadoutPanelController_Rebuild;
             On.RoR2.HealthComponent.TakeDamage += new On.RoR2.HealthComponent.hook_TakeDamage(HealthComponent_TakeDamage);
+            if (ScoutPlugin.emotesInstalled) Emotes();
         }
-
+        [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
+        private static void Emotes()
+        {
+            On.RoR2.SurvivorCatalog.Init += (orig) =>
+            {
+                orig();
+                var skele = ScoutAssets.mainAssetBundle.LoadAsset<GameObject>("scout_emoteskeleton");
+                CustomEmotesAPI.ImportArmature(ScoutSurvivor.characterPrefab, skele);
+            };
+        }
         private static void LoadoutPanelController_Rebuild(On.RoR2.UI.LoadoutPanelController.orig_Rebuild orig, LoadoutPanelController self)
         {
             orig(self);
@@ -513,8 +538,9 @@ namespace ScoutMod.Scout
         }
         private void HealthComponent_TakeDamage(On.RoR2.HealthComponent.orig_TakeDamage orig, HealthComponent self, DamageInfo damageInfo)
         {
-            if (!NetworkServer.active)
+            if(!self)
             {
+                orig.Invoke(self, damageInfo);
                 return;
             }
             CharacterBody victimBody = self.body;

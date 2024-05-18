@@ -10,6 +10,13 @@ namespace ScoutMod.Scout.Components
 
         public GenericSkill passiveSkillSlot;
 
+        public SteppedSkillDef batSkillDef;
+
+        public GenericSkill batSkillSlot;
+
+        public SkillDef ballSkillDef;
+
+        public GenericSkill ballSkillSlot;
         public bool isJump
         {
             get
@@ -17,6 +24,30 @@ namespace ScoutMod.Scout.Components
                 if (doubleJumpPassive && passiveSkillSlot)
                 {
                     return passiveSkillSlot.skillDef == doubleJumpPassive;
+                }
+
+                return false;
+            }
+        }
+        public bool isBat
+        {
+            get
+            {
+                if (batSkillDef && batSkillSlot)
+                {
+                    return batSkillSlot.skillDef == batSkillDef;
+                }
+
+                return false;
+            }
+        }
+        public bool isBall
+        {
+            get
+            {
+                if (ballSkillDef && ballSkillSlot)
+                {
+                    return ballSkillSlot.skillDef == ballSkillDef;
                 }
 
                 return false;

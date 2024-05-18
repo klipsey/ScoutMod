@@ -54,6 +54,11 @@ namespace ScoutMod.Modules
                         break;
                 }
             }
+            if(passive)
+            {
+                passive.batSkillSlot = CreateGenericSkillWithSkillFamily(targetPrefab, "Swap Primary");
+                passive.ballSkillSlot = CreateGenericSkillWithSkillFamily(targetPrefab, "Swap Secondary");
+            }
         }
 
         public static GenericSkill CreateGenericSkillWithSkillFamily(GameObject targetPrefab, string familyName, bool hidden = false)
@@ -115,6 +120,11 @@ namespace ScoutMod.Modules
         public static void AddPassiveSkills(SkillFamily passiveSkillFamily, params SkillDef[] skillDefs)
         {
             AddSkillsToFamily(passiveSkillFamily, skillDefs);
+        }
+
+        public static void AddAdditionalSkills(SkillFamily skillFamily, params SkillDef[] skillDefs)
+        {
+            AddSkillsToFamily(skillFamily, skillDefs);
         }
         /// <summary>
         /// pass in an amount of unlockables equal to or less than skill variants, null for skills that aren't locked

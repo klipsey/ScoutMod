@@ -55,9 +55,10 @@ namespace ScoutMod.Scout.Content
         internal static NetworkSoundEventDef batImpactSoundDef;
         public static void Init(AssetBundle assetBundle)
         {
-
             mainAssetBundle = assetBundle;
-
+        }
+        public static void InitAssets()
+        {
             CreateMaterials();
 
             CreateModels();
@@ -68,7 +69,6 @@ namespace ScoutMod.Scout.Content
 
             CreateProjectiles();
         }
-
         #region heart
 
         private static void CleanChildren(Transform startingTrans)
@@ -91,7 +91,7 @@ namespace ScoutMod.Scout.Content
         private static void CreateModels()
         {
             shotgunShell = mainAssetBundle.LoadAsset<GameObject>("ShotgunShell");
-            shotgunShell.GetComponentInChildren<MeshRenderer>().material = CreateMaterial("matShotgunShell");
+            shotgunShell.GetComponentInChildren<MeshRenderer>().material = mainAssetBundle.LoadAsset<Material>("matShotgunShell");
             shotgunShell.AddComponent<Modules.Components.ShellController>();
 
         }

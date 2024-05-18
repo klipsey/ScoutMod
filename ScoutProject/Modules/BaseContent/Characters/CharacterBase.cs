@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using EntityStates;
 using RoR2.WwiseUtils;
+using ScoutMod.Scout.Content;
 
 namespace ScoutMod.Modules.Characters
 {
@@ -31,7 +32,7 @@ namespace ScoutMod.Modules.Characters
         public virtual void Initialize()
         {
             instance = this as T;
-            assetBundle = Assets.LoadAssetBundle(assetBundleName);
+            assetBundle = ScoutAssets.mainAssetBundle;
             InitializeCharacter();
         }
 
@@ -50,8 +51,6 @@ namespace ScoutMod.Modules.Characters
             prefabCharacterBody = bodyPrefab.GetComponent<CharacterBody>();
 
             prefabCharacterModel = Modules.Prefabs.SetupCharacterModel(bodyPrefab, customRendererInfos);
-            ChildLocator childLocator = bodyPrefab.GetComponentInChildren<ChildLocator>();
-            childLocator.FindChild("BatMesh").gameObject.SetActive(false);
         }
 
         public virtual void InitializeItemDisplays()
