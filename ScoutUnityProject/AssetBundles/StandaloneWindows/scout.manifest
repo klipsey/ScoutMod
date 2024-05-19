@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 1039153207
+CRC: 993777316
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 3e45d64261440673699fd3c53dc02852
+    Hash: 98c24f2fb21be45c6ef13e04e6b95567
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 5ee7658611abcd42393f76cbd44d6821
+    Hash: 21d870c9448c6356e606ba97dcbaa0c4
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -42,9 +42,9 @@ ClassTypes:
 - Class: 108
   Script: {instanceID: 0}
 - Class: 114
-  Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-- Class: 114
   Script: {fileID: 11500000, guid: f8258ea15b8f74c4889ce485d21cbbb1, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 67079b849227b734694872d8810229b8, type: 3}
 - Class: 114
@@ -89,14 +89,15 @@ Assets:
 - Assets/Scout/Animations/Armature_RunLBat.anim
 - Assets/Scout/Animations/Armature_RunR.anim
 - Assets/Scout/Animations/Armature_DescendBat.anim
-- Assets/Scout/Textures/shellNormals.png
+- Assets/Scout/Textures/texShellNormals.png
 - Assets/Scout/Animations/Armature_Sprint.anim
 - Assets/Scout/VFX/matShockwave.mat
-- Assets/Scout/Animations/Armature_AimPitch.anim
 - Assets/Scout/Materials/matScoutEmissions.mat
 - Assets/Scout/Animations/Armature_SprintBat.anim
 - Assets/Scout/Animations/Armature_CSSIdleBat.anim
+- Assets/Scout/Animations/AimYaw.anim
 - Assets/Scout/Animations/Armature_RunL.anim
+- Assets/Scout/Textures/texScoutEmissionsNormals.png
 - Assets/Scout/VFX/Badass/BigExplosion.prefab
 - Assets/Scout/Animations/Armature_ShootTwohand.anim
 - Assets/Scout/VFX/Badass/MetalHitEffect.prefab
@@ -113,38 +114,38 @@ Assets:
 - Assets/Scout/mdlScout.prefab
 - Assets/Scout/Animations/Armature_LightImpact.anim
 - Assets/Scout/Animations/animScout.controller
-- Assets/Scout/Materials/matShotgunShell.mat
 - Assets/Scout/Meshes/meshScout.mesh
+- Assets/Scout/Materials/matShotgunShell.mat
 - Assets/Scout/Animations/Armature_CSSIdleIn.anim
 - Assets/Scout/Icons/texBuffSyringe.png
+- Assets/Scout/Animations/AimPitchShotgun.anim
 - Assets/Scout/VFX/texShockwave.png
 - Assets/Scout/Animations/Armature_RestIdleInBat.anim
 - Assets/Scout/Textures/texScout.png
 - Assets/Scout/Animations/Armature_RunFBat.anim
+- Assets/Scout/Meshes/meshBat.mesh
 - Assets/Scout/Animations/Armature_RunB.anim
 - Assets/Scout/Animations/Armature_StandPose.anim
 - Assets/Scout/Projectiles/CoinOrbEffect.prefab
-- Assets/Scout/Animations/Armature_AimPitchShotgun.anim
 - Assets/Scout/Projectiles/texAlphaGradient6Mask.png
-- Assets/Scout/Meshes/meshEmissions.mesh
 - Assets/Scout/Animations/Armature_Reload.anim
 - Assets/Scout/Icons/texBuffAtomic.png
 - Assets/Scout/Icons/Skill/texBaseballIcon.png
+- Assets/Scout/Meshes/meshSuperShotgun.mesh
+- Assets/Scout/Animations/AimPitch.anim
 - Assets/Scout/Animations/Armature_SprintFastBat.anim
 - Assets/Scout/Animations/Armature_RunF.anim
 - Assets/Scout/Animations/Armature_Descend.anim
-- Assets/Scout/Meshes/meshBackBat.mesh
 - Assets/Scout/Animations/Armature_IdleBat.anim
 - Assets/Scout/Animations/Armature_Jump.anim
 - Assets/Scout/HUD/WeaponChargeBar.prefab
 - Assets/Scout/Icons/texScoutIcon.png
-- Assets/Scout/Meshes/meshBat.mesh
 - Assets/Scout/Icons/Skill/texButcherKnifeIcon.png
-- Assets/Scout/Meshes/meshCleaver.mesh
 - Assets/Scout/Animations/Armature_SwapToBat.anim
 - Assets/Scout/Materials/matScout.mat
 - Assets/Scout/Animations/Armature_JumpBat.anim
 - Assets/Scout/Icons/texDefaultSkin.png
+- Assets/Scout/Meshes/meshEmissions.mesh
 - Assets/Scout/Textures/shotgunNormals.png
 - Assets/Scout/VFX/Badass/TinyExplosion.prefab
 - Assets/Scout/VFX/Badass/SandHitEffect.prefab
@@ -159,14 +160,12 @@ Assets:
 - Assets/Scout/Animations/Armature_IdleIn.anim
 - Assets/Scout/HUD/Textures/texChargeRing.png
 - Assets/Scout/Textures/texScoutEmission.png
+- Assets/Scout/Meshes/meshBackBat.mesh
 - Assets/Scout/Projectiles/DriverStunGrenadeImpact.prefab
 - Assets/Scout/Textures/texBriefcaseGold.png
 - Assets/Scout/Animations/Armature_RestIdleIn.anim
-- Assets/Scout/Meshes/meshSuperShotgun.mesh
 - Assets/Scout/Animations/Armature_Ascend.anim
 - Assets/Scout/ScoutDisplay.prefab
-- Assets/Scout/Materials/matBriefcaseGold.mat
-- Assets/Scout/Animations/Armature_aaPose.anim
 - Assets/Scout/Animations/Armature_RunBBat.anim
 - Assets/Scout/Animations/Armature_BatSwing2.anim
 - Assets/Scout/Projectiles/DriverStunGrenadeGhost.prefab
@@ -175,7 +174,7 @@ Assets:
 - Assets/Scout/Animations/Armature_SwapToGun.anim
 - Assets/Scout/VFX/Badass/WoodHitEffect.prefab
 - Assets/Scout/VFX/Badass/SmallExplosion.prefab
-- Assets/Scout/Textures/scoutNormals.png
+- Assets/Scout/Textures/texScoutNormals.png
 - Assets/Scout/Icons/Skill/texSwingIcon.png
 - Assets/Scout/Animations/Armature_CSSIdle.anim
 - Assets/Scout/Icons/Skill/texShotgunIcon.png
@@ -188,6 +187,5 @@ Assets:
 - Assets/Scout/Textures/texShell.png
 - Assets/Scout/Animations/maskScoutGesture.mask
 - Assets/Scout/HUD/Textures/texWhite.png
-- Assets/Scout/Animations/Armature_AimYaw.anim
 - Assets/Scout/Animations/Armature_IdleInBat.anim
 Dependencies: []

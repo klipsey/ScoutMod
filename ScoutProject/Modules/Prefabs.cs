@@ -9,6 +9,7 @@ using RoR2.Skills;
 using System;
 using System.Linq;
 using ScoutMod.Modules;
+using ScoutMod.Modules;
 
 namespace ScoutMod.Modules
 {
@@ -209,6 +210,7 @@ namespace ScoutMod.Modules
             bodyComponent.sprintingSpeedMultiplier = 1.45f;
 
             bodyComponent.bodyFlags = CharacterBody.BodyFlags.ImmuneToExecutes;
+            bodyComponent.bodyFlags |= CharacterBody.BodyFlags.HasBackstabPassive;
             bodyComponent.rootMotionInMainState = false;
 
             bodyComponent.hullClassification = HullClassification.Human;

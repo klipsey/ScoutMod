@@ -20,7 +20,6 @@ namespace ScoutMod.Scout.Components
         private CharacterModel characterModel;
         private Animator animator;
         private SkillLocator skillLocator;
-        private GameObject scoutTrail;
         private GameObject endEffect = ScoutAssets.atomicEndEffect;
         public DamageAPI.ModdedDamageType ModdedDamageType = DamageTypes.Default;
 
@@ -138,9 +137,7 @@ namespace ScoutMod.Scout.Components
         public void ActivateAtomic()
         {
             if (NetworkServer.active) this.characterBody.AddBuff(ScoutBuffs.scoutAtomicBuff);
-            if (scoutTrail) UnityEngine.Object.Destroy(scoutTrail);
             Transform scoutTransform = this.childLocator.FindChild("Chest").transform;
-            scoutTrail = GameObject.Instantiate(ScoutAssets.scoutZoom, scoutTransform);
             atomicDraining = true;
             this.ModdedDamageType = DamageTypes.AtomicCrits;
             AkSoundEngine.StopPlayingID(this.playID1);
@@ -150,7 +147,6 @@ namespace ScoutMod.Scout.Components
         }
         public void DeactivateAtomic()
         {
-            if(scoutTrail) UnityEngine.Object.Destroy(scoutTrail);
             AkSoundEngine.StopPlayingID(this.playID1);
             AkSoundEngine.StopPlayingID(this.playID2);
             Util.PlaySound("sfx_scout_atomic_off", base.gameObject);

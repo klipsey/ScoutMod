@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using RoR2.UI;
 using RoR2.Projectile;
 using Path = System.IO.Path;
+using ScoutMod.Modules;
 
 namespace ScoutMod.Modules
 {

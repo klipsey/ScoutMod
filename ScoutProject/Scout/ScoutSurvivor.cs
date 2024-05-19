@@ -75,12 +75,12 @@ namespace ScoutMod.Scout
                 },
                 new CustomRendererInfo
                 {
-                    childName = "BatMesh",
+                    childName = "BackBatMesh",
                     dontHotpoo = true,
                 },
                 new CustomRendererInfo
                 {
-                    childName = "BackBatMesh",
+                    childName = "BatMesh",
                     dontHotpoo = true,
                 },
                 new CustomRendererInfo
@@ -124,7 +124,6 @@ namespace ScoutMod.Scout
 
             ChildLocator childLocator = bodyPrefab.GetComponentInChildren<ChildLocator>();
             childLocator.FindChild("BatMesh").gameObject.SetActive(false);
-
             DamageTypes.Init();
 
             ScoutStates.Init();
@@ -142,6 +141,7 @@ namespace ScoutMod.Scout
             AdditionalBodySetup();
 
             characterPrefab = bodyPrefab;
+
             AddHooks();
         }
 
@@ -441,10 +441,12 @@ namespace ScoutMod.Scout
             //pass in meshes as they are named in your assetbundle
             //currently not needed as with only 1 skin they will simply take the default meshes
             //uncomment this when you have another skin
-            //defaultSkin.meshReplacements = Modules.Skins.getMeshReplacements(assetBundle, defaultRendererinfos,
-            //    "meshHenrySword",
-            //    "meshHenryGun",
-            //    "meshHenry");
+            defaultSkin.meshReplacements = Modules.Skins.getMeshReplacements(assetBundle, defaultRendererinfos,
+                "meshScout",
+                "meshSuperShotgun",
+                "meshBackBat",
+                "meshBat",
+                "meshEmissions");
 
             //add new skindef to our list of skindefs. this is what we'll be passing to the SkinController
             skins.Add(defaultSkin);

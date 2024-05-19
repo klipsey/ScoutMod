@@ -88,7 +88,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalTex:
-        m_Texture: {fileID: 2800000, guid: b651782e20ab64f4eaaf2900e44b85f8, type: 3}
+        m_Texture: {fileID: 2800000, guid: 83139322b50c84948b784e2b7b2ab44d, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -175,6 +175,6 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EmColor: {r: 0.76470596, g: 0.8117648, b: 0.5372549, a: 1}
+    - _EmColor: {r: 0.93725497, g: 1, b: 0.6666667, a: 1}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
     - _FlashColor: {r: 0, g: 0, b: 0, a: 1}

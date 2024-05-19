@@ -1,3 +1,7 @@
+# 0.7.7
+
+- Fixed stubbed shaders emission
+
 # 0.7.6
 
 - Added official emote support (might be broken until the unofficial support is removed)
