@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using RoR2;
 
-namespace ScoutMod.Scout.Components
+namespace OfficialScoutMod.Scout.Components
 {
     public class ScoutCSS : MonoBehaviour
     {

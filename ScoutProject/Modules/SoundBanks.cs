@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-namespace ScoutMod.Modules
+namespace OfficialScoutMod.Modules
 {
     internal static class SoundBanks
     {

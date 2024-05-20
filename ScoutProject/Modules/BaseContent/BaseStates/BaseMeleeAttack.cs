@@ -3,14 +3,14 @@ using R2API;
 using RoR2;
 using RoR2.Audio;
 using RoR2.Skills;
-using ScoutMod.Scout.Content;
+using OfficialScoutMod.Scout.Content;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 using static R2API.DamageAPI;
 
-namespace ScoutMod.Modules.BaseStates
+namespace OfficialScoutMod.Modules.BaseStates
 {
     public abstract class BaseMeleeAttack : BaseScoutSkillState, SteppedSkillDef.IStepSetter
     {

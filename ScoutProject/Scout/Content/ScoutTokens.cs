@@ -1,9 +1,9 @@
 ﻿using System;
-using ScoutMod.Modules;
-using ScoutMod.Scout;
-using ScoutMod.Scout.Achievements;
+using OfficialScoutMod.Modules;
+using OfficialScoutMod.Scout;
+using OfficialScoutMod.Scout.Achievements;
 
-namespace ScoutMod.Scout.Content
+namespace OfficialScoutMod.Scout.Content
 {
     public static class ScoutTokens
     {

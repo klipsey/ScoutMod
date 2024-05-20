@@ -3,9 +3,9 @@ using RoR2;
 using EntityStates;
 using RobDriver.Modules;
 using BepInEx.Configuration;
-using ScoutMod.Modules;
+using OfficialScoutMod.Modules;
 
-namespace ScoutMod.Scout.SkillStates
+namespace OfficialScoutMod.Scout.SkillStates
 {
     public class MainState : GenericCharacterMain
     {

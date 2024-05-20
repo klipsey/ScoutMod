@@ -8,9 +8,9 @@ using System.Collections.Generic;
 using RoR2.UI;
 using RoR2.Projectile;
 using Path = System.IO.Path;
-using ScoutMod.Modules;
+using OfficialScoutMod.Modules;
 
-namespace ScoutMod.Modules
+namespace OfficialScoutMod.Modules
 {
     internal static class Assets
     {

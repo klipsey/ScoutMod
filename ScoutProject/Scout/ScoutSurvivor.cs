@@ -1,6 +1,6 @@
 ﻿using BepInEx.Configuration;
-using ScoutMod.Modules;
-using ScoutMod.Modules.Characters;
+using OfficialScoutMod.Modules;
+using OfficialScoutMod.Modules.Characters;
 using RoR2;
 using RoR2.Skills;
 using System;
@@ -13,16 +13,16 @@ using UnityEngine.AddressableAssets;
 using UnityEngine.Networking;
 using UnityEngine.UI;
 using R2API.Networking;
-using ScoutMod.Scout.Components;
-using ScoutMod.Scout.Content;
-using ScoutMod.Scout.SkillStates;
+using OfficialScoutMod.Scout.Components;
+using OfficialScoutMod.Scout.Content;
+using OfficialScoutMod.Scout.SkillStates;
 using RobDriver.Modules.Components;
 using HG;
 using EntityStates;
 using EmotesAPI;
 using System.Runtime.CompilerServices;
 
-namespace ScoutMod.Scout
+namespace OfficialScoutMod.Scout
 {
     public class ScoutSurvivor : SurvivorBase<ScoutSurvivor>
     {

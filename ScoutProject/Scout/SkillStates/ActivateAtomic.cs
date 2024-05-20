@@ -1,12 +1,12 @@
 ﻿using UnityEngine;
 using EntityStates;
-using ScoutMod.Modules.BaseStates;
+using OfficialScoutMod.Modules.BaseStates;
 using RoR2;
 using UnityEngine.AddressableAssets;
-using ScoutMod.Scout.Content;
+using OfficialScoutMod.Scout.Content;
 using UnityEngine.Networking;
 
-namespace ScoutMod.Scout.SkillStates
+namespace OfficialScoutMod.Scout.SkillStates
 {
     public class ActivateAtomic : BaseScoutSkillState
     {

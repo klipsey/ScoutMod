@@ -1,7 +1,7 @@
 ﻿using System.Runtime.CompilerServices;
 using BepInEx.Configuration;
 using UnityEngine;
-namespace ScoutMod.Modules
+namespace OfficialScoutMod.Modules
 {
     public static class Config
     {

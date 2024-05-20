@@ -1,10 +1,10 @@
 ﻿using RoR2;
 using UnityEngine;
-using ScoutMod.Modules.BaseStates;
+using OfficialScoutMod.Modules.BaseStates;
 using EntityStates;
-using ScoutMod.Scout.Components;
+using OfficialScoutMod.Scout.Components;
 
-namespace ScoutMod.Scout.SkillStates
+namespace OfficialScoutMod.Scout.SkillStates
 {
     public class Reload : BaseScoutSkillState
     {

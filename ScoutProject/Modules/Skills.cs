@@ -5,9 +5,9 @@ using System;
 using R2API;
 using System.Collections.Generic;
 using UnityEngine;
-using ScoutMod.Scout.Components;
+using OfficialScoutMod.Scout.Components;
 
-namespace ScoutMod.Modules
+namespace OfficialScoutMod.Modules
 {
     internal static class Skills
     {
@@ -73,7 +73,7 @@ namespace ScoutMod.Modules
 
             skill._skillFamily = newFamily;
 
-            ScoutMod.Modules.Content.AddSkillFamily(newFamily);
+            OfficialScoutMod.Modules.Content.AddSkillFamily(newFamily);
             return skill;
         }
         #endregion
@@ -188,7 +188,7 @@ namespace ScoutMod.Modules
 
             skillDef.keywordTokens = skillDefInfo.keywordTokens;
 
-            ScoutMod.Modules.Content.AddSkillDef(skillDef);
+            OfficialScoutMod.Modules.Content.AddSkillDef(skillDef);
 
 
             return skillDef;
@@ -231,7 +231,7 @@ namespace ScoutMod.Modules
 
             reloadSkillDef.keywordTokens = skillDefInfo.keywordTokens;
 
-            ScoutMod.Modules.Content.AddSkillDef(reloadSkillDef);
+            OfficialScoutMod.Modules.Content.AddSkillDef(reloadSkillDef);
 
 
             return reloadSkillDef;

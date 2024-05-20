@@ -1,13 +1,13 @@
 ﻿using EntityStates;
 using RoR2;
-using ScoutMod.Scout.Components;
-using ScoutMod.Scout.Content;
+using OfficialScoutMod.Scout.Components;
+using OfficialScoutMod.Scout.Content;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using UnityEngine.Networking;
 
-namespace ScoutMod.Modules.BaseStates
+namespace OfficialScoutMod.Modules.BaseStates
 {
     public abstract class BaseScoutState : BaseState
     {

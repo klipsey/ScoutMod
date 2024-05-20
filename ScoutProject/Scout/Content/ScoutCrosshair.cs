@@ -1,14 +1,14 @@
 ﻿using RoR2;
 using UnityEngine;
-using ScoutMod.Modules;
+using OfficialScoutMod.Modules;
 using RoR2.Projectile;
 using UnityEngine.AddressableAssets;
 using UnityEngine.Networking;
 using R2API;
 using RoR2.UI;
-using ScoutMod.Scout.Components;
+using OfficialScoutMod.Scout.Components;
 
-namespace ScoutMod.Scout.Content
+namespace OfficialScoutMod.Scout.Content
 {
     public static class ScoutCrosshair
     {

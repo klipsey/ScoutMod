@@ -1,6 +1,6 @@
-﻿using ScoutMod.Scout.Content;
+﻿using OfficialScoutMod.Scout.Content;
 
-namespace ScoutMod.Modules
+namespace OfficialScoutMod.Modules
 {
     internal static class Tokens
     {

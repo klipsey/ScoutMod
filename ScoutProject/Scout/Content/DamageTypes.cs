@@ -3,8 +3,8 @@ using Newtonsoft.Json.Linq;
 using R2API;
 using RoR2;
 using RoR2.Projectile;
-using ScoutMod.Modules;
-using ScoutMod.Scout.Components;
+using OfficialScoutMod.Modules;
+using OfficialScoutMod.Scout.Components;
 using System;
 using System.Collections.Generic;
 using System.Threading;
@@ -13,7 +13,7 @@ using UnityEngine.Networking;
 using UnityEngine.UIElements;
 using static RoR2.DotController;
 
-namespace ScoutMod.Scout.Content
+namespace OfficialScoutMod.Scout.Content
 {
     public static class DamageTypes
     {

@@ -1,8 +1,8 @@
 ﻿using RoR2;
-using ScoutMod.Modules.Achievements;
-using ScoutMod.Scout;
+using OfficialScoutMod.Modules.Achievements;
+using OfficialScoutMod.Scout;
 
-namespace ScoutMod.Scout.Achievements
+namespace OfficialScoutMod.Scout.Achievements
 {
     //automatically creates language tokens "ACHIEVMENT_{identifier.ToUpper()}_NAME" and "ACHIEVMENT_{identifier.ToUpper()}_DESCRIPTION" 
     [RegisterAchievement(identifier, unlockableIdentifier, null, null)]

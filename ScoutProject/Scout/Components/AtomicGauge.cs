@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 using RoR2;
 using RoR2.UI;
-using ScoutMod.Scout.Components;
+using OfficialScoutMod.Scout.Components;
 
 namespace RobDriver.Modules.Components
 {

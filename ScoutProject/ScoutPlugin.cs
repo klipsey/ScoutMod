@@ -5,15 +5,15 @@ using System.Collections.Generic;
 using System.Security;
 using System.Security.Permissions;
 using R2API.Networking;
-using ScoutMod.Modules;
-using ScoutMod.Scout.Content;
+using OfficialScoutMod.Modules;
+using OfficialScoutMod.Scout.Content;
 using ShaderSwapper;
 
 [module: UnverifiableCode]
 [assembly: SecurityPermission(SecurityAction.RequestMinimum, SkipVerification = true)]
 
 //rename this namespace
-namespace ScoutMod
+namespace OfficialScoutMod
 {
     [NetworkCompatibility(CompatibilityLevel.EveryoneMustHaveMod, VersionStrictness.EveryoneNeedSameModVersion)]
     [BepInPlugin(MODUID, MODNAME, MODVERSION)]
@@ -51,7 +51,7 @@ namespace ScoutMod
             StartCoroutine(ScoutAssets.mainAssetBundle.UpgradeStubbedShadersAsync());
 
             // character initialization
-            new ScoutMod.Scout.ScoutSurvivor().Initialize();
+            new OfficialScoutMod.Scout.ScoutSurvivor().Initialize();
 
             // make a content pack and add it. this has to be last
             new Modules.ContentPacks().Initialize();

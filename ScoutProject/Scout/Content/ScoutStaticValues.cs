@@ -2,7 +2,7 @@
 using System.Runtime.CompilerServices;
 using TMPro;
 
-namespace ScoutMod.Scout.Content
+namespace OfficialScoutMod.Scout.Content
 {
     public static class ScoutStaticValues
     {

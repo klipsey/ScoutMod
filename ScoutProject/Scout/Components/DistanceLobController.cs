@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
 
-namespace ScoutMod.Scout.Components
+namespace OfficialScoutMod.Scout.Components
 {
     public class DistanceLobController : MonoBehaviour
     {

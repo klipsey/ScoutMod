@@ -6,9 +6,9 @@ using System;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.Networking;
-using ScoutMod.Scout.Content;
+using OfficialScoutMod.Scout.Content;
 
-namespace ScoutMod.Scout.Components
+namespace OfficialScoutMod.Scout.Components
 {
     public class ScoutController : MonoBehaviour
     {

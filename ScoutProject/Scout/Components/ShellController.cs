@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using RoR2;
 
-namespace ScoutMod.Modules.Components
+namespace OfficialScoutMod.Modules.Components
 {
     public class ShellController : MonoBehaviour
     {

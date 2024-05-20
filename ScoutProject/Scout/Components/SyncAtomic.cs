@@ -3,7 +3,7 @@ using RoR2;
 using UnityEngine.Networking;
 using UnityEngine;
 
-namespace ScoutMod.Scout.Components
+namespace OfficialScoutMod.Scout.Components
 {
     internal class SyncAtomic : INetMessage
     {

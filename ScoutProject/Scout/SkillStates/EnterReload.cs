@@ -1,10 +1,10 @@
 ﻿using EntityStates;
-using ScoutMod.Modules.BaseStates;
+using OfficialScoutMod.Modules.BaseStates;
 using RoR2;
 using System.Collections.Generic;
 using System.Text;
 
-namespace ScoutMod.Scout.SkillStates
+namespace OfficialScoutMod.Scout.SkillStates
 {
     public class EnterReload : BaseScoutSkillState
     {

@@ -1,11 +1,11 @@
 ﻿using RoR2;
 using RoR2.ContentManagement;
-using ScoutMod.Modules;
+using OfficialScoutMod.Modules;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-namespace ScoutMod.Modules
+namespace OfficialScoutMod.Modules
 {
     internal static class ItemDisplayCheck
     {

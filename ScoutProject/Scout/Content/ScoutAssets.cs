@@ -1,6 +1,6 @@
 ﻿using RoR2;
 using UnityEngine;
-using ScoutMod.Modules;
+using OfficialScoutMod.Modules;
 using RoR2.Projectile;
 using UnityEngine.AddressableAssets;
 using UnityEngine.Networking;
@@ -9,7 +9,7 @@ using RoR2.Skills;
 using UnityEngine.Rendering.PostProcessing;
 using TMPro;
 using ThreeEyedGames;
-using ScoutMod.Scout.Components;
+using OfficialScoutMod.Scout.Components;
 using RoR2.EntityLogic;
 using System.Collections.Generic;
 using UnityEngine.UIElements;
@@ -18,7 +18,7 @@ using System.Reflection;
 using static UnityEngine.ParticleSystem.PlaybackState;
 using Rewired.ComponentControls.Effects;
 
-namespace ScoutMod.Scout.Content
+namespace OfficialScoutMod.Scout.Content
 {
     public static class ScoutAssets
     {
@@ -100,7 +100,7 @@ namespace ScoutMod.Scout.Content
         {
             batHitEffect = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Loader/OmniImpactVFXLoader.prefab").WaitForCompletion().InstantiateClone("BatHitEffect");
             batHitEffect.AddComponent<NetworkIdentity>();
-            ScoutMod.Modules.Content.CreateAndAddEffectDef(batHitEffect);
+            OfficialScoutMod.Modules.Content.CreateAndAddEffectDef(batHitEffect);
             batSwingEffect = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Merc/MercSwordSlash.prefab").WaitForCompletion().InstantiateClone("ScoutBatSwing", false);
             batSwingEffect.transform.GetChild(0).GetComponent<ParticleSystemRenderer>().material = Addressables.LoadAssetAsync<Material>("RoR2/Base/Huntress/matHuntressSwingTrail.mat").WaitForCompletion();
             var swing = batSwingEffect.transform.GetChild(0).GetComponent<ParticleSystem>().main;
@@ -215,7 +215,7 @@ namespace ScoutMod.Scout.Content
             bloodSplatterEffect.transform.GetChild(14).gameObject.SetActive(false);
             bloodSplatterEffect.transform.GetChild(15).gameObject.SetActive(false);
             bloodSplatterEffect.transform.localScale = Vector3.one;
-            ScoutMod.Modules.Content.CreateAndAddEffectDef(bloodSplatterEffect);
+            OfficialScoutMod.Modules.Content.CreateAndAddEffectDef(bloodSplatterEffect);
         }
 
         #endregion
@@ -350,7 +350,7 @@ namespace ScoutMod.Scout.Content
             };
             PSCFED.effectComponent = newEffect.GetComponent<EffectComponent>();
 
-            ScoutMod.Modules.Content.CreateAndAddEffectDef(newEffect);
+            OfficialScoutMod.Modules.Content.CreateAndAddEffectDef(newEffect);
 
             return newEffect;
         }

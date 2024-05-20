@@ -2,7 +2,7 @@
 using RoR2.Skills;
 using UnityEngine;
 
-namespace ScoutMod.Scout.Components
+namespace OfficialScoutMod.Scout.Components
 {
     public class ScoutPassive : MonoBehaviour
     {

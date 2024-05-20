@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace ScoutMod.Modules
+namespace OfficialScoutMod.Modules
 {
     internal static class ItemDisplays
     {
@@ -41,6 +41,8 @@ namespace ScoutMod.Modules
         {
             PopulateFromBody("LoaderBody");
 
+            //PopulateCustomLightningArm();
+
             //if you have any custom item displays to add here I would be very impressed
         }
 
@@ -70,6 +72,27 @@ namespace ScoutMod.Modules
                     }
                 }
             }
+        }
+
+        private static void PopulateCustomLightningArm()
+        {
+            #region IgnoreThisAndRunAway
+            //seriously you don't need this
+            //I see you're still here, well if you do need this here's what you do
+            //but again you don't need this
+            //capacitor is hardcoded to track your "UpperArmR", "LowerArmR", and "HandR" bones.
+            //this is for having the lightning on custom bones in your childlocator
+
+            GameObject display = R2API.PrefabAPI.InstantiateClone(itemDisplayPrefabs["displaylightningarmright"], "DisplayLightningCustom", false);
+
+            LimbMatcher limbMatcher = display.GetComponent<LimbMatcher>();
+
+            limbMatcher.limbPairs[0].targetChildLimb = "LightningArm1";
+            limbMatcher.limbPairs[1].targetChildLimb = "LightningArm2";
+            limbMatcher.limbPairs[2].targetChildLimb = "LightningArmEnd";
+
+            itemDisplayPrefabs["displaylightningarmcustom"] = display;
+            #endregion
         }
 
         public static GameObject LoadDisplay(string name)

@@ -1,3 +1,17 @@
+# 0.8.1
+
+- ScoutMod.dll is now OfficialScoutMod.dll so the old ScoutTF2 can still be played ig
+
+# 0.8.0
+
+- Item displays fixed and added
+- Undeprecated now ^
+- Config to adjust shotgun recoil for motion sickness
+
+# 0.7.8
+
+- Hopefully fixed item display crash
+
 # 0.7.7
 
 - Fixed stubbed shaders emission

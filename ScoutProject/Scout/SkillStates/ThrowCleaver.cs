@@ -3,11 +3,11 @@ using RoR2;
 using EntityStates;
 using UnityEngine.AddressableAssets;
 using RoR2.Projectile;
-using ScoutMod.Scout.Content;
-using ScoutMod.Scout.Components;
+using OfficialScoutMod.Scout.Content;
+using OfficialScoutMod.Scout.Components;
 using R2API;
 
-namespace ScoutMod.Scout.SkillStates
+namespace OfficialScoutMod.Scout.SkillStates
 {
     public class ThrowCleaver : GenericProjectileBaseState
     {

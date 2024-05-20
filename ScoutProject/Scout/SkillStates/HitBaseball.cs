@@ -3,12 +3,12 @@ using RoR2;
 using EntityStates;
 using UnityEngine.AddressableAssets;
 using RoR2.Projectile;
-using ScoutMod.Scout.Content;
+using OfficialScoutMod.Scout.Content;
 using static RoR2.Console;
 using R2API;
-using ScoutMod.Scout.Components;
+using OfficialScoutMod.Scout.Components;
 
-namespace ScoutMod.Scout.SkillStates
+namespace OfficialScoutMod.Scout.SkillStates
 {
     public class HitBaseball : GenericProjectileBaseState
     {

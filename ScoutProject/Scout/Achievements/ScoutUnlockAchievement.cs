@@ -1,12 +1,12 @@
 ﻿using R2API;
 using RoR2;
 using RoR2.Achievements;
-using ScoutMod.Scout;
+using OfficialScoutMod.Scout;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace ScoutMod.Scout.Achievements
+namespace OfficialScoutMod.Scout.Achievements
 {
     [RegisterAchievement(identifier, unlockableIdentifier, null, null)]
     public class ScoutUnlockAchievement : BaseAchievement

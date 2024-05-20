@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 
-namespace ScoutMod.Modules {
+namespace OfficialScoutMod.Modules {
     internal static class Language
     {
         public static string TokensOutput = "";

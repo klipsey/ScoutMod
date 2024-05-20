@@ -3,10 +3,10 @@ using UnityEngine;
 using EntityStates;
 using RobDriver.Modules.Components;
 using R2API;
-using ScoutMod.Modules.BaseStates;
-using ScoutMod.Scout.Content;
+using OfficialScoutMod.Modules.BaseStates;
+using OfficialScoutMod.Scout.Content;
 
-namespace ScoutMod.Scout.SkillStates
+namespace OfficialScoutMod.Scout.SkillStates
 {
     public class Shoot : BaseScoutSkillState
     {
@@ -15,7 +15,7 @@ namespace ScoutMod.Scout.SkillStates
         public float baseDuration = 1.2f; // the base skill duration. i.e. attack speed
         public static int bulletCount = 12;
         public static float bulletSpread = 8f;
-        public static float bulletRecoil = 40f;
+        public static float bulletRecoil = ScoutConfig.adjustShotgunRecoil.Value;
         public static float bulletRange = 150f;
         public static float bulletThiccness = 1f;
         public float selfForce = 3000f;

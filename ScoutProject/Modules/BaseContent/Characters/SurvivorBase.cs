@@ -3,10 +3,10 @@ using RoR2;
 using UnityEngine;
 using System.Collections.Generic;
 using RoR2.Skills;
-using ScoutMod.Modules.Characters;
-using ScoutMod.Modules;
+using OfficialScoutMod.Modules.Characters;
+using OfficialScoutMod.Modules;
 
-namespace ScoutMod.Modules.Characters
+namespace OfficialScoutMod.Modules.Characters
 {
     public abstract class SurvivorBase<T> : CharacterBase<T> where T : SurvivorBase<T>, new()
     {

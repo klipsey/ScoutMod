@@ -1,7 +1,7 @@
-﻿using ScoutMod.Modules.BaseStates;
-using ScoutMod.Scout.SkillStates;
+﻿using OfficialScoutMod.Modules.BaseStates;
+using OfficialScoutMod.Scout.SkillStates;
 
-namespace ScoutMod.Scout.Content
+namespace OfficialScoutMod.Scout.Content
 {
     public static class ScoutStates
     {

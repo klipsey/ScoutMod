@@ -1,8 +1,8 @@
 ﻿using RoR2;
-using ScoutMod.Modules;
+using OfficialScoutMod.Modules;
 using System.Collections.Generic;
 
-namespace ScoutMod.Modules.Characters
+namespace OfficialScoutMod.Modules.Characters
 {
     public abstract class ItemDisplaysBase
     {

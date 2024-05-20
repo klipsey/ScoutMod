@@ -2,16 +2,15 @@
 using RoR2;
 using System.Collections.Generic;
 using UnityEngine;
-using ScoutMod.Modules.Characters;
+using OfficialScoutMod.Modules.Characters;
 using RoR2.CharacterAI;
 using static RoR2.CharacterAI.AISkillDriver;
 using RoR2.Skills;
 using System;
 using System.Linq;
-using ScoutMod.Modules;
-using ScoutMod.Modules;
+using OfficialScoutMod.Modules;
 
-namespace ScoutMod.Modules
+namespace OfficialScoutMod.Modules
 {
     // module for creating body prefabs and whatnot
     // recommended to simply avoid touching this unless you REALLY need to
@@ -151,7 +150,6 @@ namespace ScoutMod.Modules
             bodyComponent._defaultCrosshairPrefab = bodyInfo.crosshair;
             bodyComponent.hideCrosshair = false;
             bodyComponent.preferredPodPrefab = bodyInfo.podPrefab;
-            bodyComponent.preferredInitialStateType = bodyInfo.initialStateType;
 
             //stats
             bodyComponent.baseMaxHealth = bodyInfo.maxHealth;
@@ -210,7 +208,6 @@ namespace ScoutMod.Modules
             bodyComponent.sprintingSpeedMultiplier = 1.45f;
 
             bodyComponent.bodyFlags = CharacterBody.BodyFlags.ImmuneToExecutes;
-            bodyComponent.bodyFlags |= CharacterBody.BodyFlags.HasBackstabPassive;
             bodyComponent.rootMotionInMainState = false;
 
             bodyComponent.hullClassification = HullClassification.Human;
@@ -715,7 +712,6 @@ namespace ScoutMod.Modules
                 setStateOnHurt.idleStateMachine = setStateOnHurt.idleStateMachine.Append(entityStateMachine).ToArray();
             }
         }
-
         /// <summary>
         /// Sets up a hitboxgroup with passed in child transforms as hitboxes
         /// </summary>
@@ -724,6 +720,7 @@ namespace ScoutMod.Modules
         public static void SetupHitBoxGroup(GameObject modelPrefab, string hitBoxGroupName, params string[] hitboxChildNames)
         {
             ChildLocator childLocator = modelPrefab.GetComponent<ChildLocator>();
+
             Transform[] hitboxTransforms = new Transform[hitboxChildNames.Length];
             for (int i = 0; i < hitboxChildNames.Length; i++)
             {
