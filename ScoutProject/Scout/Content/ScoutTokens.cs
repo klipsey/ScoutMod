@@ -72,7 +72,7 @@ namespace OfficialScoutMod.Scout.Content
             Language.Add(prefix + "UTILITY_ATOMICBLAST_NAME", "Atomic Blast");
             Language.Add(prefix + "UTILITY_ATOMICBLAST_DESCRIPTION", $"Drain your <style=cHumanObjective>Atomic Core</style> gaining " +
                 $"<style=cIsDamage>Atomic Crits</style>, <style=cIsDamage>attack speed</style>, and <style=cIsUtility>movement speed</style>. " +
-                $"If drained at max charge, deal <style=cIsDamage>{100f * ScoutStaticValues.atomicBlastDamageCoefficient}% damage</style> around you.");
+                $"Deal <style=cIsDamage>{100f}% - {100f * ScoutStaticValues.atomicBlastDamageCoefficient}% damage</style> around you based on charge.");
 
             #endregion
 
@@ -86,7 +86,7 @@ namespace OfficialScoutMod.Scout.Content
             Language.Add(Tokens.GetAchievementDescriptionToken(ScoutMasteryAchievement.identifier), "As Scout, beat the game or obliterate on Monsoon.");
 
             Language.Add(Tokens.GetAchievementNameToken(ScoutUnlockAchievement.identifier), "Batter Up");
-            Language.Add(Tokens.GetAchievementDescriptionToken(ScoutUnlockAchievement.identifier), "Beat the stage 1 teleporter within 2 minutes without picking up a single item.");
+            Language.Add(Tokens.GetAchievementDescriptionToken(ScoutUnlockAchievement.identifier), "Beat the stage 1 teleporter within 3 minutes without picking up a single item.");
 
             #endregion
 

@@ -177,6 +177,7 @@ namespace OfficialScoutMod.Scout
         public override void InitializeSkills()
         {
             bodyPrefab.AddComponent<ScoutPassive>();
+            bodyPrefab.AddComponent<ScoutSwap>();
             Skills.CreateSkillFamilies(bodyPrefab);
             AddPassiveSkills();
             AddPrimarySkills();
@@ -223,7 +224,8 @@ namespace OfficialScoutMod.Scout
 
         private void AddPrimarySkills()
         {
-            ScoutPassive passive = bodyPrefab.GetComponent<ScoutPassive>();
+            ScoutSwap swap = bodyPrefab.GetComponent<ScoutSwap>();
+
             ReloadSkillDef Shoot = Skills.CreateReloadSkillDef(new ReloadSkillDefInfo
             {
                 skillName = "SplatterGun",
@@ -260,7 +262,7 @@ namespace OfficialScoutMod.Scout
 
             Skills.AddPrimarySkills(bodyPrefab, Shoot);
 
-            passive.batSkillDef = Skills.CreateSkillDef<SteppedSkillDef>(new SkillDefInfo
+            swap.batSkillDef = Skills.CreateSkillDef<SteppedSkillDef>(new SkillDefInfo
                 (
                     "Bonk",
                     SCOUT_PREFIX + "PRIMARY_BONK_NAME",
@@ -269,15 +271,15 @@ namespace OfficialScoutMod.Scout
                     new EntityStates.SerializableEntityStateType(typeof(SkillStates.Swing)),
                     "Weapon"
                 ));
-            passive.batSkillDef.stepCount = 2;
-            passive.batSkillDef.stepGraceDuration = 1f;
+            swap.batSkillDef.stepCount = 2;
+            swap.batSkillDef.stepGraceDuration = 1f;
 
-            Skills.AddAdditionalSkills(passive.batSkillSlot.skillFamily, passive.batSkillDef);
+            Skills.AddAdditionalSkills(swap.batSkillSlot.skillFamily, swap.batSkillDef);
         }
 
         private void AddSecondarySkills()
         {
-            ScoutPassive passive = bodyPrefab.GetComponent<ScoutPassive>();
+            ScoutSwap swap = bodyPrefab.GetComponent<ScoutSwap>();
 
             SkillDef Cleaver = Skills.CreateSkillDef(new SkillDefInfo
             {
@@ -312,7 +314,7 @@ namespace OfficialScoutMod.Scout
 
             Skills.AddSecondarySkills(bodyPrefab, Cleaver);
 
-            passive.ballSkillDef = Skills.CreateSkillDef(new SkillDefInfo
+            swap.ballSkillDef = Skills.CreateSkillDef(new SkillDefInfo
             {
                 skillName = "Atomic Spikeball",
                 skillNameToken = SCOUT_PREFIX + "SECONDARY_SPIKEDBALL_NAME",
@@ -342,7 +344,7 @@ namespace OfficialScoutMod.Scout
                 cancelSprintingOnActivation = false,
                 forceSprintDuringState = false,
             });
-            Skills.AddAdditionalSkills(passive.ballSkillSlot.skillFamily, passive.ballSkillDef);
+            Skills.AddAdditionalSkills(swap.ballSkillSlot.skillFamily, swap.ballSkillDef);
 
         }
 
@@ -530,11 +532,23 @@ namespace OfficialScoutMod.Scout
         {
             orig(self);
 
+            int slotCounter = 0; 
             if (self.currentDisplayData.bodyIndex == BodyCatalog.FindBodyIndex("ScoutBody"))
             {
                 foreach (LanguageTextMeshController i in self.gameObject.GetComponentsInChildren<LanguageTextMeshController>())
                 {
-                    if (i && i.token == "LOADOUT_SKILL_MISC") i.token = "Passive";
+                    if (i && i.token == "LOADOUT_SKILL_MISC")
+                    {
+                        if(slotCounter == 0)
+                        {
+                            i.token = "Passive";
+                            slotCounter++;
+                        }
+                        if(slotCounter == 1 && i.token != "Passive")
+                        {
+                            i.token = "Swap";
+                        }
+                    }
                 }
             }
         }

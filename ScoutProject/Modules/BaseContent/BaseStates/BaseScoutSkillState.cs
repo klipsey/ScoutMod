@@ -15,6 +15,8 @@ namespace OfficialScoutMod.Modules.BaseStates
 
         protected ScoutPassive scoutPassive;
 
+        protected ScoutSwap scoutSwapPassive;
+
         protected bool isAtomic;
         public virtual void AddRecoil2(float x1, float x2, float y1, float y2)
         {
@@ -42,6 +44,10 @@ namespace OfficialScoutMod.Modules.BaseStates
             if(!scoutPassive)
             {
                 scoutPassive = base.GetComponent<ScoutPassive>();
+            }
+            if(!scoutSwapPassive)
+            {
+                scoutSwapPassive = base.GetComponent<ScoutSwap>();
             }
         }
     }

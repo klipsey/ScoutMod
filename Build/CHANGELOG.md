@@ -1,6 +1,12 @@
+# 0.8.2
+
+- Scout's utility does damage on intervals now
+- Token fixes
+
 # 0.8.1
 
-- ScoutMod.dll is now OfficialScoutMod.dll so the old ScoutTF2 can still be played ig
+- ScoutMod.dll is now OfficialScoutMod.dll just in case
+- The old ScoutModTF2 doesnt work with 90% of mods in general but ig if you have an extremely niche modpack you can play them together now?
 
 # 0.8.0
 
