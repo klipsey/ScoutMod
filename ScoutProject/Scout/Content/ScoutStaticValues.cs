@@ -16,5 +16,6 @@ namespace OfficialScoutMod.Scout.Content
 
         public static float atomicBlastDamageCoefficient = 15f;
 
+        public static float rifleDamageCoefficient = 3.8f;
     }
 }

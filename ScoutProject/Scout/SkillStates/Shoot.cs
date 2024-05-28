@@ -40,7 +40,6 @@ namespace OfficialScoutMod.Scout.SkillStates
             if (this.isCrit) Util.PlaySound("sfx_scout_shoot_crit", base.gameObject);
             else Util.PlaySound("sfx_scout_shoot", base.gameObject);
 
-            base.PlayAnimation("AimPitch", "AimPitchShotgun");
             base.PlayAnimation("Gesture, Override", "FireShotgun", "Shoot.playbackRate", this.duration);
 
             this.fireDuration = 0;
@@ -63,8 +62,8 @@ namespace OfficialScoutMod.Scout.SkillStates
                 this.characterBody.AddSpreadBloom(4f);
                 EffectManager.SimpleMuzzleFlash(EntityStates.Commando.CommandoWeapon.FireBarrage.effectPrefab, gameObject, muzzleString, false);
 
-                GameObject tracer = ScoutAssets.shotgunTracer;
-                if (this.isCrit) tracer = ScoutAssets.shotgunTracerCrit;
+                GameObject tracer = ScoutAssets.scoutTracer;
+                if (this.isCrit) tracer = ScoutAssets.scoutTracerCrit;
 
                 if (base.isAuthority)
                 {
@@ -145,7 +144,6 @@ namespace OfficialScoutMod.Scout.SkillStates
         public override void OnExit()
         {
             base.OnExit();
-            base.PlayAnimation("AimPitch", "AimPitch");
         }
 
         public override InterruptPriority GetMinimumInterruptPriority()

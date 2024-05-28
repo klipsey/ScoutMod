@@ -11,7 +11,7 @@ namespace OfficialScoutMod.Scout.SkillStates
 {
     public class ThrowCleaver : GenericProjectileBaseState
     {
-        public static float baseDuration = 0.55f;
+        public static float baseDuration = 0.2f;
         public static float baseDelayDuration = 0.1f * baseDuration;
         public GameObject cleaver = ScoutAssets.cleaverPrefab;
         public ScoutController scoutController;

@@ -6,6 +6,7 @@ using UnityEngine.AddressableAssets;
 using UnityEngine.Networking;
 using R2API;
 using RoR2.Skills;
+using RoR2.UI;
 using UnityEngine.Rendering.PostProcessing;
 using TMPro;
 using ThreeEyedGames;
@@ -13,7 +14,7 @@ using OfficialScoutMod.Scout.Components;
 using RoR2.EntityLogic;
 using System.Collections.Generic;
 using UnityEngine.UIElements;
-using System.IO;
+using UnityEngine.UI;
 using System.Reflection;
 using static UnityEngine.ParticleSystem.PlaybackState;
 using Rewired.ComponentControls.Effects;
@@ -38,8 +39,8 @@ namespace OfficialScoutMod.Scout.Content
         internal static GameObject atomicImpactEffect;
         internal static GameObject bloodSplatterEffect;
 
-        internal static GameObject shotgunTracer;
-        internal static GameObject shotgunTracerCrit;
+        internal static GameObject scoutTracer;
+        internal static GameObject scoutTracerCrit;
 
         internal static GameObject batSwingEffect;
         internal static GameObject atomicSwingEffect;
@@ -47,10 +48,17 @@ namespace OfficialScoutMod.Scout.Content
 
         internal static GameObject scoutZoom;
         internal static GameObject scoutMaxGauge;
+
+        internal static GameObject headshotOverlay;
+        internal static GameObject headshotVisualizer;
         //Models
         internal static GameObject shotgunShell;
+        internal static GameObject bullet;
+        internal static GameObject casing;
         internal static GameObject cleaverPrefab;
         internal static GameObject baseballPrefab;
+
+        internal static Mesh meshRifle;
         //Sounds
         internal static NetworkSoundEventDef batImpactSoundDef;
         public static void Init(AssetBundle assetBundle)
@@ -94,13 +102,33 @@ namespace OfficialScoutMod.Scout.Content
             shotgunShell.GetComponentInChildren<MeshRenderer>().material = mainAssetBundle.LoadAsset<Material>("matShotgunShell");
             shotgunShell.AddComponent<Modules.Components.ShellController>();
 
+            bullet = mainAssetBundle.LoadAsset<GameObject>("Bullet");
+            bullet.GetComponentInChildren<MeshRenderer>().material = mainAssetBundle.LoadAsset<Material>("matShotgun");
+            bullet.AddComponent<Modules.Components.ShellController>();
+
+            casing = mainAssetBundle.LoadAsset<GameObject>("Casing");
+            casing.GetComponentInChildren<MeshRenderer>().material = mainAssetBundle.LoadAsset<Material>("matShotgun");
+            casing.AddComponent<Modules.Components.ShellController>();
+
+            meshRifle = mainAssetBundle.LoadAsset<Mesh>("meshGarand");
         }
         #region effects
         private static void CreateEffects()
         {
+            headshotOverlay = Addressables.LoadAssetAsync<GameObject>("RoR2/DLC1/Railgunner/RailgunnerScopeLightOverlay.prefab").WaitForCompletion().InstantiateClone("ScoutHeadshotOverlay", false);
+            SniperTargetViewer viewer = headshotOverlay.GetComponentInChildren<SniperTargetViewer>();
+            headshotOverlay.transform.Find("ScopeOverlay").gameObject.SetActive(false);
+
+            headshotVisualizer = viewer.visualizerPrefab.InstantiateClone("ScoutHeadshotVisualizer", false);
+            UnityEngine.UI.Image headshotImage = headshotVisualizer.transform.Find("Scaler/Rectangle").GetComponent<UnityEngine.UI.Image>();
+            headshotVisualizer.transform.Find("Scaler/Outer").gameObject.SetActive(false);
+            headshotImage.color = Color.red;
+
+            viewer.visualizerPrefab = headshotVisualizer;
+
             batHitEffect = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Loader/OmniImpactVFXLoader.prefab").WaitForCompletion().InstantiateClone("BatHitEffect");
             batHitEffect.AddComponent<NetworkIdentity>();
-            OfficialScoutMod.Modules.Content.CreateAndAddEffectDef(batHitEffect);
+            Modules.Content.CreateAndAddEffectDef(batHitEffect);
             batSwingEffect = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Merc/MercSwordSlash.prefab").WaitForCompletion().InstantiateClone("ScoutBatSwing", false);
             batSwingEffect.transform.GetChild(0).GetComponent<ParticleSystemRenderer>().material = Addressables.LoadAssetAsync<Material>("RoR2/Base/Huntress/matHuntressSwingTrail.mat").WaitForCompletion();
             var swing = batSwingEffect.transform.GetChild(0).GetComponent<ParticleSystem>().main;
@@ -123,45 +151,45 @@ namespace OfficialScoutMod.Scout.Content
             pingus.endColor = Color.white;
             pingus.alignment = LineAlignment.TransformZ;
 
-            shotgunTracer = RoR2.LegacyResourcesAPI.Load<GameObject>("Prefabs/Effects/Tracers/TracerCommandoShotgun").InstantiateClone("ScoutShotgunTracer", true);
+            scoutTracer = RoR2.LegacyResourcesAPI.Load<GameObject>("Prefabs/Effects/Tracers/TracerCommandoShotgun").InstantiateClone("ScoutShotgunTracer", true);
 
-            if (!shotgunTracer.GetComponent<EffectComponent>()) shotgunTracer.AddComponent<EffectComponent>();
-            if (!shotgunTracer.GetComponent<VFXAttributes>()) shotgunTracer.AddComponent<VFXAttributes>();
-            if (!shotgunTracer.GetComponent<NetworkIdentity>()) shotgunTracer.AddComponent<NetworkIdentity>();
+            if (!scoutTracer.GetComponent<EffectComponent>()) scoutTracer.AddComponent<EffectComponent>();
+            if (!scoutTracer.GetComponent<VFXAttributes>()) scoutTracer.AddComponent<VFXAttributes>();
+            if (!scoutTracer.GetComponent<NetworkIdentity>()) scoutTracer.AddComponent<NetworkIdentity>();
 
             Material bulletMat = null;
 
-            foreach (LineRenderer i in shotgunTracer.GetComponentsInChildren<LineRenderer>())
+            foreach (LineRenderer i in scoutTracer.GetComponentsInChildren<LineRenderer>())
             {
                 if (i)
                 {
                     bulletMat = UnityEngine.Object.Instantiate<Material>(i.material);
-                    bulletMat.SetColor("_TintColor", new Color(0.68f, 0.58f, 0.05f));
+                    bulletMat.SetColor("_TintColor", Color.green);
                     i.material = bulletMat;
-                    i.startColor = new Color(0.68f, 0.58f, 0.05f);
-                    i.endColor = new Color(0.68f, 0.58f, 0.05f);
+                    i.startColor = Color.green;
+                    i.endColor = Color.yellow;
                 }
             }
 
-            shotgunTracerCrit = RoR2.LegacyResourcesAPI.Load<GameObject>("Prefabs/Effects/Tracers/TracerCommandoShotgun").InstantiateClone("ScoutShotgunTracerCritical", true);
+            scoutTracerCrit = RoR2.LegacyResourcesAPI.Load<GameObject>("Prefabs/Effects/Tracers/TracerCommandoShotgun").InstantiateClone("ScoutShotgunTracerCritical", true);
 
-            if (!shotgunTracerCrit.GetComponent<EffectComponent>()) shotgunTracerCrit.AddComponent<EffectComponent>();
-            if (!shotgunTracerCrit.GetComponent<VFXAttributes>()) shotgunTracerCrit.AddComponent<VFXAttributes>();
-            if (!shotgunTracerCrit.GetComponent<NetworkIdentity>()) shotgunTracerCrit.AddComponent<NetworkIdentity>();
+            if (!scoutTracerCrit.GetComponent<EffectComponent>()) scoutTracerCrit.AddComponent<EffectComponent>();
+            if (!scoutTracerCrit.GetComponent<VFXAttributes>()) scoutTracerCrit.AddComponent<VFXAttributes>();
+            if (!scoutTracerCrit.GetComponent<NetworkIdentity>()) scoutTracerCrit.AddComponent<NetworkIdentity>();
 
-            foreach (LineRenderer i in shotgunTracerCrit.GetComponentsInChildren<LineRenderer>())
+            foreach (LineRenderer i in scoutTracerCrit.GetComponentsInChildren<LineRenderer>())
             {
                 if (i)
                 {
                     bulletMat = UnityEngine.Object.Instantiate<Material>(i.material);
-                    bulletMat.SetColor("_TintColor", Color.yellow);
+                    bulletMat.SetColor("_TintColor", Color.green);
                     i.material = bulletMat;
-                    i.startColor = new Color(0.8f, 0.24f, 0f);
-                    i.endColor = new Color(0.8f, 0.24f, 0f);
+                    i.startColor = Color.green;
+                    i.endColor = Color.yellow;
                 }
             }
-            Modules.Content.CreateAndAddEffectDef(shotgunTracer);
-            Modules.Content.CreateAndAddEffectDef(shotgunTracerCrit);
+            Modules.Content.CreateAndAddEffectDef(scoutTracer);
+            Modules.Content.CreateAndAddEffectDef(scoutTracerCrit);
 
             atomicEffect = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/KillEliteFrenzy/NoCooldownEffect.prefab").WaitForCompletion().InstantiateClone("ScoutAtomicEffect");
             atomicEffect.AddComponent<NetworkIdentity>();
@@ -194,6 +222,7 @@ namespace OfficialScoutMod.Scout.Content
             Modules.Content.CreateAndAddEffectDef(scoutMaxGauge);
 
             atomicImpactEffect = CreateImpactExplosionEffect("ScoutAtomicBlast", Addressables.LoadAssetAsync<Material>("RoR2/Base/Beetle/matBeetleSpitShockwave.mat").WaitForCompletion(), Addressables.LoadAssetAsync<Material>("RoR2/Base/Beetle/matBeetleQueenAcidDecal.mat").WaitForCompletion(), 2);
+            atomicImpactEffect.GetComponent<EffectComponent>().applyScale = true;
 
             bloodSplatterEffect = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Brother/BrotherSlamImpact.prefab").WaitForCompletion().InstantiateClone("ScoutSplat", true);
             bloodSplatterEffect.AddComponent<NetworkIdentity>();
@@ -276,6 +305,8 @@ namespace OfficialScoutMod.Scout.Content
 
             baseballPrefab.GetComponent<ProjectileController>().ghostPrefab = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Bell/BellBallSmallGhost.prefab").WaitForCompletion().InstantiateClone("ScoutBaseballGhost");
             baseballPrefab.GetComponent<ProjectileController>().ghostPrefab.AddComponent<NetworkIdentity>();
+            baseballPrefab.GetComponent<ProjectileController>().ghostPrefab.GetComponentInChildren<MeshRenderer>().materials = new Material[1];
+            baseballPrefab.GetComponent<ProjectileController>().ghostPrefab.GetComponentInChildren<MeshRenderer>().materials[0] = Object.Instantiate(Addressables.LoadAssetAsync<Material>("RoR2/DLC1/EliteEarth/matEliteAffixEarthPickup.mat").WaitForCompletion());
             Object.Destroy(baseballPrefab.transform.GetChild(0).GetChild(0).gameObject);
             Object.Destroy(baseballPrefab.transform.GetChild(0).GetChild(1).gameObject);
 

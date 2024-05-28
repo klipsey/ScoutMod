@@ -8,7 +8,7 @@ namespace OfficialScoutMod.Scout.SkillStates
 {
     public class Reload : BaseScoutSkillState
     {
-        public static float baseDuration = 1.7f;
+        public static float baseDuration = 1.4f;
         private float duration;
         private float startReload;
         private bool startReloadPlayed = false;
@@ -27,13 +27,13 @@ namespace OfficialScoutMod.Scout.SkillStates
             this.startReload = 0.04f * duration;
             this.startShell = 0.05f * duration;
             this.shellsIn = 0.5f * duration;
-            dontPlay = this.skillLocator.secondary.skillNameToken == ScoutSurvivor.SCOUT_PREFIX + "SECONDARY_SPIKEDBALL_NAME";
+            dontPlay = scoutController.isSwapped;
             if (dontPlay && base.isAuthority)
             {
                 this.outer.SetNextStateToMain();
                 return;
             }
-            base.PlayAnimation("Gesture, Override", "ReloadShotgun", "Shoot.playbackRate", this.duration);
+            base.PlayCrossfade("Gesture, Override", "ReloadShotgun", "Shoot.playbackRate", this.duration, 0.05f);
             Util.PlayAttackSpeedSound("sfx_scout_start_reload", base.gameObject, 1);
         }
 
@@ -87,7 +87,7 @@ namespace OfficialScoutMod.Scout.SkillStates
 
         public override InterruptPriority GetMinimumInterruptPriority()
         {
-            return InterruptPriority.Skill;
+            return InterruptPriority.Any;
         }
     }
 }

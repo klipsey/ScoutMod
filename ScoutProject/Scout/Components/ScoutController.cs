@@ -7,12 +7,12 @@ using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.Networking;
 using OfficialScoutMod.Scout.Content;
+using RoR2.Skills;
 
 namespace OfficialScoutMod.Scout.Components
 {
     public class ScoutController : MonoBehaviour
     {
-
         public bool atMaxGauge => atomicGauge >= maxAtomicGauge;
         private CharacterBody characterBody;
         private ModelSkinController skinController;
@@ -20,12 +20,18 @@ namespace OfficialScoutMod.Scout.Components
         private CharacterModel characterModel;
         private Animator animator;
         private SkillLocator skillLocator;
+        private ScoutSwap scoutSwap;
         private GameObject endEffect = ScoutAssets.atomicEndEffect;
         public DamageAPI.ModdedDamageType ModdedDamageType = DamageTypes.Default;
-
+        public bool isSwapped => skillLocator.secondary.skillOverrides.Length > 0;
+        public SkillDef swappedPrimarySkillDef;
+        public SkillDef swappedSecondarySkillDef;
         private readonly int maxShellCount = 12;
+        private readonly int maxCasingCount = 12;
         private GameObject[] shellObjects;
+        private GameObject[] casingObjects;
         private int currentShell;
+        private int currentCasing;
 
         public float atomicGauge = 0f;
 
@@ -52,26 +58,29 @@ namespace OfficialScoutMod.Scout.Components
 
         private float graceTimer = 0f;
         public bool hasGraced = false;
-
+        public float jamTimer;
+        public float pulseTimer;
         private void Awake()
         {
             this.characterBody = this.GetComponent<CharacterBody>();
+            this.scoutSwap = this.GetComponent<ScoutSwap>();
             ModelLocator modelLocator = this.GetComponent<ModelLocator>();
             this.childLocator = modelLocator.modelBaseTransform.GetComponentInChildren<ChildLocator>();
             this.animator = modelLocator.modelBaseTransform.GetComponentInChildren<Animator>();
             this.characterModel = modelLocator.modelBaseTransform.GetComponentInChildren<CharacterModel>();
             this.skillLocator = this.GetComponent<SkillLocator>();
             this.skinController = modelLocator.modelTransform.gameObject.GetComponent<ModelSkinController>();
+            Invoke("InitModelsAndSkillDefs", 0.5f);
+
         }
         private void Start()
         {
-            InitShells();
             SetupStockSecondary1();
             SetupStockPrimary2();
         }
         public void FillAtomic(float amount, bool isCrit)
         {
-            if (atomicDraining && !ScoutConfig.gainAtomicGaugeDuringAtomicBlast.Value) return;
+            if (atomicDraining && !ScoutConfig.gainAtomicGaugeDuringAtomicBlast.Value && this.skillLocator.special.skillNameToken != ScoutSurvivor.SCOUT_PREFIX + "SPECIAL_SCEPTER_SWAP_NAME") return;
             else if (atomicDraining && ScoutConfig.gainAtomicGaugeDuringAtomicBlast.Value) amount *= 0.25f;
 
             if (atomicGauge + amount <= maxAtomicGauge)
@@ -93,13 +102,50 @@ namespace OfficialScoutMod.Scout.Components
 
             this.onAtomicChange?.Invoke();
         }
-        private void InitShells()
+        private void InitModelsAndSkillDefs()
         {
+            GameObject desiredShell;
+
+            if (scoutSwap.isBat)
+            {
+                this.swappedPrimarySkillDef = scoutSwap.batSkillDef;
+            }
+            if (scoutSwap.isBall)
+            {
+                this.swappedSecondarySkillDef = scoutSwap.ballSkillDef;
+            }
+            if(skillLocator && skillLocator.primary.skillNameToken == ScoutSurvivor.SCOUT_PREFIX + "PRIMARY_SPLATTERGUN_NAME")
+            {
+                desiredShell = ScoutAssets.shotgunShell;
+            }
+            else if (skillLocator && skillLocator.primary.skillNameToken == ScoutSurvivor.SCOUT_PREFIX + "PRIMARY_RIFLE_NAME")
+            {
+                this.childLocator.FindChild("ScatterGunMesh").gameObject.GetComponent<SkinnedMeshRenderer>().sharedMesh = ScoutAssets.meshRifle;
+                desiredShell = ScoutAssets.bullet;
+                GameObject desiredCasing = ScoutAssets.casing;
+                this.currentCasing = 0;
+
+                this.casingObjects = new GameObject[this.maxCasingCount + 1];
+
+                for (int i = 0; i < this.maxCasingCount; i++)
+                {
+                    this.casingObjects[i] = GameObject.Instantiate(desiredCasing, this.childLocator.FindChild("Pistol"), false);
+                    this.casingObjects[i].transform.localScale = Vector3.one * 1.1f;
+                    this.casingObjects[i].SetActive(false);
+                    this.casingObjects[i].GetComponent<Rigidbody>().collisionDetectionMode = CollisionDetectionMode.Continuous;
+
+                    this.casingObjects[i].layer = LayerIndex.ragdoll.intVal;
+                    this.casingObjects[i].transform.GetChild(0).gameObject.layer = LayerIndex.ragdoll.intVal;
+                }
+            }
+            else
+            {
+                desiredShell = ScoutAssets.shotgunShell;
+            }
+
             this.currentShell = 0;
 
             this.shellObjects = new GameObject[this.maxShellCount + 1];
-
-            GameObject desiredShell = ScoutAssets.shotgunShell;
 
             for (int i = 0; i < this.maxShellCount; i++)
             {
@@ -133,9 +179,30 @@ namespace OfficialScoutMod.Scout.Components
             this.currentShell++;
             if (this.currentShell >= this.maxShellCount) this.currentShell = 0;
         }
+        public void DropCasing(Vector3 force)
+        {
+            if (this.casingObjects == null) return;
 
+            if (this.casingObjects[this.currentCasing] == null) return;
+
+            Transform origin = this.childLocator.FindChild("Scattergun");
+
+            this.casingObjects[this.currentCasing].SetActive(false);
+
+            this.casingObjects[this.currentCasing].transform.position = origin.position;
+            this.casingObjects[this.currentCasing].transform.SetParent(null);
+
+            this.casingObjects[this.currentCasing].SetActive(true);
+
+            Rigidbody rb = this.casingObjects[this.currentCasing].gameObject.GetComponent<Rigidbody>();
+            if (rb) rb.velocity = force;
+
+            this.currentCasing++;
+            if (this.currentCasing >= this.maxCasingCount) this.currentCasing = 0;
+        }
         public void ActivateAtomic()
         {
+            pulseTimer = 1.5f;
             if (NetworkServer.active) this.characterBody.AddBuff(ScoutBuffs.scoutAtomicBuff);
             Transform scoutTransform = this.childLocator.FindChild("Chest").transform;
             atomicDraining = true;
@@ -198,10 +265,49 @@ namespace OfficialScoutMod.Scout.Components
         private void FixedUpdate()
         {
             graceTimer += Time.fixedDeltaTime;
+            if(jamTimer > 0)
+            {
+                jamTimer -= Time.fixedDeltaTime;
+            }
 
             if (atomicDraining) 
             {
                 atomicGauge -= maxAtomicGauge / (400f + (100f * this.skillLocator.utility.maxStock - 1));
+                this.pulseTimer -= Time.fixedDeltaTime; 
+                if(this.pulseTimer <= 0)
+                {
+                    DamageType damageType = DamageType.AOE;
+                    damageType |= atomicGauge >= maxAtomicGauge / 2f ? DamageType.Stun1s : DamageType.Generic;
+                    BlastAttack.Result result = new BlastAttack
+                    {
+                        attacker = base.gameObject,
+                        procChainMask = default(ProcChainMask),
+                        impactEffect = EffectIndex.Invalid,
+                        losType = BlastAttack.LoSType.None,
+                        damageColorIndex = DamageColorIndex.Default,
+                        damageType = damageType,
+                        procCoefficient = Util.Remap(atomicGauge, 10f, maxAtomicGauge, 0.1f, 1f),
+                        bonusForce = Util.Remap(atomicGauge, 10f, maxAtomicGauge, 50f, 400f) * Vector3.up,
+                        baseForce = Util.Remap(atomicGauge, 10f, maxAtomicGauge, 250f, 2000f),
+                        baseDamage = Util.Remap(atomicGauge, 10f, maxAtomicGauge, 1f * this.characterBody.damage, ScoutStaticValues.atomicBlastDamageCoefficient * this.characterBody.damage),
+                        falloffModel = BlastAttack.FalloffModel.None,
+                        radius = Util.Remap(atomicGauge, 10f, maxAtomicGauge, 1f, 16f),
+                        position = this.characterBody.corePosition,
+                        attackerFiltering = AttackerFiltering.NeverHitSelf,
+                        teamIndex = this.characterBody.teamComponent.teamIndex,
+                        inflictor = base.gameObject,
+                        crit = this.characterBody.RollCrit()
+                    }.Fire();
+
+                    EffectManager.SpawnEffect(ScoutAssets.atomicImpactEffect, new EffectData
+                    {
+                        origin = this.transform.position + (Vector3.up * 1.8f),
+                        rotation = Quaternion.identity,
+                        scale = Util.Remap(atomicGauge, 10f, maxAtomicGauge, 0.2f, 3f)
+                    }, false);
+
+                    pulseTimer = 1.5f;
+                }
                 onAtomicChange?.Invoke();
                 if(atomicGauge <= 0) DeactivateAtomic();
             }

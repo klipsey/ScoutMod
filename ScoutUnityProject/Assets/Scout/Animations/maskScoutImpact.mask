@@ -17,6 +17,8 @@ AvatarMask:
     m_Weight: 0
   - m_Path: Armature/ROOT/base
     m_Weight: 0
+  - m_Path: Armature/ROOT/base/ik.head
+    m_Weight: 0
   - m_Path: Armature/ROOT/base/pelvis
     m_Weight: 0
   - m_Path: Armature/ROOT/base/pelvis/thigh.l
@@ -119,8 +121,6 @@ AvatarMask:
     m_Weight: 0
   - m_Path: Armature/ROOT/ik.hand.r
     m_Weight: 0
-  - m_Path: Armature/ROOT/ik.head
-    m_Weight: 0
   - m_Path: Armature/ROOT/ik.knee.l
     m_Weight: 0
   - m_Path: Armature/ROOT/ik.knee.r
@@ -128,6 +128,8 @@ AvatarMask:
   - m_Path: meshBackBat
     m_Weight: 0
   - m_Path: meshBat
+    m_Weight: 0
+  - m_Path: meshEmissions
     m_Weight: 0
   - m_Path: meshScout
     m_Weight: 0

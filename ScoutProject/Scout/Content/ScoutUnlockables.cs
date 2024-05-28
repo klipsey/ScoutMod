@@ -7,17 +7,19 @@ namespace OfficialScoutMod.Scout.Content
 {
     public static class ScoutUnlockables
     {
-        public static UnlockableDef characterUnlockableDef;
+        public static UnlockableDef characterUnlockableDef = null;
         public static UnlockableDef masterySkinUnlockableDef = null;
 
         public static void Init()
         {
-            if(!ScoutConfig.forceUnlock.Value)
+            /*
+            if(false == true)
             {
                 characterUnlockableDef = Modules.Content.CreateAndAddUnlockableDef(ScoutUnlockAchievement.unlockableIdentifier,
                 Modules.Tokens.GetAchievementNameToken(ScoutUnlockAchievement.unlockableIdentifier),
                 ScoutSurvivor.instance.assetBundle.LoadAsset<Sprite>("texScoutIcon"));
             }
+            */
         }
     }
 }

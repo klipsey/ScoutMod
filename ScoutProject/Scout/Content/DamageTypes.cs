@@ -20,6 +20,7 @@ namespace OfficialScoutMod.Scout.Content
         public static DamageAPI.ModdedDamageType Default;
         public static DamageAPI.ModdedDamageType FillAtomic;
         public static DamageAPI.ModdedDamageType FillAtomicShotgun;
+        public static DamageAPI.ModdedDamageType FillAtomicHeadshot;
         public static DamageAPI.ModdedDamageType AtomicCrits;
         public static DamageAPI.ModdedDamageType BallStun;
         public static DamageAPI.ModdedDamageType CleaverBonus; 
@@ -28,6 +29,7 @@ namespace OfficialScoutMod.Scout.Content
             Default = DamageAPI.ReserveDamageType();
             FillAtomic = DamageAPI.ReserveDamageType();
             FillAtomicShotgun = DamageAPI.ReserveDamageType();
+            FillAtomicHeadshot = DamageAPI.ReserveDamageType();
             CleaverBonus = DamageAPI.ReserveDamageType();
             AtomicCrits = DamageAPI.ReserveDamageType();
             BallStun = DamageAPI.ReserveDamageType();
@@ -83,7 +85,14 @@ namespace OfficialScoutMod.Scout.Content
                 {
                     if (damageInfo.HasModdedDamageType(FillAtomic))
                     {
-                        attackerScout.FillAtomic(5f / attackerBody.skillLocator.utility.cooldownScale + attackerBody.skillLocator.utility.flatCooldownReduction, damageInfo.crit);
+                        if (damageInfo.HasModdedDamageType(FillAtomicHeadshot))
+                        {
+                            attackerScout.FillAtomic(10f / attackerBody.skillLocator.utility.cooldownScale + attackerBody.skillLocator.utility.flatCooldownReduction, damageInfo.crit);
+                        }
+                        else
+                        {
+                            attackerScout.FillAtomic(5f / attackerBody.skillLocator.utility.cooldownScale + attackerBody.skillLocator.utility.flatCooldownReduction, damageInfo.crit);
+                        }
                         attackerBody.RecalculateStats();
                     }
                     else if (damageInfo.HasModdedDamageType(FillAtomicShotgun))
@@ -91,6 +100,7 @@ namespace OfficialScoutMod.Scout.Content
                         attackerScout.FillAtomic(1f / attackerBody.skillLocator.utility.cooldownScale + attackerBody.skillLocator.utility.flatCooldownReduction, damageInfo.crit);
                         attackerBody.RecalculateStats();
                     }
+
                     if (damageInfo.HasModdedDamageType(BallStun) && inflictorObject)
                     {
                         damageReport.victimBody.AddTimedBuff(ScoutBuffs.scoutStunMarker, inflictorObject.GetComponent<DistanceLobController>().timer * 2f + 1.5f);
