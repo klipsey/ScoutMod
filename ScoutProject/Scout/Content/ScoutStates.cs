@@ -17,7 +17,9 @@ namespace OfficialScoutMod.Scout.Content
             Modules.Content.AddEntityState(typeof(Swing));
             Modules.Content.AddEntityState(typeof(SwapWeapon));
             Modules.Content.AddEntityState(typeof(EnterReload));
+            Modules.Content.AddEntityState(typeof(EnterRifleReload));
             Modules.Content.AddEntityState(typeof(Reload));
+            Modules.Content.AddEntityState(typeof(RifleReload));
         }
     }
 }

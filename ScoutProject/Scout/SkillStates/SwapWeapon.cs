@@ -16,12 +16,12 @@ namespace OfficialScoutMod.Scout.SkillStates
             base.OnEnter();
             Util.PlaySound("sfx_scout_swap_weapon", this.gameObject);
             //return to gun
-            if (this.skillLocator.secondary.skillNameToken == ScoutSurvivor.SCOUT_PREFIX + "SECONDARY_SPIKEDBALL_NAME")
+            if (scoutController.isSwapped)
             {
-                PlayAnimation("Gesture, Override", "SwapToGun", "Cleaver.playbackRate", 0.5f / base.characterBody.attackSpeed);
+                PlayAnimation("Gesture, Override", "SwapToGun", "Grab.playbackRate", 0.5f / base.characterBody.attackSpeed);
                 this.scoutController.SwitchLayer("");
-                this.skillLocator.primary.UnsetSkillOverride(this.gameObject, this.scoutPassive.batSkillDef, GenericSkill.SkillOverridePriority.Network);
-                this.skillLocator.secondary.UnsetSkillOverride(this.gameObject, this.scoutPassive.ballSkillDef, GenericSkill.SkillOverridePriority.Network);
+                this.skillLocator.primary.UnsetSkillOverride(this.gameObject, this.scoutSwapPassive.batSkillDef, GenericSkill.SkillOverridePriority.Network);
+                this.skillLocator.secondary.UnsetSkillOverride(this.gameObject, this.scoutSwapPassive.ballSkillDef, GenericSkill.SkillOverridePriority.Network);
                 if (base.isAuthority)
                 {
                     this.skillLocator.secondary.RemoveAllStocks();
@@ -35,10 +35,11 @@ namespace OfficialScoutMod.Scout.SkillStates
             else
             {
                 //swap to bat
-                PlayAnimation("Gesture, Override", "SwapToBat", "Cleaver.playbackRate", 0.5f / base.characterBody.attackSpeed);
+                PlayAnimation("Gesture, Override", "SwapToBat", "Grab.playbackRate", 0.5f / base.characterBody.attackSpeed);
                 this.scoutController.SwitchLayer("Body, Bat");
-                this.skillLocator.primary.SetSkillOverride(this.gameObject, this.scoutPassive.batSkillDef, GenericSkill.SkillOverridePriority.Network);
-                this.skillLocator.secondary.SetSkillOverride(this.gameObject, this.scoutPassive.ballSkillDef, GenericSkill.SkillOverridePriority.Network);
+                this.scoutController.jamTimer = ShootRifle.baseDuration / this.attackSpeedStat;
+                this.skillLocator.primary.SetSkillOverride(this.gameObject, this.scoutSwapPassive.batSkillDef, GenericSkill.SkillOverridePriority.Network);
+                this.skillLocator.secondary.SetSkillOverride(this.gameObject, this.scoutSwapPassive.ballSkillDef, GenericSkill.SkillOverridePriority.Network);
                 if(base.isAuthority)
                 {
                     this.skillLocator.secondary.RemoveAllStocks();

@@ -20,7 +20,7 @@ namespace OfficialScoutMod.Scout.SkillStates
         public override void FixedUpdate()
         {
             base.FixedUpdate();
-            if (base.isAuthority && base.fixedAge > duration)
+            if (base.isAuthority && base.fixedAge >= duration)
             {
                 outer.SetNextState(new Reload());
             }

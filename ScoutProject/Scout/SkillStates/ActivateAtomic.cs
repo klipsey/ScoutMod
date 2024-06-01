@@ -10,13 +10,13 @@ namespace OfficialScoutMod.Scout.SkillStates
 {
     public class ActivateAtomic : BaseScoutSkillState
     {
+        DamageType damageType;
         public override void OnEnter()
         {
             RefreshState();
             base.OnEnter();
             if (this.characterBody.HasBuff(ScoutBuffs.scoutAtomicBuff) || scoutController.atomicGauge < 1f)
             {
-                if(this.skillLocator.utility.stock < 1f) this.skillLocator.utility.AddOneStock();
                 return;
             }
 
@@ -24,12 +24,14 @@ namespace OfficialScoutMod.Scout.SkillStates
             {
                 this.scoutController.ActivateAtomic();
 
-                if (this.scoutController.atomicGauge >= this.scoutController.maxAtomicGauge)
+                if (this.scoutController.atomicGauge >= 10f)
                 {
                     if(NetworkServer.active) this.characterBody.AddTimedBuff(RoR2Content.Buffs.HiddenInvincibility, 1.5f);
 
                     if (base.isAuthority)
                     {
+                        this.damageType = DamageType.AOE;
+                        this.damageType |= scoutController.atomicGauge >= scoutController.maxAtomicGauge / 2f ? DamageType.Stun1s : DamageType.Generic;
                         BlastAttack.Result result = new BlastAttack
                         {
                             attacker = base.gameObject,
@@ -37,13 +39,13 @@ namespace OfficialScoutMod.Scout.SkillStates
                             impactEffect = EffectIndex.Invalid,
                             losType = BlastAttack.LoSType.None,
                             damageColorIndex = DamageColorIndex.Default,
-                            damageType = DamageType.Stun1s,
-                            procCoefficient = 1f,
-                            bonusForce = 400 * Vector3.up,
-                            baseForce = 2000f,
-                            baseDamage = ScoutStaticValues.atomicBlastDamageCoefficient * this.damageStat,
+                            damageType = this.damageType,
+                            procCoefficient = Util.Remap(scoutController.atomicGauge, 10f, scoutController.maxAtomicGauge, 0.1f, 1f),
+                            bonusForce = Util.Remap(scoutController.atomicGauge, 10f, scoutController.maxAtomicGauge, 50f, 400f) * Vector3.up,
+                            baseForce = Util.Remap(scoutController.atomicGauge, 10f, scoutController.maxAtomicGauge, 250f, 2000f),
+                            baseDamage = Util.Remap(scoutController.atomicGauge, 10f, scoutController.maxAtomicGauge, 1f * this.damageStat, ScoutStaticValues.atomicBlastDamageCoefficient * this.damageStat),
                             falloffModel = BlastAttack.FalloffModel.None,
-                            radius = 16f,
+                            radius = Util.Remap(scoutController.atomicGauge, 10f, scoutController.maxAtomicGauge, 1f, 16f),
                             position = this.characterBody.corePosition,
                             attackerFiltering = AttackerFiltering.NeverHitSelf,
                             teamIndex = base.GetTeam(),
@@ -55,7 +57,7 @@ namespace OfficialScoutMod.Scout.SkillStates
                         {
                             origin = this.transform.position + (Vector3.up * 1.8f),
                             rotation = Quaternion.identity,
-                            scale = 3f
+                            scale = Util.Remap(scoutController.atomicGauge, 10f, scoutController.maxAtomicGauge, 0.2f,  3f)
                         }, false);
                     }
                 }
@@ -63,7 +65,7 @@ namespace OfficialScoutMod.Scout.SkillStates
                 {
                     if (!this.isGrounded)
                     {
-                        this.SmallHop(this.characterMotor, 16f);
+                        this.SmallHop(this.characterMotor, Util.Remap(scoutController.atomicGauge, 10f, scoutController.maxAtomicGauge, 1f, 16f));
                     }
                     this.outer.SetNextStateToMain();
                 }

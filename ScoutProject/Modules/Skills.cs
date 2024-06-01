@@ -31,8 +31,7 @@ namespace OfficialScoutMod.Modules
 
             SkillLocator skillLocator = targetPrefab.GetComponent<SkillLocator>();
 
-            ScoutPassive passive = targetPrefab.GetComponent<ScoutPassive>();
-            if (passive)
+            if (targetPrefab.TryGetComponent<ScoutPassive>(out var passive))
             {
                 passive.passiveSkillSlot = CreateGenericSkillWithSkillFamily(targetPrefab, "Passive");
             }
@@ -54,10 +53,10 @@ namespace OfficialScoutMod.Modules
                         break;
                 }
             }
-            if(passive)
+            if(targetPrefab.TryGetComponent<ScoutSwap>(out var swap))
             {
-                passive.batSkillSlot = CreateGenericSkillWithSkillFamily(targetPrefab, "Swap Primary");
-                passive.ballSkillSlot = CreateGenericSkillWithSkillFamily(targetPrefab, "Swap Secondary");
+                swap.batSkillSlot = CreateGenericSkillWithSkillFamily(targetPrefab, "Swap");
+                swap.ballSkillSlot = CreateGenericSkillWithSkillFamily(targetPrefab, "Swap");
             }
         }
 

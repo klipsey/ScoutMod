@@ -19,6 +19,7 @@ using OfficialScoutMod.Scout.SkillStates;
 using RobDriver.Modules.Components;
 using HG;
 using EntityStates;
+using AncientScepter;
 using EmotesAPI;
 using System.Runtime.CompilerServices;
 
@@ -37,6 +38,7 @@ namespace OfficialScoutMod.Scout
 
         internal static GameObject characterPrefab;
 
+        public static SkillDef swapScepterSkillDef;
         public override BodyInfo bodyInfo => new BodyInfo
         {
             bodyName = bodyName,
@@ -51,10 +53,10 @@ namespace OfficialScoutMod.Scout
             podPrefab = RoR2.LegacyResourcesAPI.Load<GameObject>("Prefabs/NetworkedObjects/SurvivorPod"),
 
             maxHealth = 110f,
-            healthRegen = 1.2f,
+            healthRegen = 1f,
             armor = 0f,
             damage = 12f,
-
+            moveSpeed = 8f,
             damageGrowth = 2.4f,
             healthGrowth = 110f * 0.35f,
 
@@ -177,12 +179,14 @@ namespace OfficialScoutMod.Scout
         public override void InitializeSkills()
         {
             bodyPrefab.AddComponent<ScoutPassive>();
+            bodyPrefab.AddComponent<ScoutSwap>();
             Skills.CreateSkillFamilies(bodyPrefab);
             AddPassiveSkills();
             AddPrimarySkills();
             AddSecondarySkills();
             AddUtilitySkills();
             AddSpecialSkills();
+            if(ScoutPlugin.scepterInstalled) InitializeScepter();
         }
 
         private void AddPassiveSkills()
@@ -223,7 +227,8 @@ namespace OfficialScoutMod.Scout
 
         private void AddPrimarySkills()
         {
-            ScoutPassive passive = bodyPrefab.GetComponent<ScoutPassive>();
+            ScoutSwap swap = bodyPrefab.GetComponent<ScoutSwap>();
+
             ReloadSkillDef Shoot = Skills.CreateReloadSkillDef(new ReloadSkillDefInfo
             {
                 skillName = "SplatterGun",
@@ -260,7 +265,43 @@ namespace OfficialScoutMod.Scout
 
             Skills.AddPrimarySkills(bodyPrefab, Shoot);
 
-            passive.batSkillDef = Skills.CreateSkillDef<SteppedSkillDef>(new SkillDefInfo
+            ReloadSkillDef Shoot2 = Skills.CreateReloadSkillDef(new ReloadSkillDefInfo
+            {
+                skillName = "Rifle",
+                skillNameToken = SCOUT_PREFIX + "PRIMARY_RIFLE_NAME",
+                skillDescriptionToken = SCOUT_PREFIX + "PRIMARY_RIFLE_DESCRIPTION",
+                keywordTokens = new string[] { Tokens.agileKeyword, Tokens.miniCritsKeyword },
+                skillIcon = assetBundle.LoadAsset<Sprite>("texRifleIcon"),
+
+                activationState = new EntityStates.SerializableEntityStateType(typeof(ShootRifle)),
+                reloadState = new SerializableEntityStateType(typeof(EnterRifleReload)),
+
+                activationStateMachineName = "Weapon",
+                interruptPriority = InterruptPriority.Skill,
+                reloadInterruptPriority = InterruptPriority.Any,
+
+                baseMaxStock = 7,
+                baseRechargeInterval = 0f,
+                rechargeStock = 0,
+                requiredStock = 1,
+                stockToConsume = 1,
+                graceDuration = 5f,
+
+                resetCooldownTimerOnUse = false,
+                fullRestockOnAssign = false,
+                dontAllowPastMaxStocks = false,
+                beginSkillCooldownOnSkillEnd = false,
+                mustKeyPress = false,
+
+                isCombatSkill = true,
+                canceledFromSprinting = false,
+                cancelSprintingOnActivation = false,
+                forceSprintDuringState = false,
+            });
+
+            Skills.AddPrimarySkills(bodyPrefab, Shoot2);
+
+            swap.batSkillDef = Skills.CreateSkillDef<SteppedSkillDef>(new SkillDefInfo
                 (
                     "Bonk",
                     SCOUT_PREFIX + "PRIMARY_BONK_NAME",
@@ -269,15 +310,15 @@ namespace OfficialScoutMod.Scout
                     new EntityStates.SerializableEntityStateType(typeof(SkillStates.Swing)),
                     "Weapon"
                 ));
-            passive.batSkillDef.stepCount = 2;
-            passive.batSkillDef.stepGraceDuration = 1f;
+            swap.batSkillDef.stepCount = 2;
+            swap.batSkillDef.stepGraceDuration = 1f;
 
-            Skills.AddAdditionalSkills(passive.batSkillSlot.skillFamily, passive.batSkillDef);
+            Skills.AddAdditionalSkills(swap.batSkillSlot.skillFamily, swap.batSkillDef);
         }
 
         private void AddSecondarySkills()
         {
-            ScoutPassive passive = bodyPrefab.GetComponent<ScoutPassive>();
+            ScoutSwap swap = bodyPrefab.GetComponent<ScoutSwap>();
 
             SkillDef Cleaver = Skills.CreateSkillDef(new SkillDefInfo
             {
@@ -289,7 +330,7 @@ namespace OfficialScoutMod.Scout
 
                 activationState = new EntityStates.SerializableEntityStateType(typeof(ThrowCleaver)),
 
-                activationStateMachineName = "Weapon",
+                activationStateMachineName = "Weapon2",
                 interruptPriority = EntityStates.InterruptPriority.Skill,
 
                 baseMaxStock = 1,
@@ -312,7 +353,7 @@ namespace OfficialScoutMod.Scout
 
             Skills.AddSecondarySkills(bodyPrefab, Cleaver);
 
-            passive.ballSkillDef = Skills.CreateSkillDef(new SkillDefInfo
+            swap.ballSkillDef = Skills.CreateSkillDef(new SkillDefInfo
             {
                 skillName = "Atomic Spikeball",
                 skillNameToken = SCOUT_PREFIX + "SECONDARY_SPIKEDBALL_NAME",
@@ -342,7 +383,7 @@ namespace OfficialScoutMod.Scout
                 cancelSprintingOnActivation = false,
                 forceSprintDuringState = false,
             });
-            Skills.AddAdditionalSkills(passive.ballSkillSlot.skillFamily, passive.ballSkillDef);
+            Skills.AddAdditionalSkills(swap.ballSkillSlot.skillFamily, swap.ballSkillDef);
 
         }
 
@@ -390,19 +431,19 @@ namespace OfficialScoutMod.Scout
                 skillName = "Swap",
                 skillNameToken = SCOUT_PREFIX + "SPECIAL_SWAP_NAME",
                 skillDescriptionToken = SCOUT_PREFIX + "SPECIAL_SWAP_DESCRIPTION",
-                keywordTokens = new string[] { Tokens.agileKeyword },
+                keywordTokens = new string[] {},
                 skillIcon = assetBundle.LoadAsset<Sprite>("texSwapIcon"),
 
                 activationState = new EntityStates.SerializableEntityStateType(typeof(SwapWeapon)),
                 activationStateMachineName = "Weapon",
                 interruptPriority = EntityStates.InterruptPriority.PrioritySkill,
 
-                baseRechargeInterval = 0.1f,
+                baseRechargeInterval = 0f,
                 baseMaxStock = 1,
 
                 rechargeStock = 1,
                 requiredStock = 1,
-                stockToConsume = 1,
+                stockToConsume = 0,
 
                 resetCooldownTimerOnUse = false,
                 fullRestockOnAssign = false,
@@ -417,6 +458,42 @@ namespace OfficialScoutMod.Scout
             });
 
             Skills.AddSpecialSkills(bodyPrefab, Swap);
+        }
+
+        private void InitializeScepter()
+        {
+            swapScepterSkillDef = Skills.CreateSkillDef(new SkillDefInfo
+            {
+                skillName = "Swap Scepter",
+                skillNameToken = SCOUT_PREFIX + "SPECIAL_SCEPTER_SWAP_NAME",
+                skillDescriptionToken = SCOUT_PREFIX + "SPECIAL_SCEPTER_SWAP_DESCRIPTION",
+                keywordTokens = new string[] { },
+                skillIcon = assetBundle.LoadAsset<Sprite>("texSwapIcon"),
+
+                activationState = new EntityStates.SerializableEntityStateType(typeof(SwapWeapon)),
+                activationStateMachineName = "Weapon",
+                interruptPriority = EntityStates.InterruptPriority.PrioritySkill,
+
+                baseRechargeInterval = 0f,
+                baseMaxStock = 1,
+
+                rechargeStock = 1,
+                requiredStock = 1,
+                stockToConsume = 0,
+
+                resetCooldownTimerOnUse = false,
+                fullRestockOnAssign = true,
+                dontAllowPastMaxStocks = true,
+                mustKeyPress = true,
+                beginSkillCooldownOnSkillEnd = false,
+
+                isCombatSkill = false,
+                canceledFromSprinting = false,
+                cancelSprintingOnActivation = false,
+                forceSprintDuringState = false,
+            });
+
+            AncientScepter.AncientScepterItem.instance.RegisterScepterSkill(swapScepterSkillDef, bodyName, SkillSlot.Special, 0);
         }
         #endregion skills
 
@@ -530,11 +607,23 @@ namespace OfficialScoutMod.Scout
         {
             orig(self);
 
+            int slotCounter = 0; 
             if (self.currentDisplayData.bodyIndex == BodyCatalog.FindBodyIndex("ScoutBody"))
             {
                 foreach (LanguageTextMeshController i in self.gameObject.GetComponentsInChildren<LanguageTextMeshController>())
                 {
-                    if (i && i.token == "LOADOUT_SKILL_MISC") i.token = "Passive";
+                    if (i && i.token == "LOADOUT_SKILL_MISC")
+                    {
+                        if(slotCounter == 0)
+                        {
+                            i.token = "Passive";
+                            slotCounter++;
+                        }
+                        if(slotCounter == 1 && i.token != "Passive")
+                        {
+                            i.token = "Swap";
+                        }
+                    }
                 }
             }
         }

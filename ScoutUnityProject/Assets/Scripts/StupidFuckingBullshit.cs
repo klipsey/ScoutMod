@@ -2,15 +2,15 @@
 
 public class StupidFuckingBullshit : MonoBehaviour
 {
-    public ParticleSystem faggot;
+    public ParticleSystem ok;
 
     private void Awake()
     {
-        this.faggot.transform.SetParent(null);
+        this.ok.transform.SetParent(null);
     }
 
     private void FixedUpdate()
     {
-        this.faggot.transform.SetPositionAndRotation(this.transform.position, this.transform.rotation);
+        this.ok.transform.SetPositionAndRotation(this.transform.position, this.transform.rotation);
     }
 }

@@ -1,6 +1,30 @@
+# 0.8.5
+
+- New run/sprint anims (Makes him a teeny tiny bit smoother)
+- New Primary Dastardly Dwarf. Heads will roll..
+- Added Ancient Scepter support for Swap: Atomic Charge can still be gained while Atomic Core drains
+- Atomic Core pulses in intervals over its duration to deal more damage
+
+# 0.8.4
+
+- Increased base ms by 1 to feel more scouty
+- Removed unlock condition cause bugged
+
+# 0.8.3
+
+- Removed cooldown from swap (it was funny with void items but a little TOO funny)
+- Lowered reload speed slightly
+- Token fixes
+
+# 0.8.2
+
+- Scout's utility does damage on intervals now
+- Token fixes
+
 # 0.8.1
 
-- ScoutMod.dll is now OfficialScoutMod.dll so the old ScoutTF2 can still be played ig
+- ScoutMod.dll is now OfficialScoutMod.dll just in case
+- The old ScoutModTF2 doesnt work with 90% of mods in general but ig if you have an extremely niche modpack you can play them together now?
 
 # 0.8.0
 
