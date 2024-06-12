@@ -6,7 +6,7 @@ namespace OfficialScoutMod.Scout.Content
 {
     public static class ScoutStaticValues
     {
-        public static float shotgunDamageCoefficient = 0.5f;
+        public static float shotgunDamageCoefficient = 0.6f;
 
         public static float baseballDamageCoefficient = 2.4f;
 
@@ -16,6 +16,6 @@ namespace OfficialScoutMod.Scout.Content
 
         public static float atomicBlastDamageCoefficient = 15f;
 
-        public static float rifleDamageCoefficient = 3.8f;
+        public static float rifleDamageCoefficient = 3.6f;
     }
 }

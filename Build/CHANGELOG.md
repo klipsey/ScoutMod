@@ -1,3 +1,11 @@
+# 0.8.7
+
+- Size of cleaver and baseball increase by 2x
+
+# 0.8.6
+
+- oops
+
 # 0.8.5
 
 - New run/sprint anims (Makes him a teeny tiny bit smoother)

@@ -76,7 +76,7 @@ namespace OfficialScoutMod.Scout.Components
         private void Start()
         {
             SetupStockSecondary1();
-            SetupStockPrimary2();
+            SetupStockSecondary2();
         }
         public void FillAtomic(float amount, bool isCrit)
         {
@@ -244,7 +244,7 @@ namespace OfficialScoutMod.Scout.Components
                 this.animator.SetLayerWeight(this.animator.GetLayerIndex(layerName), 1f);
             }
         }
-        public void SetupStockPrimary2()
+        public void SetupStockSecondary2()
         {
             secondary2CdTimer = this.skillLocator.secondary.rechargeStopwatch;
             secondary2Cd = this.skillLocator.secondary.finalRechargeInterval;

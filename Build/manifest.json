@@ -1,7 +1,7 @@
 {
     "name": "Scout",
     "author": "tsuyoikenko",
-    "version_number": "0.8.5",
+    "version_number": "0.8.7",
     "website_url": "https://github.com/klipsey/ScoutMod",
     "description": "Adds the Scout survivor! Now with proper emote compatibility and item displays! Multiplayer compatible!",
     "dependencies": [

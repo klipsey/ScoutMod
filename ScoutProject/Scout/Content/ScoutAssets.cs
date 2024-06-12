@@ -257,6 +257,8 @@ namespace OfficialScoutMod.Scout.Content
             cleaverPrefab.GetComponent<ProjectileSingleTargetImpact>().hitSoundString = "sfx_scout_cleaver_miss";
             cleaverPrefab.GetComponent<ProjectileSingleTargetImpact>().enemyHitSoundString = "sfx_scout_cleaver_hit";
 
+            cleaverPrefab.GetComponent<SphereCollider>().radius = 0.5f;
+
             cleaverPrefab.GetComponent<ProjectileDamage>().damageType = DamageType.BlightOnHit;
             DamageAPI.ModdedDamageTypeHolderComponent moddedDamage = cleaverPrefab.AddComponent<DamageAPI.ModdedDamageTypeHolderComponent>();
             moddedDamage.Add(DamageTypes.CleaverBonus);
@@ -287,6 +289,9 @@ namespace OfficialScoutMod.Scout.Content
             baseballPrefab = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Bandit2/Bandit2ShivProjectile.prefab").WaitForCompletion().InstantiateClone("ScoutBaseball");
             baseballPrefab.AddComponent<NetworkIdentity>();
             baseballPrefab.GetComponent <ProjectileStickOnImpact>().enabled = false;
+
+            baseballPrefab.GetComponent<SphereCollider>().radius = 0.5f;
+
 
             baseballPrefab.GetComponent<DelayedEvent>().enabled = false;
 

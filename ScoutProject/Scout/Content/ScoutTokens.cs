@@ -55,7 +55,7 @@ namespace OfficialScoutMod.Scout.Content
             Language.Add(prefix + "PRIMARY_SPLATTERGUN_DESCRIPTION", $"{Tokens.agilePrefix}. Fire a scattergun burst for <style=cIsDamage>12x{100f * ScoutStaticValues.shotgunDamageCoefficient}% damage</style>.");
 
             Language.Add(prefix + "PRIMARY_RIFLE_NAME", "Dastardly Dwarf");
-            Language.Add(prefix + "PRIMARY_RIFLE_DESCRIPTION", $"{Tokens.agilePrefix}. Fire a high velocity round for <style=cIsDamage>{100f * ScoutStaticValues.rifleDamageCoefficient}% damage</style>. " +
+            Language.Add(prefix + "PRIMARY_RIFLE_DESCRIPTION", $"Fire a high velocity round for <style=cIsDamage>{100f * ScoutStaticValues.rifleDamageCoefficient}% damage</style>. " +
                 $"<style=cIsDamage>Headshots deal 2x damage</style>");
             #endregion
 

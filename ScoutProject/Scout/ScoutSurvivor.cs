@@ -270,7 +270,7 @@ namespace OfficialScoutMod.Scout
                 skillName = "Rifle",
                 skillNameToken = SCOUT_PREFIX + "PRIMARY_RIFLE_NAME",
                 skillDescriptionToken = SCOUT_PREFIX + "PRIMARY_RIFLE_DESCRIPTION",
-                keywordTokens = new string[] { Tokens.agileKeyword, Tokens.miniCritsKeyword },
+                keywordTokens = new string[] { },
                 skillIcon = assetBundle.LoadAsset<Sprite>("texRifleIcon"),
 
                 activationState = new EntityStates.SerializableEntityStateType(typeof(ShootRifle)),
@@ -295,7 +295,7 @@ namespace OfficialScoutMod.Scout
 
                 isCombatSkill = true,
                 canceledFromSprinting = false,
-                cancelSprintingOnActivation = false,
+                cancelSprintingOnActivation = true,
                 forceSprintDuringState = false,
             });
 

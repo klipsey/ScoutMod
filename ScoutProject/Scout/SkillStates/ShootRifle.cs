@@ -28,7 +28,7 @@ namespace OfficialScoutMod.Scout.SkillStates
 
         protected virtual GameObject tracerPrefab => this.isCrit ? ScoutAssets.scoutTracerCrit : ScoutAssets.scoutTracer;
         public string shootSoundString = "sfx_scout_rifle_shoot";
-        public virtual BulletAttack.FalloffModel falloff => BulletAttack.FalloffModel.DefaultBullet;
+        public virtual BulletAttack.FalloffModel falloff => BulletAttack.FalloffModel.None;
 
         private CameraParamsOverrideHandle camParamsOverrideHandle;
         private OverlayController overlayController;
@@ -40,7 +40,6 @@ namespace OfficialScoutMod.Scout.SkillStates
             base.OnEnter();
 
             this.duration = ShootRifle.baseDuration / this.attackSpeedStat;
-            this.characterBody.isSprinting = false;
 
             base.characterBody.SetAimTimer(4f);
             this.muzzleString = "GunMuzzle";
@@ -107,6 +106,8 @@ namespace OfficialScoutMod.Scout.SkillStates
         }
         public void Fire()
         {
+            this.characterBody.isSprinting = false;
+
             this.PlayAnimation("Gesture, Override", "FireRifle", "Shoot.playbackRate", this.duration * 1.5f);
 
             if (this.scoutController)
