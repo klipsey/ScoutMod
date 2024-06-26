@@ -64,9 +64,7 @@ namespace OfficialScoutMod.Scout.Content
         public static void Init(AssetBundle assetBundle)
         {
             mainAssetBundle = assetBundle;
-        }
-        public static void InitAssets()
-        {
+
             CreateMaterials();
 
             CreateModels();

@@ -60,7 +60,7 @@ namespace OfficialScoutMod.Scout.SkillStates
         {
             if (base.GetModelAnimator())
             {
-                base.PlayAnimation("Gesture, Override", "ThrowCleaver", "Cleaver.playbackRate", this.duration);
+                base.PlayAnimation("Gesture, Override", "ThrowCleaver", "Cleaver.playbackRate", this.duration * 4.5f);
             }
         }
     }

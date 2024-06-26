@@ -22,6 +22,7 @@ namespace OfficialScoutMod.Scout.SkillStates
         {
             base.OnEnter();
             this.duration = baseDuration / attackSpeedStat;
+            //Check if the stagedReload has been saved         Now set this duration to that saved reload
             if (this.scoutController.stagedReload > 0f) this.duration = this.scoutController.stagedReload;
             else this.scoutController.stagedReload = this.duration;
             this.startReload = 0.04f * duration;
@@ -34,7 +35,7 @@ namespace OfficialScoutMod.Scout.SkillStates
                 return;
             }
             base.PlayCrossfade("Gesture, Override", "ReloadShotgun", "Shoot.playbackRate", this.duration, 0.05f);
-            Util.PlayAttackSpeedSound("sfx_scout_start_reload", base.gameObject, 1);
+            Util.PlayAttackSpeedSound("sfx_scout_start_reload", base.gameObject, attackSpeedStat);
         }
 
         public override void FixedUpdate()
@@ -45,6 +46,7 @@ namespace OfficialScoutMod.Scout.SkillStates
                 this.outer.SetNextStateToMain();
                 return;
             }
+            //Checkpoint
             if(base.fixedAge >= startReload && !startReloadPlayed)
             {
                 this.scoutController.stagedReload = duration - startReload;

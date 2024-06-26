@@ -277,6 +277,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: matScoutEmissions
     second: {fileID: 2100000, guid: 8eed09c1570316743a8449b561f3f1f7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: matShotgun
+    second: {fileID: 2100000, guid: 925a2f80c82281a47bb7431f22031461, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0

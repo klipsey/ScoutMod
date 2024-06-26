@@ -40,7 +40,7 @@ namespace OfficialScoutMod.Scout.SkillStates
             if (this.isCrit) Util.PlaySound("sfx_scout_shoot_crit", base.gameObject);
             else Util.PlaySound("sfx_scout_shoot", base.gameObject);
 
-            base.PlayAnimation("Gesture, Override", "FireShotgun", "Shoot.playbackRate", this.duration);
+            base.PlayAnimation("Gesture, Override", "FireShotgun", "Shoot.playbackRate", this.duration * 1.5f);
 
             this.fireDuration = 0;
         }

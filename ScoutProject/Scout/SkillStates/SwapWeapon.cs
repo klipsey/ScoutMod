@@ -18,7 +18,7 @@ namespace OfficialScoutMod.Scout.SkillStates
             //return to gun
             if (scoutController.isSwapped)
             {
-                PlayAnimation("Gesture, Override", "SwapToGun", "Grab.playbackRate", 0.5f / base.characterBody.attackSpeed);
+                PlayAnimation("Gesture, Override", "SwapToGun", "Swap.playbackRate", 0.65f / base.characterBody.attackSpeed);
                 this.scoutController.SwitchLayer("");
                 this.skillLocator.primary.UnsetSkillOverride(this.gameObject, this.scoutSwapPassive.batSkillDef, GenericSkill.SkillOverridePriority.Network);
                 this.skillLocator.secondary.UnsetSkillOverride(this.gameObject, this.scoutSwapPassive.ballSkillDef, GenericSkill.SkillOverridePriority.Network);
@@ -35,7 +35,7 @@ namespace OfficialScoutMod.Scout.SkillStates
             else
             {
                 //swap to bat
-                PlayAnimation("Gesture, Override", "SwapToBat", "Grab.playbackRate", 0.5f / base.characterBody.attackSpeed);
+                PlayAnimation("Gesture, Override", "SwapToBat", "Swap.playbackRate", 0.65f / base.characterBody.attackSpeed);
                 this.scoutController.SwitchLayer("Body, Bat");
                 this.scoutController.jamTimer = ShootRifle.baseDuration / this.attackSpeedStat;
                 this.skillLocator.primary.SetSkillOverride(this.gameObject, this.scoutSwapPassive.batSkillDef, GenericSkill.SkillOverridePriority.Network);

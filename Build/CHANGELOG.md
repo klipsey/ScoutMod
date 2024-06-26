@@ -1,3 +1,7 @@
+# 0.8.8
+
+- If people complain about scout anims or his model now i will personally throw a spikeball cleaver into your skull
+
 # 0.8.7
 
 - Size of cleaver and baseball increase by 2x

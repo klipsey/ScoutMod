@@ -68,29 +68,19 @@ namespace OfficialScoutMod.Scout
                 new CustomRendererInfo
                 {
                     childName = "Model",
-                    dontHotpoo = true,
                 },
                 new CustomRendererInfo
                 {
                     childName = "ScatterGunMesh",
-                    dontHotpoo = true,
                 },
                 new CustomRendererInfo
                 {
                     childName = "BackBatMesh",
-                    dontHotpoo = true,
                 },
                 new CustomRendererInfo
                 {
                     childName = "BatMesh",
-                    dontHotpoo = true,
-                },
-                new CustomRendererInfo
-                {
-                    childName = "EmissionsMesh",
-                    dontHotpoo = true,
                 }
-
         };
 
         public override UnlockableDef characterUnlockableDef => ScoutUnlockables.characterUnlockableDef;
@@ -131,7 +121,7 @@ namespace OfficialScoutMod.Scout
             ScoutStates.Init();
             ScoutTokens.Init();
 
-            ScoutAssets.InitAssets();
+            ScoutAssets.Init(assetBundle);
 
             ScoutBuffs.Init(assetBundle);
 
@@ -238,7 +228,7 @@ namespace OfficialScoutMod.Scout
                 skillIcon = assetBundle.LoadAsset<Sprite>("texShotgunIcon"),
 
                 activationState = new EntityStates.SerializableEntityStateType(typeof(Shoot)),
-                reloadState = new SerializableEntityStateType(typeof(EnterReload)),
+                reloadState = new SerializableEntityStateType(typeof(EnterReload)), 
 
                 activationStateMachineName = "Weapon",
                 interruptPriority = InterruptPriority.Skill,
@@ -522,8 +512,7 @@ namespace OfficialScoutMod.Scout
                 "meshScout",
                 "meshSuperShotgun",
                 "meshBackBat",
-                "meshBat",
-                "meshEmissions");
+                "meshBat");
 
             //add new skindef to our list of skindefs. this is what we'll be passing to the SkinController
             skins.Add(defaultSkin);

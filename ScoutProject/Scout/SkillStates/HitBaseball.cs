@@ -65,7 +65,7 @@ namespace OfficialScoutMod.Scout.SkillStates
         {
             if (base.GetModelAnimator())
             {
-                base.PlayAnimation("Gesture, Override", "BatSwing1", "Swing.playbackRate", this.duration);
+                base.PlayAnimation("Gesture, Override", "BatSwing1", "Swing.playbackRate", this.duration * 4.5f);
             }
         }
 

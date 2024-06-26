@@ -4,6 +4,7 @@ using OfficialScoutMod.Modules;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using OfficialScoutMod.Scout.Content;
 
 namespace OfficialScoutMod.Modules.Characters
 {
@@ -32,7 +33,7 @@ namespace OfficialScoutMod.Modules.Characters
         public virtual void Initialize()
         {
             instance = this as T;
-            assetBundle = Scout.Content.ScoutAssets.mainAssetBundle;
+            assetBundle = Assets.LoadAssetBundle("scout");
 
             InitializeCharacter();
         }

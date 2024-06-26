@@ -7,7 +7,6 @@ using System.Security.Permissions;
 using R2API.Networking;
 using OfficialScoutMod.Modules;
 using OfficialScoutMod.Scout.Content;
-using ShaderSwapper;
 
 [module: UnverifiableCode]
 [assembly: SecurityPermission(SecurityAction.RequestMinimum, SkipVerification = true)]
@@ -47,9 +46,6 @@ namespace OfficialScoutMod
 
             // used when you want to properly set up language folders
             Modules.Language.Init();
-
-            ScoutAssets.Init(Assets.LoadAssetBundle("scout"));
-            StartCoroutine(ScoutAssets.mainAssetBundle.UpgradeStubbedShadersAsync());
 
             // character initialization
             new OfficialScoutMod.Scout.ScoutSurvivor().Initialize();
