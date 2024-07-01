@@ -1,3 +1,15 @@
+# 0.9.0
+
+- Hi
+
+# 0.8.10
+
+- hopefully fixed sound????
+
+# 0.8.9
+
+- NERFS
+
 # 0.8.8
 
 - If people complain about scout anims or his model now i will personally throw a spikeball cleaver into your skull

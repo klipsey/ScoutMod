@@ -1,67 +1,58 @@
 # Scout
 
-[![](https://i.postimg.cc/qRX8gj2q/Screenshot-2024-05-01-002255.png)]()
-
-[![](https://i.postimg.cc/g2nq4ybt/icon.png)]()
-
-Original Concept by vo1dstud1os - discord https://codenamecrisis.carrd.co/ - carrd
-[![](https://i.postimg.cc/TPcwDSNz/scoutconcept.png)]()
+[![tex-Scout-Icon.png](https://i.postimg.cc/15LG0gn5/tex-Scout-Icon.png)]()
 
 # Overview
 
-[![](https://i.postimg.cc/7LXH6zfD/Abyssal-Wars.png)]()
+[![Screenshot-2024-06-30-160824.png](https://i.postimg.cc/G2NqVbhc/Screenshot-2024-06-30-160824.png)]()
 
-# Skills
+## Passive
 
-## Passive: **Atomic Core**
+[![Screenshot-2024-06-30-155412.png](https://i.postimg.cc/GmwD8ZV4/Screenshot-2024-06-30-155412.png)]()
 
-- Scout can double jump. Deal damage to build up Atomic Core. Taking damage reduces Atomic Core. Atomic Core increases movement speed.
+## Primary
 
-[![](https://i.postimg.cc/bwmgR9TT/Scout-Atomic-Core.gif)]()
+[![Screenshot-2024-06-30-155611.png](https://i.postimg.cc/y8yTV1x1/Screenshot-2024-06-30-155611.png)]()
 
-## Primary: **Splattergun**
+## Alt Primary
 
-- Agile. Fire a scattergun burst for 12x50% damage.
+[![Screenshot-2024-06-30-155717.png](https://i.postimg.cc/65dPvNqS/Screenshot-2024-06-30-155717.png)]()
 
-[![](https://i.postimg.cc/x8VgkXkj/Scout-Shotgun.gif)]()
+## Secondary
 
-## Primary Swap: **Bonk**
+[![Screenshot-2024-06-30-155627.png](https://i.postimg.cc/43KnWPrD/Screenshot-2024-06-30-155627.png)]()
 
-- Agile. Swing your bat for 320% damage.
+## Utility
 
-[![](https://i.postimg.cc/VsTmh1xf/Scout-Swapandbat.gif)]()
+[![Screenshot-2024-06-30-155638.png](https://i.postimg.cc/hGRNYPwK/Screenshot-2024-06-30-155638.png)]()
 
-## Secondary: **Toxic Cleaver**
+## Special
 
-- Agile. Throw your cleaver Blighting and dealing 350% damage. Crits and Poisons stunned enemies.
+[![Screenshot-2024-06-30-160547.png](https://i.postimg.cc/Jhp1bk6s/Screenshot-2024-06-30-160547.png)]()
 
-## Secondary Swap: **Spike Ball**
+## Primary Swap
 
-- Agile. Hit your baseball Stunning and dealing 240% damage. Stun duration scales with distance traveled.
+[![Screenshot-2024-06-30-155649.png](https://i.postimg.cc/FHyT7bWQ/Screenshot-2024-06-30-155649.png)]()
 
-[![](https://i.postimg.cc/XqYQbTt4/Scout-Ball-Cleaver.gif)]()
+## Secondary Swap
 
-## Utility: **Atomic Blast**
-
-- Drain your Atomic Core gaining Atomic Crits, attack speed, and movement speed. If drained at max charge, deal 1500% damage around you.
-
-[![](https://i.postimg.cc/bNtpcWPQ/Scout-Atomic-Minicrits.gif)]()
-
-## Special: **Swap**
-
-- Swap to your bat.
-
-[![](https://i.postimg.cc/KzDRnJ7c/Scout-Swap.gif)]()
+[![Screenshot-2024-06-30-155700.png](https://i.postimg.cc/7hJVDSGd/Screenshot-2024-06-30-155700.png)]()
 
 # Keywords
 
-## **Atomic Crits**:
+### Atomic Crits: Damage is increased by 125% and all attacks apply Weaken.
 
-- Damage is increased by 125% and all attacks apply Weaken.
+# Credits
 
-This character was made in 24 hours! This release was made afterward with some polishing.
+tsuyoikenko - Code, model, animations.
 
-[![Scout Video](https://img.youtube.com/vi/-vVGdieXHz8/0.jpg)](https://www.youtube.com/watch?v=-vVGdieXHz8)
+Original concept and art by vo1dstud1os - discord https://codenamecrisis.carrd.co/ - carrd
+
+[![](https://i.postimg.cc/7LXH6zfD/Abyssal-Wars.png)]()
+
+TheTimeSweeper - Incredible new Henry template.
+
+rob - Creator of the glorious Henry template.
 
 Download other tf2 akin characters: 
 
@@ -74,13 +65,3 @@ https://thunderstore.io/package/EnforcerGang/Enforcer/ (Nemforcer)
 https://thunderstore.io/package/PopcornFactory/Arsonist_Mod/ 
 
 Contact me on Discord: https://discord.gg/3NaMEsvYeD
-
-# Credits
-
-tsuyoikenko - Code, model, animations.
-
-vo1dstud1os - Concept art, icon art.
-
-TheTimeSweeper - Incredible new Henry template.
-
-rob - Creator of the glorious Henry template. Also, built Scouts animations using Driver as a base.

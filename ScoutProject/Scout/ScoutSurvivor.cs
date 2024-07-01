@@ -56,9 +56,7 @@ namespace OfficialScoutMod.Scout
             healthRegen = 1f,
             armor = 0f,
             damage = 12f,
-            moveSpeed = 8f,
             damageGrowth = 2.4f,
-            healthGrowth = 110f * 0.35f,
 
             jumpCount = 2,
         };
