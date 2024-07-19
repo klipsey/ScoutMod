@@ -72,7 +72,7 @@ namespace OfficialScoutMod.Scout.Content
 
             #region SecondarySwap
             Language.Add(prefix + "SECONDARY_SPIKEDBALL_NAME", "Spike Ball");
-            Language.Add(prefix + "SECONDARY_SPIKEDBALL_DESCRIPTION", $"{Tokens.agilePrefix}. Hit your baseball <style=cIsDamage>Stunning</style> and dealing <style=cIsDamage>{100f * ScoutStaticValues.baseballDamageCoefficient}% damage </style>. " +
+            Language.Add(prefix + "SECONDARY_SPIKEDBALL_DESCRIPTION", $"{Tokens.agilePrefix}. Hit your baseball <style=cIsDamage>Stunning</style> and dealing <style=cIsDamage>{100f * ScoutStaticValues.baseballDamageCoefficient}% damage</style>. " +
                 "<style=cIsDamage>Stun</style> duration scales with distance traveled.");
             #endregion
 

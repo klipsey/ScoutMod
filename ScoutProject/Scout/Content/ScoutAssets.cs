@@ -251,7 +251,8 @@ namespace OfficialScoutMod.Scout.Content
         private static void CreateProjectiles()
         {
             cleaverPrefab = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Bandit2/Bandit2ShivProjectile.prefab").WaitForCompletion().InstantiateClone("ScoutCleaver");
-            cleaverPrefab.AddComponent<NetworkIdentity>();
+            if (!cleaverPrefab.GetComponent<NetworkIdentity>()) cleaverPrefab.AddComponent<NetworkIdentity>();
+
             cleaverPrefab.GetComponent<ProjectileSingleTargetImpact>().hitSoundString = "sfx_scout_cleaver_miss";
             cleaverPrefab.GetComponent<ProjectileSingleTargetImpact>().enemyHitSoundString = "sfx_scout_cleaver_hit";
 
@@ -281,15 +282,15 @@ namespace OfficialScoutMod.Scout.Content
             cleaverPrefab.GetComponent<ProjectileController>().ghostPrefab.transform.GetChild(0).localRotation = new Quaternion(90f, 0f, 90f, Quaternion.identity.w);
             cleaverPrefab.GetComponent<ProjectileController>().ghostPrefab.transform.GetChild(0).localScale = Vector3.one * 0.015f;
             cleaverPrefab.GetComponent<ProjectileController>().ghostPrefab.transform.GetChild(0).gameObject.GetComponent<MeshRenderer>().material = CreateMaterial("matScout");
+            cleaverPrefab.GetComponent<ProjectileController>().allowPrediction = false;
 
             Modules.Content.AddProjectilePrefab(cleaverPrefab);
 
             baseballPrefab = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Bandit2/Bandit2ShivProjectile.prefab").WaitForCompletion().InstantiateClone("ScoutBaseball");
-            baseballPrefab.AddComponent<NetworkIdentity>();
+            if (!baseballPrefab.GetComponent<NetworkIdentity>()) baseballPrefab.AddComponent<NetworkIdentity>();
             baseballPrefab.GetComponent <ProjectileStickOnImpact>().enabled = false;
 
             baseballPrefab.GetComponent<SphereCollider>().radius = 0.5f;
-
 
             baseballPrefab.GetComponent<DelayedEvent>().enabled = false;
 
@@ -310,6 +311,8 @@ namespace OfficialScoutMod.Scout.Content
             baseballPrefab.GetComponent<ProjectileController>().ghostPrefab.AddComponent<NetworkIdentity>();
             baseballPrefab.GetComponent<ProjectileController>().ghostPrefab.GetComponentInChildren<MeshRenderer>().materials = new Material[1];
             baseballPrefab.GetComponent<ProjectileController>().ghostPrefab.GetComponentInChildren<MeshRenderer>().materials[0] = Object.Instantiate(Addressables.LoadAssetAsync<Material>("RoR2/DLC1/EliteEarth/matEliteAffixEarthPickup.mat").WaitForCompletion());
+            baseballPrefab.GetComponent<ProjectileController>().allowPrediction = false;
+
             Object.Destroy(baseballPrefab.transform.GetChild(0).GetChild(0).gameObject);
             Object.Destroy(baseballPrefab.transform.GetChild(0).GetChild(1).gameObject);
 

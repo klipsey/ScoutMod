@@ -20,8 +20,8 @@ namespace OfficialScoutMod.Scout.SkillStates
             {
                 PlayAnimation("Gesture, Override", "SwapToGun", "Swap.playbackRate", 0.65f / base.characterBody.attackSpeed);
                 this.scoutController.SwitchLayer("");
-                this.skillLocator.primary.UnsetSkillOverride(this.gameObject, this.scoutSwapPassive.batSkillDef, GenericSkill.SkillOverridePriority.Network);
-                this.skillLocator.secondary.UnsetSkillOverride(this.gameObject, this.scoutSwapPassive.ballSkillDef, GenericSkill.SkillOverridePriority.Network);
+                this.skillLocator.primary.UnsetSkillOverride(this.gameObject, this.scoutSwapPassive.batSkillDef, GenericSkill.SkillOverridePriority.Contextual);
+                this.skillLocator.secondary.UnsetSkillOverride(this.gameObject, this.scoutSwapPassive.ballSkillDef, GenericSkill.SkillOverridePriority.Contextual);
                 if (base.isAuthority)
                 {
                     this.skillLocator.secondary.RemoveAllStocks();
@@ -38,8 +38,8 @@ namespace OfficialScoutMod.Scout.SkillStates
                 PlayAnimation("Gesture, Override", "SwapToBat", "Swap.playbackRate", 0.65f / base.characterBody.attackSpeed);
                 this.scoutController.SwitchLayer("Body, Bat");
                 this.scoutController.jamTimer = ShootRifle.baseDuration / this.attackSpeedStat;
-                this.skillLocator.primary.SetSkillOverride(this.gameObject, this.scoutSwapPassive.batSkillDef, GenericSkill.SkillOverridePriority.Network);
-                this.skillLocator.secondary.SetSkillOverride(this.gameObject, this.scoutSwapPassive.ballSkillDef, GenericSkill.SkillOverridePriority.Network);
+                this.skillLocator.primary.SetSkillOverride(this.gameObject, this.scoutSwapPassive.batSkillDef, GenericSkill.SkillOverridePriority.Contextual);
+                this.skillLocator.secondary.SetSkillOverride(this.gameObject, this.scoutSwapPassive.ballSkillDef, GenericSkill.SkillOverridePriority.Contextual);
                 if(base.isAuthority)
                 {
                     this.skillLocator.secondary.RemoveAllStocks();

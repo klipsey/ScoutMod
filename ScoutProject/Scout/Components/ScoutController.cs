@@ -23,7 +23,7 @@ namespace OfficialScoutMod.Scout.Components
         private ScoutSwap scoutSwap;
         private GameObject endEffect = ScoutAssets.atomicEndEffect;
         public DamageAPI.ModdedDamageType ModdedDamageType = DamageTypes.Default;
-        public bool isSwapped => skillLocator.secondary.skillOverrides.Length > 0;
+        public bool isSwapped => skillLocator.secondary.skillOverrides.Length > 0 && skillLocator.primary.skillOverrides.Length > 0;
         public SkillDef swappedPrimarySkillDef;
         public SkillDef swappedSecondarySkillDef;
         private readonly int maxShellCount = 12;
