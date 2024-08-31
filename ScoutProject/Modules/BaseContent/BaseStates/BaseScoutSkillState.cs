@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using UnityEngine.Networking;
+using UnityEngine;
 
 namespace OfficialScoutMod.Modules.BaseStates
 {
@@ -18,6 +19,8 @@ namespace OfficialScoutMod.Modules.BaseStates
         protected ScoutSwap scoutSwapPassive;
 
         protected bool isAtomic;
+
+        public float fixedAge;
         public virtual void AddRecoil2(float x1, float x2, float y1, float y2)
         {
             this.AddRecoil(x1, x2, y1, y2);
@@ -29,7 +32,7 @@ namespace OfficialScoutMod.Modules.BaseStates
         }
         public override void FixedUpdate()
         {
-            base.FixedUpdate();
+            fixedAge += Time.fixedDeltaTime;
         }
         protected void RefreshState()
         {

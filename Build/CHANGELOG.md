@@ -1,3 +1,19 @@
+# 0.9.5
+
+- Playable for sots
+- Dont report bugfixes until Gearbox gets their crap together
+
+# 0.9.3
+
+- Fixed skill overrides
+
+# 0.9.2
+
+- What?
+
+# 0.9.1
+
+- Fixed some networking 
 
 # 0.9.0
 
@@ -5,7 +21,7 @@
 
 # 0.8.10
 
-- hopefully fixed sound????
+- Hopefully fixed sound????
 
 # 0.8.9
 

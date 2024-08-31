@@ -52,8 +52,6 @@ Original concept and art by vo1dstud1os - discord https://codenamecrisis.carrd.c
 
 TheTimeSweeper - Incredible new Henry template.
 
-rob - Creator of the glorious Henry template.
-
 Download other tf2 akin characters: 
 
 https://thunderstore.io/package/EnforcerGang/SniperClassic/

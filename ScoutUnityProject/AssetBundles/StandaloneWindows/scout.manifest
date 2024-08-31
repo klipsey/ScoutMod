@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 2664933294
+CRC: 269778239
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: e5f1bc3a594b5872571b8344ea25e69a
+    Hash: a75d0b2d487f96f8fa3a7ef7daef7d9b
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 5ee7658611abcd42393f76cbd44d6821
+    Hash: 41b03846aab8a9e823f3c87ab3d35f14
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -42,13 +42,13 @@ ClassTypes:
 - Class: 108
   Script: {instanceID: 0}
 - Class: 114
-  Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: f8258ea15b8f74c4889ce485d21cbbb1, type: 3}
-- Class: 114
   Script: {fileID: 11500000, guid: 67079b849227b734694872d8810229b8, type: 3}
 - Class: 114
+  Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: db294d07add6b364f99a346939dd2a8a, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: f8258ea15b8f74c4889ce485d21cbbb1, type: 3}
 - Class: 115
   Script: {instanceID: 0}
 - Class: 120
@@ -73,83 +73,89 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 319
   Script: {instanceID: 0}
-SerializeReferenceClassIdentifiers: []
+SerializeReferenceClassIdentifiers:
+- AssemblyName: Assembly-CSharp
+  ClassName: ChildLocator/NameTransformPair
+- AssemblyName: UnityEngine.CoreModule
+  ClassName: UnityEngine.Events.PersistentCallGroup
+- AssemblyName: UnityEngine.UI
+  ClassName: UnityEngine.UI.MaskableGraphic/CullStateChangedEvent
 Assets:
+- Assets/Scout/Icons/Skill/texSwingIcon.png
+- Assets/Scout/Meshes/meshGarand.mesh
+- Assets/Scout/Icons/Skill/texDoubleJumpIcon.png
+- Assets/Scout/Textures/texScoutEmission.png
+- Assets/Scout/VFX/matShockwave2.mat
+- Assets/Scout/Projectiles/texRampCoin2.png
+- Assets/Scout/HUD/Textures/texChargeRing.png
+- Assets/Scout/scoutCleaver.prefab
+- Assets/Scout/HUD/ChargeRing.prefab
+- Assets/Scout/HUD/ChargeBar.prefab
+- Assets/Scout/mdlScout.prefab
+- Assets/Scout/Projectiles/DriverStunGrenadeImpact.prefab
+- Assets/Scout/Icons/Skill/texSwapIcon.png
 - Assets/Scout/Icons/Skill/texRifleIcon.png
 - Assets/Scout/Projectiles/texRampCrocoDiseaseDark.png
-- Assets/Scout/Animations/animScoutCSS.controller
-- Assets/Scout/Icons/Skill/texAtomicIcon.png
-- Assets/Scout/Icons/Skill/texSwapIcon.png
-- Assets/Scout/Textures/texShotgunEmission.png
-- Assets/Scout/scoutCleaver.prefab
-- Assets/Scout/Materials/matShotgun.mat
-- Assets/Scout/VFX/BloodSpurtEffect.prefab
-- Assets/Scout/HUD/ChargeBar.prefab
-- Assets/Scout/Textures/texShellNormals.png
-- Assets/Scout/VFX/matShockwave.mat
-- Assets/Scout/Bullet.prefab
-- Assets/Scout/Textures/texScoutEmissionsNormals.png
-- Assets/Scout/VFX/Badass/BigExplosion.prefab
-- Assets/Scout/VFX/Badass/MetalHitEffect.prefab
-- Assets/Scout/Projectiles/CoinImpactHit.prefab
-- Assets/Scout/HUD/Textures/texBulletIndicator.png
-- Assets/Scout/ShotgunShell.prefab
-- Assets/Scout/VFX/matShockwave2.mat
-- Assets/Scout/VFX/Badass/StoneHitEffect.prefab
-- Assets/Scout/Projectiles/CoinTracer.prefab
-- Assets/Scout/Animations/maskScoutAim.mask
-- Assets/Scout/Projectiles/CoinProjectile.prefab
-- Assets/Scout/mdlScout.prefab
-- Assets/Scout/Meshes/meshScout.mesh
-- Assets/Scout/Meshes/meshBackBat.mesh
-- Assets/Scout/Animations/animScout.controller
-- Assets/Scout/Meshes/meshClip.mesh
-- Assets/Scout/Materials/matShotgunShell.mat
-- Assets/Scout/Animations/animScoutAvatar.asset
-- Assets/Scout/Icons/texBuffSyringe.png
-- Assets/Scout/VFX/texShockwave.png
-- Assets/Scout/Textures/texScout.png
-- Assets/Scout/Meshes/meshSuperShotgun.mesh
-- Assets/Scout/Projectiles/CoinOrbEffect.prefab
-- Assets/Scout/scout_emoteskeleton.prefab
 - Assets/Scout/Projectiles/texAlphaGradient6Mask.png
-- Assets/Scout/Icons/texBuffAtomic.png
+- Assets/Scout/Projectiles/texRampCoin.png
+- Assets/Scout/Animations/maskScoutImpact.mask
+- Assets/Scout/Textures/texScoutNormals.png
 - Assets/Scout/Icons/Skill/texBaseballIcon.png
-- Assets/Scout/HUD/WeaponChargeBar.prefab
-- Assets/Scout/Icons/texScoutIcon.png
-- Assets/Scout/Casing.prefab
+- Assets/Scout/Textures/texScout.png
+- Assets/Scout/Animations/animScout.controller
+- Assets/Scout/HUD/Textures/texWhite.png
+- Assets/Scout/Meshes/meshBat.mesh
+- Assets/Scout/VFX/Badass/BigExplosion.prefab
+- Assets/Scout/Icons/Skill/texAtomicIcon.png
+- Assets/Scout/Textures/texScoutEmissionsNormals.png
+- Assets/Scout/ShotgunShell.prefab
+- Assets/Scout/scout_emoteskeleton.prefab
+- Assets/Scout/Bullet.prefab
+- Assets/Scout/HUD/Textures/texBulletIndicator.png
+- Assets/Scout/Meshes/meshBackBat.mesh
 - Assets/Scout/Icons/Skill/texButcherKnifeIcon.png
+- Assets/Scout/HUD/Textures/texSniperBulletIndicator.png
+- Assets/Scout/Textures/texShotgun.png
+- Assets/Scout/Meshes/meshBullet.mesh
+- Assets/Scout/Animations/animScoutAvatar.asset
+- Assets/Scout/VFX/Badass/MetalHitEffect.prefab
+- Assets/Scout/Icons/texBuffAtomic.png
+- Assets/Scout/Materials/matShotgunShell.mat
+- Assets/Scout/VFX/Badass/SandHitEffect.prefab
+- Assets/Scout/Projectiles/CoinProjectileGhost.prefab
+- Assets/Scout/VFX/BloodSpurtEffect.prefab
+- Assets/Scout/Animations/animScoutCSS.controller
+- Assets/Scout/Materials/matShotgun.mat
+- Assets/Scout/VFX/Badass/WoodHitEffect.prefab
+- Assets/Scout/Icons/Skill/texShotgunIcon.png
+- Assets/Scout/Meshes/meshSuperShotgun.mesh
+- Assets/Scout/Projectiles/DriverStunGrenadeGhost.prefab
+- Assets/Scout/VFX/Badass/StoneHitEffect.prefab
+- Assets/Scout/VFX/texShockwave.png
+- Assets/Scout/Casing.prefab
 - Assets/Scout/Materials/matScout.mat
 - Assets/Scout/Icons/texDefaultSkin.png
-- Assets/Scout/Textures/shotgunNormals.png
-- Assets/Scout/VFX/Badass/TinyExplosion.prefab
-- Assets/Scout/VFX/Badass/SandHitEffect.prefab
-- Assets/Scout/HUD/ChargeRing.prefab
-- Assets/Scout/Projectiles/texRampCoin.png
-- Assets/Scout/Projectiles/CoinProjectileGhost.prefab
+- Assets/Scout/Textures/texShotgunEmission.png
 - Assets/Scout/Projectiles/coin.asset
-- Assets/Scout/Animations/animScoutEmotes.controller
+- Assets/Scout/Projectiles/CoinTracer.prefab
+- Assets/Scout/Textures/shotgunNormals.png
 - Assets/Scout/Animations/maskScoutLeftArm.mask
-- Assets/Scout/Icons/Skill/texDoubleJumpIcon.png
-- Assets/Scout/HUD/Textures/texChargeRing.png
-- Assets/Scout/Textures/texScoutEmission.png
-- Assets/Scout/Projectiles/DriverStunGrenadeImpact.prefab
-- Assets/Scout/Textures/texBriefcaseGold.png
+- Assets/Scout/Projectiles/CoinProjectile.prefab
+- Assets/Scout/Textures/texShellNormals.png
 - Assets/Scout/ScoutDisplay.prefab
-- Assets/Scout/Projectiles/DriverStunGrenadeGhost.prefab
-- Assets/Scout/Projectiles/texRampCoin2.png
-- Assets/Scout/VFX/Badass/WoodHitEffect.prefab
+- Assets/Scout/Animations/maskScoutAim.mask
 - Assets/Scout/VFX/Badass/SmallExplosion.prefab
-- Assets/Scout/Textures/texScoutNormals.png
-- Assets/Scout/Icons/Skill/texSwingIcon.png
-- Assets/Scout/Icons/Skill/texShotgunIcon.png
-- Assets/Scout/HUD/Textures/texSniperBulletIndicator.png
-- Assets/Scout/Animations/maskScoutImpact.mask
-- Assets/Scout/Meshes/meshGarand.mesh
-- Assets/Scout/Meshes/meshBullet.mesh
-- Assets/Scout/Meshes/meshBat.mesh
-- Assets/Scout/Textures/texShotgun.png
-- Assets/Scout/Textures/texShell.png
+- Assets/Scout/VFX/matShockwave.mat
+- Assets/Scout/VFX/Badass/TinyExplosion.prefab
+- Assets/Scout/Meshes/meshClip.mesh
+- Assets/Scout/Icons/texBuffSyringe.png
+- Assets/Scout/Meshes/meshScout.mesh
 - Assets/Scout/Animations/maskScoutGesture.mask
-- Assets/Scout/HUD/Textures/texWhite.png
+- Assets/Scout/HUD/WeaponChargeBar.prefab
+- Assets/Scout/Icons/texScoutIcon.png
+- Assets/Scout/Projectiles/CoinImpactHit.prefab
+- Assets/Scout/Animations/animScoutEmotes.controller
+- Assets/Scout/Projectiles/CoinOrbEffect.prefab
+- Assets/Scout/Textures/texBriefcaseGold.png
+- Assets/Scout/Textures/texShell.png
 Dependencies: []

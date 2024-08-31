@@ -33,7 +33,7 @@ namespace OfficialScoutMod.Modules.Characters
         public virtual void Initialize()
         {
             instance = this as T;
-            assetBundle = Assets.LoadAssetBundle("scout");
+            assetBundle = CharacterAssets.LoadAssetBundle("scout");
 
             InitializeCharacter();
         }
