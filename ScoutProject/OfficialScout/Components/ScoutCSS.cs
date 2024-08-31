@@ -12,7 +12,7 @@ namespace OfficialScoutMod.Scout.Components
         }
         private void FixedUpdate()
         {
-            timer += Time.fixedDeltaTime;
+            timer += Time.deltaTime;
             if (!hasPlayed && timer >= 0.8f)
             {
                 hasPlayed = true;

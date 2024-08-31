@@ -264,16 +264,16 @@ namespace OfficialScoutMod.Scout.Components
         }
         private void FixedUpdate()
         {
-            graceTimer += Time.fixedDeltaTime;
+            graceTimer += Time.deltaTime;
             if(jamTimer > 0)
             {
-                jamTimer -= Time.fixedDeltaTime;
+                jamTimer -= Time.deltaTime;
             }
 
             if (atomicDraining) 
             {
                 atomicGauge -= maxAtomicGauge / (400f + (100f * this.skillLocator.utility.maxStock - 1));
-                this.pulseTimer -= Time.fixedDeltaTime; 
+                this.pulseTimer -= Time.deltaTime; 
                 if(this.pulseTimer <= 0)
                 {
                     DamageType damageType = DamageType.AOE;
@@ -314,7 +314,7 @@ namespace OfficialScoutMod.Scout.Components
 
             if (secondary2CdTimer < secondary2Cd)
             {
-                secondary2CdTimer += Time.fixedDeltaTime;
+                secondary2CdTimer += Time.deltaTime;
             }
             else if (secondary2CdTimer >= secondary2Cd && currentSecondary2Stock < maxSecondary2Stock)
             {
@@ -324,7 +324,7 @@ namespace OfficialScoutMod.Scout.Components
 
             if (secondary1CdTimer < secondary1Cd)
             {
-                secondary1CdTimer += Time.fixedDeltaTime;
+                secondary1CdTimer += Time.deltaTime;
             }
             else if (secondary1CdTimer >= secondary1Cd && currentSecondary1Stock < maxSecondary1Stock)
             {

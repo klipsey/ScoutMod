@@ -6,7 +6,6 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using UnityEngine.Networking;
-using UnityEngine;
 
 namespace OfficialScoutMod.Modules.BaseStates
 {
@@ -14,15 +13,14 @@ namespace OfficialScoutMod.Modules.BaseStates
     {
         protected ScoutController scoutController;
 
-        public float fixedAge;
         public override void OnEnter()
         {
             base.OnEnter();
         }
         public override void FixedUpdate()
         {
+            base.FixedUpdate();
             RefreshState();
-            fixedAge += Time.fixedDeltaTime;
         }
         protected void RefreshState()
         {
