@@ -150,6 +150,7 @@ namespace OfficialScoutMod.Modules
             bodyComponent._defaultCrosshairPrefab = bodyInfo.crosshair;
             bodyComponent.hideCrosshair = false;
             bodyComponent.preferredPodPrefab = bodyInfo.podPrefab;
+            bodyComponent.preferredInitialStateType = bodyInfo.initialStateType;
 
             //stats
             bodyComponent.baseMaxHealth = bodyInfo.maxHealth;
@@ -208,6 +209,7 @@ namespace OfficialScoutMod.Modules
             bodyComponent.sprintingSpeedMultiplier = 1.45f;
 
             bodyComponent.bodyFlags = CharacterBody.BodyFlags.ImmuneToExecutes;
+
             bodyComponent.rootMotionInMainState = false;
 
             bodyComponent.hullClassification = HullClassification.Human;

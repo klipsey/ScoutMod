@@ -159,7 +159,7 @@ namespace OfficialScoutMod.Modules.BaseStates
         {
             base.FixedUpdate();
 
-            hitPauseTimer -= Time.deltaTime;
+            hitPauseTimer -= Time.fixedDeltaTime;
 
             if (hitPauseTimer <= 0f && inHitPause)
             {
@@ -168,7 +168,7 @@ namespace OfficialScoutMod.Modules.BaseStates
 
             if (!inHitPause)
             {
-                stopwatch += Time.deltaTime;
+                stopwatch += Time.fixedDeltaTime;
             }
             else
             {

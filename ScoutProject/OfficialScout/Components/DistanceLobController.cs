@@ -10,7 +10,7 @@ namespace OfficialScoutMod.Scout.Components
         public float timer = 0f;
         private void FixedUpdate()
         {
-            timer += Time.deltaTime;
+            timer += Time.fixedDeltaTime;
         }
     }
 }

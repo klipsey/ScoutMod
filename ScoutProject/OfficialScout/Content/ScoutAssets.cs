@@ -5,19 +5,11 @@ using RoR2.Projectile;
 using UnityEngine.AddressableAssets;
 using UnityEngine.Networking;
 using R2API;
-using RoR2.Skills;
 using RoR2.UI;
-using UnityEngine.Rendering.PostProcessing;
-using TMPro;
 using ThreeEyedGames;
 using OfficialScoutMod.Scout.Components;
 using RoR2.EntityLogic;
-using System.Collections.Generic;
-using UnityEngine.UIElements;
-using UnityEngine.UI;
 using System.Reflection;
-using static UnityEngine.ParticleSystem.PlaybackState;
-using Rewired.ComponentControls.Effects;
 using System.IO;
 
 namespace OfficialScoutMod.Scout.Content

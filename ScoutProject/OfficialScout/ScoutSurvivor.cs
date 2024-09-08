@@ -47,7 +47,7 @@ namespace OfficialScoutMod.Scout
 
             characterPortrait = assetBundle.LoadAsset<Texture>("texScoutIcon"),
             bodyColor = new Color(184f / 255f, 226f / 255f, 61f / 255f),
-            sortPosition = 5.99f,
+            sortPosition = 7f,
 
             crosshair = Modules.CharacterAssets.LoadCrosshair("SimpleDot"),
             podPrefab = RoR2.LegacyResourcesAPI.Load<GameObject>("Prefabs/NetworkedObjects/SurvivorPod"),
@@ -140,7 +140,7 @@ namespace OfficialScoutMod.Scout
             AddHitboxes();
             bool tempAdd(CharacterBody body) => body.HasBuff(ScoutBuffs.scoutAtomicBuff);
             float pee(CharacterBody body) => 2f * body.radius;
-            bodyPrefab.AddComponent<ScoutController>();
+            //bodyPrefab.AddComponent<ScoutController>();
             TempVisualEffectAPI.AddTemporaryVisualEffect(ScoutAssets.atomicEffect, pee, tempAdd);
         }
         public void AddHitboxes()
@@ -577,7 +577,7 @@ namespace OfficialScoutMod.Scout
             HUD.onHudTargetChangedGlobal += HUDSetup;
             R2API.RecalculateStatsAPI.GetStatCoefficients += RecalculateStatsAPI_GetStatCoefficients;
             On.RoR2.UI.LoadoutPanelController.Rebuild += LoadoutPanelController_Rebuild;
-            On.RoR2.HealthComponent.TakeDamage += new On.RoR2.HealthComponent.hook_TakeDamage(HealthComponent_TakeDamage);
+            On.RoR2.HealthComponent.TakeDamageProcess += HealthComponent_TakeDamageProcess;
             if (ScoutPlugin.emotesInstalled) Emotes();
         }
         [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
@@ -606,7 +606,7 @@ namespace OfficialScoutMod.Scout
                             i.token = "Passive";
                             slotCounter++;
                         }
-                        if(slotCounter == 1 && i.token != "Passive")
+                        if(slotCounter == 1)
                         {
                             i.token = "Swap";
                         }
@@ -614,7 +614,7 @@ namespace OfficialScoutMod.Scout
                 }
             }
         }
-        private void HealthComponent_TakeDamage(On.RoR2.HealthComponent.orig_TakeDamage orig, HealthComponent self, DamageInfo damageInfo)
+        private void HealthComponent_TakeDamageProcess(On.RoR2.HealthComponent.orig_TakeDamageProcess orig, HealthComponent self, DamageInfo damageInfo)
         {
             if(!self)
             {

@@ -125,7 +125,7 @@ namespace OfficialScoutMod.Modules
             networkSoundEventDef.eventName = eventName;
 
             AddNetworkSoundEventDef(networkSoundEventDef);
-            
+
             return networkSoundEventDef;
         }
     }

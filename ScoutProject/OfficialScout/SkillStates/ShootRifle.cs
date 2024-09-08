@@ -62,7 +62,7 @@ namespace OfficialScoutMod.Scout.SkillStates
 
             if(this.scoutController.jamTimer <= 0f)
             {
-                this.fireTimer += Time.deltaTime;
+                this.fireTimer += Time.fixedDeltaTime;
                 if (!hasFired)
                 {
                     hasFired = true;

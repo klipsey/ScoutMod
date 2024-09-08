@@ -44,7 +44,7 @@ namespace RobDriver.Modules.Components
                 if (this.durationBarRed)
                 {
                     if (fill >= 1f) this.durationBarRed.fillAmount = 1f;
-                    this.durationBarRed.fillAmount = Mathf.Lerp(this.durationBarRed.fillAmount, fill, Time.deltaTime * 2f);
+                    this.durationBarRed.fillAmount = Mathf.Lerp(this.durationBarRed.fillAmount, fill, Time.fixedDeltaTime * 2f);
                 }
 
                 this.durationBar.fillAmount = fill;

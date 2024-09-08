@@ -39,7 +39,6 @@ namespace OfficialScoutMod.Scout.Content
         {
             GlobalEventManager.onServerDamageDealt += GlobalEventManager_onServerDamageDealt;
             On.RoR2.SetStateOnHurt.OnTakeDamageServer += SetStateOnHurt_OnTakeDamageServer;
-            On.RoR2.GlobalEventManager.OnHitEnemy += new On.RoR2.GlobalEventManager.hook_OnHitEnemy(GlobalEventManager_OnHitEnemy);
         }
 
         private static void SetStateOnHurt_OnTakeDamageServer(On.RoR2.SetStateOnHurt.orig_OnTakeDamageServer orig, SetStateOnHurt self, DamageReport damageReport)
@@ -52,17 +51,6 @@ namespace OfficialScoutMod.Scout.Content
             {
                 self.SetStun(inflictorObject.GetComponent<DistanceLobController>().timer * 2f + 1.5f);
             }
-        }
-
-        private static void GlobalEventManager_OnHitEnemy(On.RoR2.GlobalEventManager.orig_OnHitEnemy orig, GlobalEventManager self, DamageInfo damageInfo, GameObject victim)
-        {
-
-            if (!damageInfo.attacker || !victim)
-            {
-                return;
-            }
-            CharacterBody victimBody = victim.GetComponent<CharacterBody>();
-            orig.Invoke(self, damageInfo, victim);
         }
 
         private static void GlobalEventManager_onServerDamageDealt(DamageReport damageReport)

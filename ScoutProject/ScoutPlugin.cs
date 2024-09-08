@@ -1,12 +1,8 @@
 ﻿using BepInEx;
 using R2API.Utils;
-using RoR2;
-using System.Collections.Generic;
 using System.Security;
 using System.Security.Permissions;
 using R2API.Networking;
-using OfficialScoutMod.Modules;
-using OfficialScoutMod.Scout.Content;
 
 [module: UnverifiableCode]
 [assembly: SecurityPermission(SecurityAction.RequestMinimum, SkipVerification = true)]
