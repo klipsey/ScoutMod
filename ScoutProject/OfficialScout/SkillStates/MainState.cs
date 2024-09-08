@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using RoR2;
 using EntityStates;
-using RobDriver.Modules;
 using BepInEx.Configuration;
 using OfficialScoutMod.Modules;
 

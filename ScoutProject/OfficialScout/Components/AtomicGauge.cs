@@ -2,9 +2,8 @@
 using UnityEngine.UI;
 using RoR2;
 using RoR2.UI;
-using OfficialScoutMod.Scout.Components;
 
-namespace RobDriver.Modules.Components
+namespace OfficialScoutMod.Scout.Components
 {
     public class AtomicGauge : MonoBehaviour
     {

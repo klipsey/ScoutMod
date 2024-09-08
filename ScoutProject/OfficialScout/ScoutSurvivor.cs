@@ -16,7 +16,6 @@ using R2API.Networking;
 using OfficialScoutMod.Scout.Components;
 using OfficialScoutMod.Scout.Content;
 using OfficialScoutMod.Scout.SkillStates;
-using RobDriver.Modules.Components;
 using HG;
 using EntityStates;
 using AncientScepter;
@@ -140,7 +139,7 @@ namespace OfficialScoutMod.Scout
             AddHitboxes();
             bool tempAdd(CharacterBody body) => body.HasBuff(ScoutBuffs.scoutAtomicBuff);
             float pee(CharacterBody body) => 2f * body.radius;
-            //bodyPrefab.AddComponent<ScoutController>();
+            bodyPrefab.AddComponent<ScoutController>();
             TempVisualEffectAPI.AddTemporaryVisualEffect(ScoutAssets.atomicEffect, pee, tempAdd);
         }
         public void AddHitboxes()
@@ -481,7 +480,7 @@ namespace OfficialScoutMod.Scout
                 forceSprintDuringState = false,
             });
 
-            AncientScepter.AncientScepterItem.instance.RegisterScepterSkill(swapScepterSkillDef, bodyName, SkillSlot.Special, 0);
+            AncientScepterItem.instance.RegisterScepterSkill(swapScepterSkillDef, bodyName, SkillSlot.Special, 0);
         }
         #endregion skills
 
@@ -616,14 +615,9 @@ namespace OfficialScoutMod.Scout
         }
         private void HealthComponent_TakeDamageProcess(On.RoR2.HealthComponent.orig_TakeDamageProcess orig, HealthComponent self, DamageInfo damageInfo)
         {
-            if(!self)
-            {
-                orig.Invoke(self, damageInfo);
-                return;
-            }
             CharacterBody victimBody = self.body;
             EntityStateMachine victimMachine = victimBody.GetComponent<EntityStateMachine>();
-            if (victimBody && victimBody.baseNameToken == "KENKO_SCOUT_NAME")
+            if (victimBody && victimBody.bodyIndex == BodyCatalog.FindBodyIndex("ScoutBody"))
             {
                 ScoutController scoutController = victimBody.GetComponent<ScoutController>();
                 if (!scoutController.InGracePeriod())
@@ -647,7 +641,7 @@ namespace OfficialScoutMod.Scout
                 }
             }
             orig.Invoke(self, damageInfo);
-            if (victimBody && victimBody.baseNameToken == "KENKO_SCOUT_NAME") victimBody.RecalculateStats();
+            if (victimBody && victimBody.bodyIndex == BodyCatalog.FindBodyIndex("ScoutBody")) victimBody.RecalculateStats();
         }
         private void RecalculateStatsAPI_GetStatCoefficients(CharacterBody sender, R2API.RecalculateStatsAPI.StatHookEventArgs args)
         {

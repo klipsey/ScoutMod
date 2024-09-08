@@ -1,7 +1,7 @@
 ﻿using RoR2;
 using UnityEngine;
 using EntityStates;
-using RobDriver.Modules.Components;
+using OfficialScoutMod.Modules.Components;
 using R2API;
 using OfficialScoutMod.Modules.BaseStates;
 using OfficialScoutMod.Scout.Content;

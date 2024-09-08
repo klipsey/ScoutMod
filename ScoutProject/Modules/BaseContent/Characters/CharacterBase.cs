@@ -25,7 +25,6 @@ namespace OfficialScoutMod.Modules.Characters
         public static T instance { get; private set; }
 
         public abstract AssetBundle assetBundle { get; protected set; }
-
         public abstract GameObject bodyPrefab { get; protected set; }
         public abstract CharacterBody prefabCharacterBody { get; protected set; }
         public abstract GameObject characterModelObject { get; protected set; }
@@ -65,7 +64,6 @@ namespace OfficialScoutMod.Modules.Characters
 
             if (itemDisplays != null)
             {
-                Modules.ItemDisplays.queuedDisplays++;
                 RoR2.ContentManagement.ContentManager.onContentPacksAssigned += SetItemDisplays;
             }
         }
