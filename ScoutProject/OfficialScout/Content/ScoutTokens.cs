@@ -52,27 +52,32 @@ namespace OfficialScoutMod.Scout.Content
 
             #region Primary
             Language.Add(prefix + "PRIMARY_SPLATTERGUN_NAME", "Splattergun");
-            Language.Add(prefix + "PRIMARY_SPLATTERGUN_DESCRIPTION", $"{Tokens.agilePrefix}. Fire a scattergun burst for <style=cIsDamage>12x{100f * ScoutStaticValues.shotgunDamageCoefficient}% damage</style>.");
+            Language.Add(prefix + "PRIMARY_SPLATTERGUN_DESCRIPTION", $"{Tokens.agilePrefix}. Fire a scattergun burst for " +
+                $"<style=cIsDamage>12x{100f * ScoutConfig.shotgunDamageCoefficient.Value}% damage</style>.");
 
             Language.Add(prefix + "PRIMARY_RIFLE_NAME", "Dastardly Dwarf");
-            Language.Add(prefix + "PRIMARY_RIFLE_DESCRIPTION", $"Fire a high velocity round for <style=cIsDamage>{100f * ScoutStaticValues.rifleDamageCoefficient}% damage</style>. " +
+            Language.Add(prefix + "PRIMARY_RIFLE_DESCRIPTION", $"Fire a high velocity round for " +
+                $"<style=cIsDamage>{100f * ScoutConfig.rifleDamageCoefficient.Value}% damage</style>. " +
                 $"<style=cIsDamage>Headshots deal 2x damage</style>");
             #endregion
 
             #region PrimarySwap
             Language.Add(prefix + "PRIMARY_BONK_NAME", "Elephants Foot");
-            Language.Add(prefix + "PRIMARY_BONK_DESCRIPTION", $"{Tokens.agilePrefix}. Swing your bat for <style=cIsDamage>{100f * ScoutStaticValues.baseballDamageCoefficient}% damage</style>.");
+            Language.Add(prefix + "PRIMARY_BONK_DESCRIPTION", $"{Tokens.agilePrefix}. Swing your bat for " +
+                $"<style=cIsDamage>{100f * ScoutConfig.baseballDamageCoefficient.Value}% damage</style>.");
             #endregion
 
             #region Secondary
             Language.Add(prefix + "SECONDARY_CLEAVER_NAME", "Toxic Cleaver");
-            Language.Add(prefix + "SECONDARY_CLEAVER_DESCRIPTION", $"{Tokens.agilePrefix}. Throw your cleaver <style=cIsDamage>Blighting</style> and dealing <style=cIsDamage>{100f * ScoutStaticValues.cleaverDamageCoefficient}% damage</style>. " +
+            Language.Add(prefix + "SECONDARY_CLEAVER_DESCRIPTION", $"{Tokens.agilePrefix}. " +
+                $"Throw your cleaver <style=cIsDamage>Blighting</style> and dealing <style=cIsDamage>{100f * ScoutConfig.cleaverDamageCoefficient.Value}% damage</style>. " +
                 $"<style=cIsDamage>Critically Strikes</style> and <style=cIsHealing>Poisons</style> <style=cIsDamage>Stunned</style> enemies.");
             #endregion
 
             #region SecondarySwap
             Language.Add(prefix + "SECONDARY_SPIKEDBALL_NAME", "Spike Ball");
-            Language.Add(prefix + "SECONDARY_SPIKEDBALL_DESCRIPTION", $"{Tokens.agilePrefix}. Hit your baseball <style=cIsDamage>Stunning</style> and dealing <style=cIsDamage>{100f * ScoutStaticValues.baseballDamageCoefficient}% damage</style>. " +
+            Language.Add(prefix + "SECONDARY_SPIKEDBALL_DESCRIPTION", $"{Tokens.agilePrefix}. Hit your baseball " +
+                $"<style=cIsDamage>Stunning</style> and dealing <style=cIsDamage>{100f * ScoutConfig.baseballDamageCoefficient.Value}% damage</style>. " +
                 "<style=cIsDamage>Stun</style> duration scales with distance traveled.");
             #endregion
 
@@ -80,7 +85,7 @@ namespace OfficialScoutMod.Scout.Content
             Language.Add(prefix + "UTILITY_ATOMICBLAST_NAME", "Atomic Blast");
             Language.Add(prefix + "UTILITY_ATOMICBLAST_DESCRIPTION", $"Drain your <style=cHumanObjective>Atomic Core</style> gaining " +
                 $"<style=cIsDamage>Atomic Crits</style>, <style=cIsDamage>attack speed</style>, and <style=cIsUtility>movement speed</style>. " +
-                $"Deal <style=cIsDamage>{100f}% - {100f * ScoutStaticValues.atomicBlastDamageCoefficient}% damage</style> around you based on charge.");
+                $"Deal <style=cIsDamage>{100f}% - {100f * ScoutConfig.atomicBlastDamageCoefficient.Value}% damage</style> around you based on charge.");
 
             #endregion
 

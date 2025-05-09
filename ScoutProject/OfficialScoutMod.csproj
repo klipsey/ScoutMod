@@ -29,12 +29,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-        <PackageReference Include="BepInEx.Core" Version="5.*" />
-        <PackageReference Include="RiskOfRain2.GameLibs" Version="1.3.2-r.1" />
-        <PackageReference Include="UnityEngine.Modules" Version="2021.3.33" />
-        <PackageReference Include="MMHOOK.RoR2" Version="2024.9.5">
-            <NoWarn>NU1701</NoWarn>
-        </PackageReference>
 		<PackageReference Include="RoR2BepInExPack" Version="*" />
 		<PackageReference Include="BepInEx.Analyzers" Version="*">
 			<PrivateAssets>all</PrivateAssets>
@@ -43,6 +37,7 @@
 
 		<PackageReference Include="BepInEx.Core" Version="5.*" />
 		<PackageReference Include="RiskOfRain2.GameLibs" Version="*-*" />
+		<PackageReference Include="MMHOOK.RoR2" Version="*" />
 		<PackageReference Include="R2API.Core" Version="*" />
 		<PackageReference Include="R2API.Prefab" Version="*" />
 		<PackageReference Include="R2API.RecalculateStats" Version="*" />
@@ -84,6 +79,6 @@
 		<Exec Command="echo moved patched file to project folder" />
 	</Target>
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="REM follow the Building Your Mod page on the henrytutorial wiki for more information on this&#xD;&#xA;REM change this to your username (or add yours if you're working in a team or somethin)&#xD;&#xA;if &quot;$(Username)&quot; == &quot;mario&quot; set build=true&#xD;&#xA;&#xD;&#xA;if defined build (&#xD;&#xA;&#xD;&#xA;REM copy the built mod to our Build folder&#xD;&#xA;copy &quot;$(TargetPath)&quot; &quot;$(ProjectDir)..\Build\plugins&quot;&#xD;&#xA;&#xD;&#xA;REM copy the assetbundle from our unity project to our Build folder&#xD;&#xA;REM change these paths to your (now hopefully renamed) folders&#xD;&#xA;if exist &quot;$(ProjectDir)..\ScoutUnityProject\AssetBundles\StandaloneWindows\scout&quot; (&#xD;&#xA;copy &quot;$(ProjectDir)..\ScoutUnityProject\AssetBundles\StandaloneWindows\scout&quot; &quot;$(ProjectDir)..\ScoutProject&quot;&#xD;&#xA;)&#xD;&#xA;&#xD;&#xA;REM copy the whole Build\plugins folder into your r2modman profile. This mimics how r2modman will install your mod&#xD;&#xA;Xcopy /E /I /Y &quot;$(ProjectDir)..\Build\plugins&quot; &quot;C:\Users\mario\AppData\Roaming\r2modmanPlus-local\RiskOfRain2\profiles\scout\BepInEx\plugins\kenko-scout&quot;&#xD;&#xA;)" />  </Target>
+    <Exec Command="REM follow the Building Your Mod page on the henrytutorial wiki for more information on this&#xD;&#xA;REM change this to your username (or add yours if you're working in a team or somethin)&#xD;&#xA;if &quot;$(Username)&quot; == &quot;mario&quot; set build=true&#xD;&#xA;&#xD;&#xA;if defined build (&#xD;&#xA;&#xD;&#xA;REM copy the built mod to our Build folder&#xD;&#xA;copy &quot;$(TargetPath)&quot; &quot;$(ProjectDir)..\Build\plugins&quot;&#xD;&#xA;&#xD;&#xA;REM copy the assetbundle from our unity project to our Build folder&#xD;&#xA;REM change these paths to your (now hopefully renamed) folders&#xD;&#xA;if exist &quot;$(ProjectDir)..\ScoutUnityProject\AssetBundles\StandaloneWindows\scout&quot; (&#xD;&#xA;copy &quot;$(ProjectDir)..\ScoutUnityProject\AssetBundles\StandaloneWindows\scout&quot; &quot;$(ProjectDir)..\ScoutProject&quot;&#xD;&#xA;)&#xD;&#xA;&#xD;&#xA;REM copy the whole Build\plugins folder into your r2modman profile. This mimics how r2modman will install your mod&#xD;&#xA;Xcopy /E /I /Y &quot;$(ProjectDir)..\Build\plugins&quot; &quot;F:\WebfishingMods\RiskOfRain2\profiles\testing\BepInEx\plugins\kenko-scout\&quot;&#xD;&#xA;)" />  </Target>
 
 </Project>

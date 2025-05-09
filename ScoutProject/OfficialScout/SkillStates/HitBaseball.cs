@@ -44,10 +44,14 @@ namespace OfficialScoutMod.Scout.SkillStates
                 Ray aimRay = base.GetAimRay();
                 aimRay = this.ModifyProjectileAimRay(aimRay);
                 aimRay.direction = Util.ApplySpread(aimRay.direction, 0f, 0f, 1f, 1f, 0f, this.projectilePitchBonus);
-                DamageAPI.ModdedDamageTypeHolderComponent moddedDamage = ballPrefab.GetComponent<DamageAPI.ModdedDamageTypeHolderComponent>();
-                if (scoutController.ModdedDamageType == DamageTypes.AtomicCrits) moddedDamage.Add(DamageTypes.AtomicCrits);
-                ProjectileManager.instance.FireProjectile(ballPrefab, aimRay.origin, Util.QuaternionSafeLookRotation(aimRay.direction), this.gameObject, this.damageStat * ScoutStaticValues.baseballDamageCoefficient, this.force, this.RollCrit(), scoutController.atomicDraining ? DamageColorIndex.Item : DamageColorIndex.Default, null, -1f);
-                if (moddedDamage.Has(DamageTypes.AtomicCrits)) moddedDamage.Remove(DamageTypes.AtomicCrits);
+
+                ProjectileDamage moddedDamage = ballPrefab.GetComponent<ProjectileDamage>();
+                if (scoutController.ModdedDamageType == DamageTypes.AtomicCrits) moddedDamage.damageType.AddModdedDamageType(DamageTypes.AtomicCrits);
+                ProjectileManager.instance.FireProjectile(ballPrefab, aimRay.origin, Util.QuaternionSafeLookRotation(aimRay.direction), this.gameObject, 
+                    this.damageStat * ScoutConfig.baseballDamageCoefficient.Value, this.force, this.RollCrit(), 
+                    scoutController.atomicDraining ? DamageColorIndex.Item : DamageColorIndex.Default, null, -1f);
+
+                if (moddedDamage.damageType.HasModdedDamageType(DamageTypes.AtomicCrits)) moddedDamage.damageType.RemoveModdedDamageType(DamageTypes.AtomicCrits);
             }
         }
 

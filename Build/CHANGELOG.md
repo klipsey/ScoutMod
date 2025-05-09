@@ -1,3 +1,7 @@
+# 0.9.6
+
+- Playable for Sots v3
+
 # 0.9.5
 
 - Playable for sots

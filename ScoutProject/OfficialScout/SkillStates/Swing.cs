@@ -16,7 +16,8 @@ namespace OfficialScoutMod.Scout.SkillStates
             hitboxGroupName = "Bat";
 
             damageType = DamageType.Generic;
-            damageCoefficient = ScoutStaticValues.swingDamageCoefficient;
+            damageSource = DamageSource.Primary;
+            damageCoefficient = ScoutConfig.swingDamageCoefficient.Value;
             procCoefficient = 1f;
             pushForce = 300f;
             bonusForce = Vector3.zero;

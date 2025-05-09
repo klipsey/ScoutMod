@@ -14,11 +14,11 @@ namespace OfficialScoutMod.Scout.SkillStates
 {
     public class ShootRifle : BaseScoutSkillState
     {
-        public float damageCoefficient = ScoutStaticValues.rifleDamageCoefficient;
+        public float damageCoefficient = ScoutConfig.rifleDamageCoefficient.Value;
         public static float procCoefficient = 1f;
         public static float baseDuration = 0.8f;
         public static float force = 200f;
-        public static float recoil = 4f;
+        public static float recoil = ScoutConfig.adjustRifleRecoil.Value;
         public static float range = 9000f;
 
         protected float duration;
@@ -153,6 +153,9 @@ namespace OfficialScoutMod.Scout.SkillStates
                     queryTriggerInteraction = QueryTriggerInteraction.UseGlobal,
                     hitEffectPrefab = EntityStates.Commando.CommandoWeapon.FirePistol2.hitEffectPrefab,
                 };
+
+                bulletAttack.damageType.damageSource = DamageSource.Primary;
+
                 bulletAttack.AddModdedDamageType(scoutController.ModdedDamageType);
                 bulletAttack.AddModdedDamageType(DamageTypes.FillAtomic);
                 bulletAttack.modifyOutgoingDamageCallback = delegate (BulletAttack _bulletAttack, ref BulletAttack.BulletHit hitInfo, DamageInfo damageInfo)

@@ -251,10 +251,11 @@ namespace OfficialScoutMod.Scout.Content
 
             cleaverPrefab.GetComponent<SphereCollider>().radius = 0.5f;
 
-            cleaverPrefab.GetComponent<ProjectileDamage>().damageType = DamageType.BlightOnHit;
-            DamageAPI.ModdedDamageTypeHolderComponent moddedDamage = cleaverPrefab.AddComponent<DamageAPI.ModdedDamageTypeHolderComponent>();
-            moddedDamage.Add(DamageTypes.CleaverBonus);
-            moddedDamage.Add(DamageTypes.FillAtomic);
+            var pdc = cleaverPrefab.GetComponent<ProjectileDamage>();
+            pdc.damageType = DamageType.BlightOnHit;
+            pdc.damageType.AddModdedDamageType(DamageTypes.CleaverBonus);
+            pdc.damageType.AddModdedDamageType(DamageTypes.FillAtomic);
+            pdc.damageType.damageSource = DamageSource.Secondary;
 
             cleaverPrefab.GetComponent<ProjectileController>().ghostPrefab = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Bandit2/Bandit2ShivGhostAlt.prefab").WaitForCompletion().InstantiateClone("ScoutCleaverGhost");
             cleaverPrefab.GetComponent<ProjectileController>().ghostPrefab.AddComponent<NetworkIdentity>();
@@ -291,10 +292,14 @@ namespace OfficialScoutMod.Scout.Content
             baseballPrefab.GetComponent<ProjectileSingleTargetImpact>().hitSoundString = "sfx_scout_baseball_miss";
             baseballPrefab.GetComponent<ProjectileSingleTargetImpact>().enemyHitSoundString = "sfx_scout_baseball_impact";
 
+            var pd = baseballPrefab.GetComponent<ProjectileDamage>();
+
             baseballPrefab.GetComponent<ProjectileDamage>().damageType = DamageType.Generic;
-            DamageAPI.ModdedDamageTypeHolderComponent moddedDamage2 = baseballPrefab.AddComponent<DamageAPI.ModdedDamageTypeHolderComponent>();
-            moddedDamage2.Add(DamageTypes.BallStun);
-            moddedDamage2.Add(DamageTypes.FillAtomic);
+
+            pd.damageType.AddModdedDamageType(DamageTypes.BallStun);
+            pd.damageType.AddModdedDamageType(DamageTypes.FillAtomic);
+
+            pd.damageType.damageSource = DamageSource.Secondary;
 
             baseballPrefab.GetComponent<ProjectileSimple>().desiredForwardSpeed = 120f;
 

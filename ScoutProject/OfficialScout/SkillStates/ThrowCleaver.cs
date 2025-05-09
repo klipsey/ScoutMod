@@ -13,7 +13,7 @@ namespace OfficialScoutMod.Scout.SkillStates
     {
         public static float baseDuration = 0.2f;
         public static float baseDelayDuration = 0.1f * baseDuration;
-        public GameObject cleaver = ScoutAssets.cleaverPrefab;
+        public GameObject cleaverPrefab = ScoutAssets.cleaverPrefab;
         public ScoutController scoutController;
         public override void OnEnter()
         {
@@ -39,10 +39,11 @@ namespace OfficialScoutMod.Scout.SkillStates
                 Ray aimRay = base.GetAimRay();
                 aimRay = this.ModifyProjectileAimRay(aimRay);
                 aimRay.direction = Util.ApplySpread(aimRay.direction, 0f, 0f, 1f, 1f, 0f, this.projectilePitchBonus);
-                DamageAPI.ModdedDamageTypeHolderComponent moddedDamage = cleaver.GetComponent<DamageAPI.ModdedDamageTypeHolderComponent>();
-                if (scoutController.ModdedDamageType == DamageTypes.AtomicCrits) moddedDamage.Add(DamageTypes.AtomicCrits);
-                ProjectileManager.instance.FireProjectile(cleaver, aimRay.origin, Util.QuaternionSafeLookRotation(aimRay.direction), this.gameObject, this.damageStat * ScoutStaticValues.cleaverDamageCoefficient, this.force, this.RollCrit(), scoutController.atomicDraining ? DamageColorIndex.Item : DamageColorIndex.Default, null, -1f);
-                if (moddedDamage.Has(DamageTypes.AtomicCrits)) moddedDamage.Remove(DamageTypes.AtomicCrits);
+                ProjectileDamage moddedDamage = cleaverPrefab.GetComponent<ProjectileDamage>();
+                if (scoutController.ModdedDamageType == DamageTypes.AtomicCrits) moddedDamage.damageType.AddModdedDamageType(DamageTypes.AtomicCrits);
+                ProjectileManager.instance.FireProjectile(cleaverPrefab, aimRay.origin, Util.QuaternionSafeLookRotation(aimRay.direction), this.gameObject, 
+                    this.damageStat * ScoutConfig.cleaverDamageCoefficient.Value, this.force, this.RollCrit(), scoutController.atomicDraining ? DamageColorIndex.Item : DamageColorIndex.Default, null, -1f);
+                if (moddedDamage.damageType.HasModdedDamageType(DamageTypes.AtomicCrits)) moddedDamage.damageType.RemoveModdedDamageType(DamageTypes.AtomicCrits);
             }
         }
 

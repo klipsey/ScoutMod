@@ -10,7 +10,7 @@ namespace OfficialScoutMod.Scout.SkillStates
 {
     public class Shoot : BaseScoutSkillState
     {
-        public static float damageCoefficient = ScoutStaticValues.shotgunDamageCoefficient;
+        public static float damageCoefficient = ScoutConfig.shotgunDamageCoefficient.Value;
         public static float procCoefficient = 0.7f;
         public float baseDuration = 1.2f; // the base skill duration. i.e. attack speed
         public static int bulletCount = 12;
@@ -103,6 +103,9 @@ namespace OfficialScoutMod.Scout.SkillStates
                         hitEffectPrefab = EntityStates.Commando.CommandoWeapon.FireBarrage.hitEffectPrefab,
                         HitEffectNormal = false,
                     };
+
+                    bulletAttack.damageType.damageSource = DamageSource.Primary;
+
                     bulletAttack.AddModdedDamageType(scoutController.ModdedDamageType);
                     bulletAttack.AddModdedDamageType(DamageTypes.FillAtomicShotgun);
                     bulletAttack.minSpread = 0;

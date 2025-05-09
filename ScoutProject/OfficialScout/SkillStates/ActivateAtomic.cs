@@ -10,7 +10,6 @@ namespace OfficialScoutMod.Scout.SkillStates
 {
     public class ActivateAtomic : BaseScoutSkillState
     {
-        DamageType damageType;
         public override void OnEnter()
         {
             RefreshState();
@@ -30,8 +29,10 @@ namespace OfficialScoutMod.Scout.SkillStates
 
                     if (base.isAuthority)
                     {
-                        this.damageType = DamageType.AOE;
-                        this.damageType |= scoutController.atomicGauge >= scoutController.maxAtomicGauge / 2f ? DamageType.Stun1s : DamageType.Generic;
+                        DamageTypeCombo damageType = DamageType.AOE;
+                        damageType |= scoutController.atomicGauge >= scoutController.maxAtomicGauge / 2f ? DamageType.Stun1s : DamageType.Generic;
+                        damageType.damageSource = DamageSource.Utility;
+
                         BlastAttack.Result result = new BlastAttack
                         {
                             attacker = base.gameObject,
@@ -39,11 +40,12 @@ namespace OfficialScoutMod.Scout.SkillStates
                             impactEffect = EffectIndex.Invalid,
                             losType = BlastAttack.LoSType.None,
                             damageColorIndex = DamageColorIndex.Default,
-                            damageType = this.damageType,
+                            damageType = damageType,
                             procCoefficient = Util.Remap(scoutController.atomicGauge, 10f, scoutController.maxAtomicGauge, 0.1f, 1f),
                             bonusForce = Util.Remap(scoutController.atomicGauge, 10f, scoutController.maxAtomicGauge, 50f, 400f) * Vector3.up,
                             baseForce = Util.Remap(scoutController.atomicGauge, 10f, scoutController.maxAtomicGauge, 250f, 2000f),
-                            baseDamage = Util.Remap(scoutController.atomicGauge, 10f, scoutController.maxAtomicGauge, 1f * this.damageStat, ScoutStaticValues.atomicBlastDamageCoefficient * this.damageStat),
+                            baseDamage = Util.Remap(scoutController.atomicGauge, 10f, scoutController.maxAtomicGauge, 1f * this.damageStat, 
+                            ScoutConfig.atomicBlastDamageCoefficient.Value * this.damageStat),
                             falloffModel = BlastAttack.FalloffModel.None,
                             radius = Util.Remap(scoutController.atomicGauge, 10f, scoutController.maxAtomicGauge, 1f, 16f),
                             position = this.characterBody.corePosition,
