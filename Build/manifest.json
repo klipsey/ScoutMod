@@ -1,7 +1,7 @@
 {
     "name": "Scout",
     "author": "tsuyoikenko",
-    "version_number": "0.9.6",
+    "version_number": "0.9.7",
     "website_url": "https://github.com/klipsey/ScoutMod",
     "description": "Adds the Scout survivor.",
     "dependencies": [
