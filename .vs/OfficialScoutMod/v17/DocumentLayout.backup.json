@@ -3,48 +3,64 @@
   "WorkspaceRootPath": "D:\\RoR2Mods\\ScoutMod\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{09DDB9A5-6EB2-4607-B145-A36C51B5207C}|ScoutProject\\OfficialScoutMod.csproj|d:\\ror2mods\\scoutmod\\scoutproject\\officialscout\\content\\scouttokens.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{09DDB9A5-6EB2-4607-B145-A36C51B5207C}|ScoutProject\\OfficialScoutMod.csproj|solutionrelative:scoutproject\\officialscout\\content\\scouttokens.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{09DDB9A5-6EB2-4607-B145-A36C51B5207C}|ScoutProject\\OfficialScoutMod.csproj|d:\\ror2mods\\scoutmod\\scoutproject\\officialscout\\skillstates\\shoot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{09DDB9A5-6EB2-4607-B145-A36C51B5207C}|ScoutProject\\OfficialScoutMod.csproj|solutionrelative:scoutproject\\officialscout\\skillstates\\shoot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{09DDB9A5-6EB2-4607-B145-A36C51B5207C}|ScoutProject\\OfficialScoutMod.csproj|d:\\ror2mods\\scoutmod\\scoutproject\\officialscout\\components\\scoutcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{09DDB9A5-6EB2-4607-B145-A36C51B5207C}|ScoutProject\\OfficialScoutMod.csproj|solutionrelative:scoutproject\\officialscout\\components\\scoutcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{09DDB9A5-6EB2-4607-B145-A36C51B5207C}|ScoutProject\\OfficialScoutMod.csproj|d:\\ror2mods\\scoutmod\\scoutproject\\officialscout\\skillstates\\throwcleaver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{09DDB9A5-6EB2-4607-B145-A36C51B5207C}|ScoutProject\\OfficialScoutMod.csproj|solutionrelative:scoutproject\\officialscout\\skillstates\\throwcleaver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{09DDB9A5-6EB2-4607-B145-A36C51B5207C}|ScoutProject\\OfficialScoutMod.csproj|d:\\ror2mods\\scoutmod\\scoutproject\\officialscout\\skillstates\\hitbaseball.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{09DDB9A5-6EB2-4607-B145-A36C51B5207C}|ScoutProject\\OfficialScoutMod.csproj|solutionrelative:scoutproject\\officialscout\\skillstates\\hitbaseball.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{09DDB9A5-6EB2-4607-B145-A36C51B5207C}|ScoutProject\\OfficialScoutMod.csproj|d:\\ror2mods\\scoutmod\\scoutproject\\officialscout\\skillstates\\swing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{09DDB9A5-6EB2-4607-B145-A36C51B5207C}|ScoutProject\\OfficialScoutMod.csproj|solutionrelative:scoutproject\\officialscout\\skillstates\\swing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{09DDB9A5-6EB2-4607-B145-A36C51B5207C}|ScoutProject\\OfficialScoutMod.csproj|d:\\ror2mods\\scoutmod\\scoutproject\\officialscout\\skillstates\\swapweapon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{09DDB9A5-6EB2-4607-B145-A36C51B5207C}|ScoutProject\\OfficialScoutMod.csproj|solutionrelative:scoutproject\\officialscout\\skillstates\\swapweapon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{09DDB9A5-6EB2-4607-B145-A36C51B5207C}|ScoutProject\\OfficialScoutMod.csproj|d:\\ror2mods\\scoutmod\\scoutproject\\modules\\basecontent\\basestates\\basemeleeattack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{09DDB9A5-6EB2-4607-B145-A36C51B5207C}|ScoutProject\\OfficialScoutMod.csproj|solutionrelative:scoutproject\\modules\\basecontent\\basestates\\basemeleeattack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{09DDB9A5-6EB2-4607-B145-A36C51B5207C}|ScoutProject\\OfficialScoutMod.csproj|d:\\ror2mods\\scoutmod\\scoutproject\\officialscout\\skillstates\\riflereload.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{09DDB9A5-6EB2-4607-B145-A36C51B5207C}|ScoutProject\\OfficialScoutMod.csproj|solutionrelative:scoutproject\\officialscout\\skillstates\\riflereload.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{09DDB9A5-6EB2-4607-B145-A36C51B5207C}|ScoutProject\\OfficialScoutMod.csproj|d:\\ror2mods\\scoutmod\\scoutproject\\officialscout\\content\\scoutassets.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{09DDB9A5-6EB2-4607-B145-A36C51B5207C}|ScoutProject\\OfficialScoutMod.csproj|solutionrelative:scoutproject\\officialscout\\content\\scoutassets.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{09DDB9A5-6EB2-4607-B145-A36C51B5207C}|ScoutProject\\OfficialScoutMod.csproj|d:\\ror2mods\\scoutmod\\scoutproject\\officialscout\\content\\scoutconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{09DDB9A5-6EB2-4607-B145-A36C51B5207C}|ScoutProject\\OfficialScoutMod.csproj|solutionrelative:scoutproject\\officialscout\\content\\scoutconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{09DDB9A5-6EB2-4607-B145-A36C51B5207C}|ScoutProject\\OfficialScoutMod.csproj|d:\\ror2mods\\scoutmod\\scoutproject\\officialscout\\skillstates\\throwcleaver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{09DDB9A5-6EB2-4607-B145-A36C51B5207C}|ScoutProject\\OfficialScoutMod.csproj|solutionrelative:scoutproject\\officialscout\\skillstates\\throwcleaver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{09DDB9A5-6EB2-4607-B145-A36C51B5207C}|ScoutProject\\OfficialScoutMod.csproj|d:\\ror2mods\\scoutmod\\scoutproject\\officialscout\\components\\scoutswap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{09DDB9A5-6EB2-4607-B145-A36C51B5207C}|ScoutProject\\OfficialScoutMod.csproj|solutionrelative:scoutproject\\officialscout\\components\\scoutswap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{09DDB9A5-6EB2-4607-B145-A36C51B5207C}|ScoutProject\\OfficialScoutMod.csproj|d:\\ror2mods\\scoutmod\\scoutproject\\officialscout\\scoutsurvivor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{09DDB9A5-6EB2-4607-B145-A36C51B5207C}|ScoutProject\\OfficialScoutMod.csproj|solutionrelative:scoutproject\\officialscout\\scoutsurvivor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{09DDB9A5-6EB2-4607-B145-A36C51B5207C}|ScoutProject\\OfficialScoutMod.csproj|d:\\ror2mods\\scoutmod\\scoutproject\\modules\\skills.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{09DDB9A5-6EB2-4607-B145-A36C51B5207C}|ScoutProject\\OfficialScoutMod.csproj|solutionrelative:scoutproject\\modules\\skills.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{09DDB9A5-6EB2-4607-B145-A36C51B5207C}|ScoutProject\\OfficialScoutMod.csproj|d:\\ror2mods\\scoutmod\\scoutproject\\officialscout\\content\\damagetypes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{09DDB9A5-6EB2-4607-B145-A36C51B5207C}|ScoutProject\\OfficialScoutMod.csproj|solutionrelative:scoutproject\\officialscout\\content\\damagetypes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{09DDB9A5-6EB2-4607-B145-A36C51B5207C}|ScoutProject\\OfficialScoutMod.csproj|d:\\ror2mods\\scoutmod\\scoutproject\\officialscout\\skillstates\\shoot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{09DDB9A5-6EB2-4607-B145-A36C51B5207C}|ScoutProject\\OfficialScoutMod.csproj|solutionrelative:scoutproject\\officialscout\\skillstates\\shoot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{09DDB9A5-6EB2-4607-B145-A36C51B5207C}|ScoutProject\\OfficialScoutMod.csproj|d:\\ror2mods\\scoutmod\\scoutproject\\modules\\characterassets.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{09DDB9A5-6EB2-4607-B145-A36C51B5207C}|ScoutProject\\OfficialScoutMod.csproj|solutionrelative:scoutproject\\modules\\characterassets.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{09DDB9A5-6EB2-4607-B145-A36C51B5207C}|ScoutProject\\OfficialScoutMod.csproj|d:\\ror2mods\\scoutmod\\scoutproject\\modules\\basecontent\\basestates\\basemeleeattack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{09DDB9A5-6EB2-4607-B145-A36C51B5207C}|ScoutProject\\OfficialScoutMod.csproj|solutionrelative:scoutproject\\modules\\basecontent\\basestates\\basemeleeattack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{09DDB9A5-6EB2-4607-B145-A36C51B5207C}|ScoutProject\\OfficialScoutMod.csproj|d:\\ror2mods\\scoutmod\\scoutproject\\officialscout\\skillstates\\swing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{09DDB9A5-6EB2-4607-B145-A36C51B5207C}|ScoutProject\\OfficialScoutMod.csproj|solutionrelative:scoutproject\\officialscout\\skillstates\\swing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{09DDB9A5-6EB2-4607-B145-A36C51B5207C}|ScoutProject\\OfficialScoutMod.csproj|d:\\ror2mods\\scoutmod\\scoutproject\\officialscout\\content\\scouttokens.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{09DDB9A5-6EB2-4607-B145-A36C51B5207C}|ScoutProject\\OfficialScoutMod.csproj|solutionrelative:scoutproject\\officialscout\\content\\scouttokens.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{09DDB9A5-6EB2-4607-B145-A36C51B5207C}|ScoutProject\\OfficialScoutMod.csproj|d:\\ror2mods\\scoutmod\\scoutproject\\officialscout\\skillstates\\riflereload.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{09DDB9A5-6EB2-4607-B145-A36C51B5207C}|ScoutProject\\OfficialScoutMod.csproj|solutionrelative:scoutproject\\officialscout\\skillstates\\riflereload.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{09DDB9A5-6EB2-4607-B145-A36C51B5207C}|ScoutProject\\OfficialScoutMod.csproj|d:\\ror2mods\\scoutmod\\scoutproject\\officialscout\\skillstates\\activateatomic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -57,10 +73,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{09DDB9A5-6EB2-4607-B145-A36C51B5207C}|ScoutProject\\OfficialScoutMod.csproj|d:\\ror2mods\\scoutmod\\scoutproject\\officialscoutmod.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{09DDB9A5-6EB2-4607-B145-A36C51B5207C}|ScoutProject\\OfficialScoutMod.csproj|solutionrelative:scoutproject\\officialscoutmod.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{09DDB9A5-6EB2-4607-B145-A36C51B5207C}|ScoutProject\\OfficialScoutMod.csproj|d:\\ror2mods\\scoutmod\\scoutproject\\officialscout\\scoutsurvivor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{09DDB9A5-6EB2-4607-B145-A36C51B5207C}|ScoutProject\\OfficialScoutMod.csproj|solutionrelative:scoutproject\\officialscout\\scoutsurvivor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{09DDB9A5-6EB2-4607-B145-A36C51B5207C}|ScoutProject\\OfficialScoutMod.csproj|d:\\ror2mods\\scoutmod\\scoutproject\\officialscout\\components\\atomicgauge.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -93,14 +105,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{09DDB9A5-6EB2-4607-B145-A36C51B5207C}|ScoutProject\\OfficialScoutMod.csproj|d:\\ror2mods\\scoutmod\\scoutproject\\officialscout\\skillstates\\mainstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{09DDB9A5-6EB2-4607-B145-A36C51B5207C}|ScoutProject\\OfficialScoutMod.csproj|solutionrelative:scoutproject\\officialscout\\skillstates\\mainstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{09DDB9A5-6EB2-4607-B145-A36C51B5207C}|ScoutProject\\OfficialScoutMod.csproj|d:\\ror2mods\\scoutmod\\scoutproject\\modules\\skills.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{09DDB9A5-6EB2-4607-B145-A36C51B5207C}|ScoutProject\\OfficialScoutMod.csproj|solutionrelative:scoutproject\\modules\\skills.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{09DDB9A5-6EB2-4607-B145-A36C51B5207C}|ScoutProject\\OfficialScoutMod.csproj|d:\\ror2mods\\scoutmod\\scoutproject\\modules\\characterassets.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{09DDB9A5-6EB2-4607-B145-A36C51B5207C}|ScoutProject\\OfficialScoutMod.csproj|solutionrelative:scoutproject\\modules\\characterassets.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{09DDB9A5-6EB2-4607-B145-A36C51B5207C}|ScoutProject\\OfficialScoutMod.csproj|d:\\ror2mods\\scoutmod\\scoutproject\\officialscout\\content\\scoutbuffs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -139,16 +143,8 @@
       "RelativeMoniker": "D:0:0:{09DDB9A5-6EB2-4607-B145-A36C51B5207C}|ScoutProject\\OfficialScoutMod.csproj|solutionrelative:scoutproject\\officialscout\\content\\scoutai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{09DDB9A5-6EB2-4607-B145-A36C51B5207C}|ScoutProject\\OfficialScoutMod.csproj|d:\\ror2mods\\scoutmod\\scoutproject\\officialscout\\content\\damagetypes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{09DDB9A5-6EB2-4607-B145-A36C51B5207C}|ScoutProject\\OfficialScoutMod.csproj|solutionrelative:scoutproject\\officialscout\\content\\damagetypes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{09DDB9A5-6EB2-4607-B145-A36C51B5207C}|ScoutProject\\OfficialScoutMod.csproj|d:\\ror2mods\\scoutmod\\scoutproject\\modules\\content.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{09DDB9A5-6EB2-4607-B145-A36C51B5207C}|ScoutProject\\OfficialScoutMod.csproj|solutionrelative:scoutproject\\modules\\content.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{09DDB9A5-6EB2-4607-B145-A36C51B5207C}|ScoutProject\\OfficialScoutMod.csproj|d:\\ror2mods\\scoutmod\\scoutproject\\officialscout\\components\\scoutswap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{09DDB9A5-6EB2-4607-B145-A36C51B5207C}|ScoutProject\\OfficialScoutMod.csproj|solutionrelative:scoutproject\\officialscout\\components\\scoutswap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{09DDB9A5-6EB2-4607-B145-A36C51B5207C}|ScoutProject\\OfficialScoutMod.csproj|d:\\ror2mods\\scoutmod\\scoutproject\\officialscout\\components\\scoutpassive.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -175,10 +171,6 @@
       "RelativeMoniker": "D:0:0:{09DDB9A5-6EB2-4607-B145-A36C51B5207C}|ScoutProject\\OfficialScoutMod.csproj|solutionrelative:scoutproject\\officialscout\\achievements\\scoutmasteryachievement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{09DDB9A5-6EB2-4607-B145-A36C51B5207C}|ScoutProject\\OfficialScoutMod.csproj|d:\\ror2mods\\scoutmod\\scoutproject\\modules\\basecontent\\basestates\\basescoutskillstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{09DDB9A5-6EB2-4607-B145-A36C51B5207C}|ScoutProject\\OfficialScoutMod.csproj|solutionrelative:scoutproject\\modules\\basecontent\\basestates\\basescoutskillstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{09DDB9A5-6EB2-4607-B145-A36C51B5207C}|ScoutProject\\OfficialScoutMod.csproj|d:\\ror2mods\\scoutmod\\scoutproject\\modules\\basecontent\\basestates\\basescoutstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{09DDB9A5-6EB2-4607-B145-A36C51B5207C}|ScoutProject\\OfficialScoutMod.csproj|solutionrelative:scoutproject\\modules\\basecontent\\basestates\\basescoutstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -194,7 +186,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 28,
+          "SelectedChildIndex": 27,
           "Children": [
             {
               "$type": "Bookmark",
@@ -287,103 +279,12 @@
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "ThrowCleaver.cs",
-              "DocumentMoniker": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\OfficialScout\\SkillStates\\ThrowCleaver.cs",
-              "RelativeDocumentMoniker": "ScoutProject\\OfficialScout\\SkillStates\\ThrowCleaver.cs",
-              "ToolTip": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\OfficialScout\\SkillStates\\ThrowCleaver.cs",
-              "RelativeToolTip": "ScoutProject\\OfficialScout\\SkillStates\\ThrowCleaver.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAgwCQAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T21:49:03.193Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "RifleReload.cs",
-              "DocumentMoniker": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\OfficialScout\\SkillStates\\RifleReload.cs",
-              "RelativeDocumentMoniker": "ScoutProject\\OfficialScout\\SkillStates\\RifleReload.cs",
-              "ToolTip": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\OfficialScout\\SkillStates\\RifleReload.cs",
-              "RelativeToolTip": "ScoutProject\\OfficialScout\\SkillStates\\RifleReload.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T21:47:43.934Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "HitBaseball.cs",
-              "DocumentMoniker": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\OfficialScout\\SkillStates\\HitBaseball.cs",
-              "RelativeDocumentMoniker": "ScoutProject\\OfficialScout\\SkillStates\\HitBaseball.cs",
-              "ToolTip": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\OfficialScout\\SkillStates\\HitBaseball.cs",
-              "RelativeToolTip": "ScoutProject\\OfficialScout\\SkillStates\\HitBaseball.cs",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAgwDYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T21:43:02.103Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "ShootRifle.cs",
-              "DocumentMoniker": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\OfficialScout\\SkillStates\\ShootRifle.cs",
-              "RelativeDocumentMoniker": "ScoutProject\\OfficialScout\\SkillStates\\ShootRifle.cs",
-              "ToolTip": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\OfficialScout\\SkillStates\\ShootRifle.cs",
-              "RelativeToolTip": "ScoutProject\\OfficialScout\\SkillStates\\ShootRifle.cs",
-              "ViewState": "AgIAAGoAAAAAAAAAAAAswHwAAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T21:39:27.336Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "OfficialScoutMod.csproj",
-              "DocumentMoniker": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\OfficialScoutMod.csproj",
-              "RelativeDocumentMoniker": "ScoutProject\\OfficialScoutMod.csproj",
-              "ToolTip": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\OfficialScoutMod.csproj",
-              "RelativeToolTip": "ScoutProject\\OfficialScoutMod.csproj",
-              "ViewState": "AgIAADwAAAAAAAAAAAAAAEcAAAB3AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-05-09T21:30:07.039Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ScoutTokens.cs",
-              "DocumentMoniker": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\OfficialScout\\Content\\ScoutTokens.cs",
-              "RelativeDocumentMoniker": "ScoutProject\\OfficialScout\\Content\\ScoutTokens.cs",
-              "ToolTip": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\OfficialScout\\Content\\ScoutTokens.cs",
-              "RelativeToolTip": "ScoutProject\\OfficialScout\\Content\\ScoutTokens.cs",
-              "ViewState": "AgIAADsAAAAAAAAAAAAiwEIAAABgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T21:30:07.156Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Shoot.cs",
-              "DocumentMoniker": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\OfficialScout\\SkillStates\\Shoot.cs",
-              "RelativeDocumentMoniker": "ScoutProject\\OfficialScout\\SkillStates\\Shoot.cs",
-              "ToolTip": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\OfficialScout\\SkillStates\\Shoot.cs",
-              "RelativeToolTip": "ScoutProject\\OfficialScout\\SkillStates\\Shoot.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAzAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T21:30:06.852Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
               "Title": "ScoutAssets.cs",
               "DocumentMoniker": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\OfficialScout\\Content\\ScoutAssets.cs",
               "RelativeDocumentMoniker": "ScoutProject\\OfficialScout\\Content\\ScoutAssets.cs",
               "ToolTip": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\OfficialScout\\Content\\ScoutAssets.cs",
               "RelativeToolTip": "ScoutProject\\OfficialScout\\Content\\ScoutAssets.cs",
-              "ViewState": "AgIAAPYAAAAAAAAAAADgvwEBAAAPAAAAAAAAAA==",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAwwMkAAABpAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-09T21:30:07.114Z",
               "EditorCaption": ""
@@ -391,71 +292,183 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "ScoutController.cs",
-              "DocumentMoniker": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\OfficialScout\\Components\\ScoutController.cs",
-              "RelativeDocumentMoniker": "ScoutProject\\OfficialScout\\Components\\ScoutController.cs",
-              "ToolTip": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\OfficialScout\\Components\\ScoutController.cs",
-              "RelativeToolTip": "ScoutProject\\OfficialScout\\Components\\ScoutController.cs",
-              "ViewState": "AgIAABABAAAAAAAAAAAiwCoBAAA0AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T21:30:07.099Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
               "Title": "SwapWeapon.cs",
               "DocumentMoniker": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\OfficialScout\\SkillStates\\SwapWeapon.cs",
               "RelativeDocumentMoniker": "ScoutProject\\OfficialScout\\SkillStates\\SwapWeapon.cs",
               "ToolTip": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\OfficialScout\\SkillStates\\SwapWeapon.cs",
               "RelativeToolTip": "ScoutProject\\OfficialScout\\SkillStates\\SwapWeapon.cs",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAgwDYAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAABYAAAAAAAAAAAAmwBsAAABGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-09T21:30:07.155Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Swing.cs",
-              "DocumentMoniker": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\OfficialScout\\SkillStates\\Swing.cs",
-              "RelativeDocumentMoniker": "ScoutProject\\OfficialScout\\SkillStates\\Swing.cs",
-              "ToolTip": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\OfficialScout\\SkillStates\\Swing.cs",
-              "RelativeToolTip": "ScoutProject\\OfficialScout\\SkillStates\\Swing.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABIAAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T21:30:07.142Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "BaseMeleeAttack.cs",
-              "DocumentMoniker": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\Modules\\BaseContent\\BaseStates\\BaseMeleeAttack.cs",
-              "RelativeDocumentMoniker": "ScoutProject\\Modules\\BaseContent\\BaseStates\\BaseMeleeAttack.cs",
-              "ToolTip": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\Modules\\BaseContent\\BaseStates\\BaseMeleeAttack.cs",
-              "RelativeToolTip": "ScoutProject\\Modules\\BaseContent\\BaseStates\\BaseMeleeAttack.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAArwBUAAABIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T21:30:07.152Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 6,
               "Title": "ScoutSurvivor.cs",
               "DocumentMoniker": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\OfficialScout\\ScoutSurvivor.cs",
               "RelativeDocumentMoniker": "ScoutProject\\OfficialScout\\ScoutSurvivor.cs",
               "ToolTip": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\OfficialScout\\ScoutSurvivor.cs",
               "RelativeToolTip": "ScoutProject\\OfficialScout\\ScoutSurvivor.cs",
-              "ViewState": "AgIAACUAAAAAAAAAAAAswDUAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAALsBAAAAAAAAAAAlwIABAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-09T21:30:07.033Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 1,
+              "Title": "HitBaseball.cs",
+              "DocumentMoniker": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\OfficialScout\\SkillStates\\HitBaseball.cs",
+              "RelativeDocumentMoniker": "ScoutProject\\OfficialScout\\SkillStates\\HitBaseball.cs",
+              "ToolTip": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\OfficialScout\\SkillStates\\HitBaseball.cs",
+              "RelativeToolTip": "ScoutProject\\OfficialScout\\SkillStates\\HitBaseball.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAtwCQAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-09T21:43:02.103Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ScoutSwap.cs",
+              "DocumentMoniker": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\OfficialScout\\Components\\ScoutSwap.cs",
+              "RelativeDocumentMoniker": "ScoutProject\\OfficialScout\\Components\\ScoutSwap.cs",
+              "ToolTip": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\OfficialScout\\Components\\ScoutSwap.cs",
+              "RelativeToolTip": "ScoutProject\\OfficialScout\\Components\\ScoutSwap.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAcwBIAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-09T21:30:07.133Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ScoutController.cs",
+              "DocumentMoniker": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\OfficialScout\\Components\\ScoutController.cs",
+              "RelativeDocumentMoniker": "ScoutProject\\OfficialScout\\Components\\ScoutController.cs",
+              "ToolTip": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\OfficialScout\\Components\\ScoutController.cs",
+              "RelativeToolTip": "ScoutProject\\OfficialScout\\Components\\ScoutController.cs",
+              "ViewState": "AgIAACYBAAAAAAAAAAAYwPYAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-09T21:30:07.099Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Shoot.cs",
+              "DocumentMoniker": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\OfficialScout\\SkillStates\\Shoot.cs",
+              "RelativeDocumentMoniker": "ScoutProject\\OfficialScout\\SkillStates\\Shoot.cs",
+              "ToolTip": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\OfficialScout\\SkillStates\\Shoot.cs",
+              "RelativeToolTip": "ScoutProject\\OfficialScout\\SkillStates\\Shoot.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-09T21:30:06.852Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Skills.cs",
+              "DocumentMoniker": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\Modules\\Skills.cs",
+              "RelativeDocumentMoniker": "ScoutProject\\Modules\\Skills.cs",
+              "ToolTip": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\Modules\\Skills.cs",
+              "RelativeToolTip": "ScoutProject\\Modules\\Skills.cs",
+              "ViewState": "AgIAADQBAAAAAAAAAAA8wA8BAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-09T21:30:07.112Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "DamageTypes.cs",
+              "DocumentMoniker": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\OfficialScout\\Content\\DamageTypes.cs",
+              "RelativeDocumentMoniker": "ScoutProject\\OfficialScout\\Content\\DamageTypes.cs",
+              "ToolTip": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\OfficialScout\\Content\\DamageTypes.cs",
+              "RelativeToolTip": "ScoutProject\\OfficialScout\\Content\\DamageTypes.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAUwCIAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-09T21:30:07.137Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ThrowCleaver.cs",
+              "DocumentMoniker": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\OfficialScout\\SkillStates\\ThrowCleaver.cs",
+              "RelativeDocumentMoniker": "ScoutProject\\OfficialScout\\SkillStates\\ThrowCleaver.cs",
+              "ToolTip": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\OfficialScout\\SkillStates\\ThrowCleaver.cs",
+              "RelativeToolTip": "ScoutProject\\OfficialScout\\SkillStates\\ThrowCleaver.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-09T21:49:03.193Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "OfficialScoutMod.csproj",
+              "DocumentMoniker": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\OfficialScoutMod.csproj",
+              "RelativeDocumentMoniker": "ScoutProject\\OfficialScoutMod.csproj",
+              "ToolTip": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\OfficialScoutMod.csproj",
+              "RelativeToolTip": "ScoutProject\\OfficialScoutMod.csproj",
+              "ViewState": "AgIAADwAAAAAAAAAAAAAAEcAAAB3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-05-09T21:30:07.039Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "BaseMeleeAttack.cs",
+              "DocumentMoniker": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\Modules\\BaseContent\\BaseStates\\BaseMeleeAttack.cs",
+              "RelativeDocumentMoniker": "ScoutProject\\Modules\\BaseContent\\BaseStates\\BaseMeleeAttack.cs",
+              "ToolTip": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\Modules\\BaseContent\\BaseStates\\BaseMeleeAttack.cs",
+              "RelativeToolTip": "ScoutProject\\Modules\\BaseContent\\BaseStates\\BaseMeleeAttack.cs",
+              "ViewState": "AgIAAMoAAAAAAAAAAAAowNkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-09T21:30:07.152Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Swing.cs",
+              "DocumentMoniker": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\OfficialScout\\SkillStates\\Swing.cs",
+              "RelativeDocumentMoniker": "ScoutProject\\OfficialScout\\SkillStates\\Swing.cs",
+              "ToolTip": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\OfficialScout\\SkillStates\\Swing.cs",
+              "RelativeToolTip": "ScoutProject\\OfficialScout\\SkillStates\\Swing.cs",
+              "ViewState": "AgIAADcAAAAAAAAAAAAgwBIAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-09T21:30:07.142Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "ShootRifle.cs",
+              "DocumentMoniker": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\OfficialScout\\SkillStates\\ShootRifle.cs",
+              "RelativeDocumentMoniker": "ScoutProject\\OfficialScout\\SkillStates\\ShootRifle.cs",
+              "ToolTip": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\OfficialScout\\SkillStates\\ShootRifle.cs",
+              "RelativeToolTip": "ScoutProject\\OfficialScout\\SkillStates\\ShootRifle.cs",
+              "ViewState": "AgIAAGoAAAAAAAAAAAAswHwAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-09T21:39:27.336Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "RifleReload.cs",
+              "DocumentMoniker": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\OfficialScout\\SkillStates\\RifleReload.cs",
+              "RelativeDocumentMoniker": "ScoutProject\\OfficialScout\\SkillStates\\RifleReload.cs",
+              "ToolTip": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\OfficialScout\\SkillStates\\RifleReload.cs",
+              "RelativeToolTip": "ScoutProject\\OfficialScout\\SkillStates\\RifleReload.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-09T21:47:43.934Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
               "Title": "AtomicGauge.cs",
               "DocumentMoniker": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\OfficialScout\\Components\\AtomicGauge.cs",
               "RelativeDocumentMoniker": "ScoutProject\\OfficialScout\\Components\\AtomicGauge.cs",
@@ -463,115 +476,11 @@
               "RelativeToolTip": "ScoutProject\\OfficialScout\\Components\\AtomicGauge.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T21:30:07.095Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-09T21:30:07.095Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "OfficialScoutMod",
-              "DocumentMoniker": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\OfficialScoutMod.csproj",
-              "RelativeDocumentMoniker": "ScoutProject\\OfficialScoutMod.csproj",
-              "ToolTip": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\OfficialScoutMod.csproj",
-              "RelativeToolTip": "ScoutProject\\OfficialScoutMod.csproj",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-05-09T21:30:07.116Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "ScoutPlugin.cs",
-              "DocumentMoniker": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\ScoutPlugin.cs",
-              "RelativeDocumentMoniker": "ScoutProject\\ScoutPlugin.cs",
-              "ToolTip": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\ScoutPlugin.cs",
-              "RelativeToolTip": "ScoutProject\\ScoutPlugin.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAAgwCkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T21:30:07.035Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "ActivateAtomic.cs",
-              "DocumentMoniker": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\OfficialScout\\SkillStates\\ActivateAtomic.cs",
-              "RelativeDocumentMoniker": "ScoutProject\\OfficialScout\\SkillStates\\ActivateAtomic.cs",
-              "ToolTip": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\OfficialScout\\SkillStates\\ActivateAtomic.cs",
-              "RelativeToolTip": "ScoutProject\\OfficialScout\\SkillStates\\ActivateAtomic.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAAgwCkAAABIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T21:30:07.106Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "CharacterBase.cs",
-              "DocumentMoniker": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\Modules\\BaseContent\\Characters\\CharacterBase.cs",
-              "RelativeDocumentMoniker": "ScoutProject\\Modules\\BaseContent\\Characters\\CharacterBase.cs",
-              "ToolTip": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\Modules\\BaseContent\\Characters\\CharacterBase.cs",
-              "RelativeToolTip": "ScoutProject\\Modules\\BaseContent\\Characters\\CharacterBase.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAA7wDMAAAA5AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T21:30:07.101Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "DistanceLobController.cs",
-              "DocumentMoniker": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\OfficialScout\\Components\\DistanceLobController.cs",
-              "RelativeDocumentMoniker": "ScoutProject\\OfficialScout\\Components\\DistanceLobController.cs",
-              "ToolTip": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\OfficialScout\\Components\\DistanceLobController.cs",
-              "RelativeToolTip": "ScoutProject\\OfficialScout\\Components\\DistanceLobController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T21:30:07.097Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "Config.cs",
-              "DocumentMoniker": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\Modules\\Config.cs",
-              "RelativeDocumentMoniker": "ScoutProject\\Modules\\Config.cs",
-              "ToolTip": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\Modules\\Config.cs",
-              "RelativeToolTip": "ScoutProject\\Modules\\Config.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T21:30:07.144Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "MainState.cs",
-              "DocumentMoniker": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\OfficialScout\\SkillStates\\MainState.cs",
-              "RelativeDocumentMoniker": "ScoutProject\\OfficialScout\\SkillStates\\MainState.cs",
-              "ToolTip": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\OfficialScout\\SkillStates\\MainState.cs",
-              "RelativeToolTip": "ScoutProject\\OfficialScout\\SkillStates\\MainState.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAATAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T21:30:07.03Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "Prefabs.cs",
-              "DocumentMoniker": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\Modules\\Prefabs.cs",
-              "RelativeDocumentMoniker": "ScoutProject\\Modules\\Prefabs.cs",
-              "ToolTip": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\Modules\\Prefabs.cs",
-              "RelativeToolTip": "ScoutProject\\Modules\\Prefabs.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACsAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T21:30:07.103Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 10,
               "Title": "CharacterAssets.cs",
               "DocumentMoniker": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\Modules\\CharacterAssets.cs",
               "RelativeDocumentMoniker": "ScoutProject\\Modules\\CharacterAssets.cs",
@@ -579,12 +488,118 @@
               "RelativeToolTip": "ScoutProject\\Modules\\CharacterAssets.cs",
               "ViewState": "AgIAAGsAAAAAAAAAAADwv3oAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T21:30:07.107Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-09T21:30:07.107Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ScoutTokens.cs",
+              "DocumentMoniker": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\OfficialScout\\Content\\ScoutTokens.cs",
+              "RelativeDocumentMoniker": "ScoutProject\\OfficialScout\\Content\\ScoutTokens.cs",
+              "ToolTip": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\OfficialScout\\Content\\ScoutTokens.cs",
+              "RelativeToolTip": "ScoutProject\\OfficialScout\\Content\\ScoutTokens.cs",
+              "ViewState": "AgIAADsAAAAAAAAAAAAiwEIAAABgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-09T21:30:07.156Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "OfficialScoutMod",
+              "DocumentMoniker": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\OfficialScoutMod.csproj",
+              "RelativeDocumentMoniker": "ScoutProject\\OfficialScoutMod.csproj",
+              "ToolTip": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\OfficialScoutMod.csproj",
+              "RelativeToolTip": "ScoutProject\\OfficialScoutMod.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-05-09T21:30:07.116Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "ScoutPlugin.cs",
+              "DocumentMoniker": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\ScoutPlugin.cs",
+              "RelativeDocumentMoniker": "ScoutProject\\ScoutPlugin.cs",
+              "ToolTip": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\ScoutPlugin.cs",
+              "RelativeToolTip": "ScoutProject\\ScoutPlugin.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAgwCkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-09T21:30:07.035Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "ActivateAtomic.cs",
+              "DocumentMoniker": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\OfficialScout\\SkillStates\\ActivateAtomic.cs",
+              "RelativeDocumentMoniker": "ScoutProject\\OfficialScout\\SkillStates\\ActivateAtomic.cs",
+              "ToolTip": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\OfficialScout\\SkillStates\\ActivateAtomic.cs",
+              "RelativeToolTip": "ScoutProject\\OfficialScout\\SkillStates\\ActivateAtomic.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAgwCkAAABIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-09T21:30:07.106Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "CharacterBase.cs",
+              "DocumentMoniker": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\Modules\\BaseContent\\Characters\\CharacterBase.cs",
+              "RelativeDocumentMoniker": "ScoutProject\\Modules\\BaseContent\\Characters\\CharacterBase.cs",
+              "ToolTip": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\Modules\\BaseContent\\Characters\\CharacterBase.cs",
+              "RelativeToolTip": "ScoutProject\\Modules\\BaseContent\\Characters\\CharacterBase.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAA7wDMAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-09T21:30:07.101Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "DistanceLobController.cs",
+              "DocumentMoniker": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\OfficialScout\\Components\\DistanceLobController.cs",
+              "RelativeDocumentMoniker": "ScoutProject\\OfficialScout\\Components\\DistanceLobController.cs",
+              "ToolTip": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\OfficialScout\\Components\\DistanceLobController.cs",
+              "RelativeToolTip": "ScoutProject\\OfficialScout\\Components\\DistanceLobController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-09T21:30:07.097Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Config.cs",
+              "DocumentMoniker": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\Modules\\Config.cs",
+              "RelativeDocumentMoniker": "ScoutProject\\Modules\\Config.cs",
+              "ToolTip": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\Modules\\Config.cs",
+              "RelativeToolTip": "ScoutProject\\Modules\\Config.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-09T21:30:07.144Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 25,
+              "Title": "MainState.cs",
+              "DocumentMoniker": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\OfficialScout\\SkillStates\\MainState.cs",
+              "RelativeDocumentMoniker": "ScoutProject\\OfficialScout\\SkillStates\\MainState.cs",
+              "ToolTip": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\OfficialScout\\SkillStates\\MainState.cs",
+              "RelativeToolTip": "ScoutProject\\OfficialScout\\SkillStates\\MainState.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-09T21:30:07.03Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Prefabs.cs",
+              "DocumentMoniker": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\Modules\\Prefabs.cs",
+              "RelativeDocumentMoniker": "ScoutProject\\Modules\\Prefabs.cs",
+              "ToolTip": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\Modules\\Prefabs.cs",
+              "RelativeToolTip": "ScoutProject\\Modules\\Prefabs.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACsAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-09T21:30:07.103Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
               "Title": "ScoutBuffs.cs",
               "DocumentMoniker": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\OfficialScout\\Content\\ScoutBuffs.cs",
               "RelativeDocumentMoniker": "ScoutProject\\OfficialScout\\Content\\ScoutBuffs.cs",
@@ -592,25 +607,11 @@
               "RelativeToolTip": "ScoutProject\\OfficialScout\\Content\\ScoutBuffs.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T21:30:07.109Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-09T21:30:07.109Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "Skills.cs",
-              "DocumentMoniker": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\Modules\\Skills.cs",
-              "RelativeDocumentMoniker": "ScoutProject\\Modules\\Skills.cs",
-              "ToolTip": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\Modules\\Skills.cs",
-              "RelativeToolTip": "ScoutProject\\Modules\\Skills.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAUwA0AAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T21:30:07.112Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 27,
               "Title": "Language.cs",
               "DocumentMoniker": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\Modules\\Language.cs",
               "RelativeDocumentMoniker": "ScoutProject\\Modules\\Language.cs",
@@ -618,12 +619,11 @@
               "RelativeToolTip": "ScoutProject\\Modules\\Language.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T21:30:07.119Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-09T21:30:07.119Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 30,
               "Title": "ScoutCSS.cs",
               "DocumentMoniker": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\OfficialScout\\Components\\ScoutCSS.cs",
               "RelativeDocumentMoniker": "ScoutProject\\OfficialScout\\Components\\ScoutCSS.cs",
@@ -631,12 +631,11 @@
               "RelativeToolTip": "ScoutProject\\OfficialScout\\Components\\ScoutCSS.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAqwAsAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T21:30:07.121Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-09T21:30:07.121Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 28,
               "Title": "ItemDisplays.cs",
               "DocumentMoniker": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\Modules\\ItemDisplays.cs",
               "RelativeDocumentMoniker": "ScoutProject\\Modules\\ItemDisplays.cs",
@@ -644,12 +643,11 @@
               "RelativeToolTip": "ScoutProject\\Modules\\ItemDisplays.cs",
               "ViewState": "AgIAALMAAAAAAAAAAAAkwHMAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T21:30:07.125Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-09T21:30:07.125Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 31,
               "Title": "ScoutCrosshair.cs",
               "DocumentMoniker": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\OfficialScout\\Content\\ScoutCrosshair.cs",
               "RelativeDocumentMoniker": "ScoutProject\\OfficialScout\\Content\\ScoutCrosshair.cs",
@@ -657,12 +655,11 @@
               "RelativeToolTip": "ScoutProject\\OfficialScout\\Content\\ScoutCrosshair.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T21:30:07.126Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-09T21:30:07.126Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 29,
               "Title": "ScoutItemDisplays.cs",
               "DocumentMoniker": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\OfficialScout\\Content\\ScoutItemDisplays.cs",
               "RelativeDocumentMoniker": "ScoutProject\\OfficialScout\\Content\\ScoutItemDisplays.cs",
@@ -670,12 +667,11 @@
               "RelativeToolTip": "ScoutProject\\OfficialScout\\Content\\ScoutItemDisplays.cs",
               "ViewState": "AgIAAJEEAAAAAAAAAAAnwL8EAAB0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T21:30:07.128Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-09T21:30:07.128Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 33,
               "Title": "ScoutUnlockables.cs",
               "DocumentMoniker": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\OfficialScout\\Content\\ScoutUnlockables.cs",
               "RelativeDocumentMoniker": "ScoutProject\\OfficialScout\\Content\\ScoutUnlockables.cs",
@@ -683,12 +679,11 @@
               "RelativeToolTip": "ScoutProject\\OfficialScout\\Content\\ScoutUnlockables.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T21:30:07.13Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-09T21:30:07.13Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 34,
               "Title": "ScoutAI.cs",
               "DocumentMoniker": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\OfficialScout\\Content\\ScoutAI.cs",
               "RelativeDocumentMoniker": "ScoutProject\\OfficialScout\\Content\\ScoutAI.cs",
@@ -696,25 +691,11 @@
               "RelativeToolTip": "ScoutProject\\OfficialScout\\Content\\ScoutAI.cs",
               "ViewState": "AgIAAHgAAAAAAAAAAADwv4AAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T21:30:07.131Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-09T21:30:07.131Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 36,
-              "Title": "ScoutSwap.cs",
-              "DocumentMoniker": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\OfficialScout\\Components\\ScoutSwap.cs",
-              "RelativeDocumentMoniker": "ScoutProject\\OfficialScout\\Components\\ScoutSwap.cs",
-              "ToolTip": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\OfficialScout\\Components\\ScoutSwap.cs",
-              "RelativeToolTip": "ScoutProject\\OfficialScout\\Components\\ScoutSwap.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T21:30:07.133Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 37,
               "Title": "ScoutPassive.cs",
               "DocumentMoniker": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\OfficialScout\\Components\\ScoutPassive.cs",
               "RelativeDocumentMoniker": "ScoutProject\\OfficialScout\\Components\\ScoutPassive.cs",
@@ -722,25 +703,11 @@
               "RelativeToolTip": "ScoutProject\\OfficialScout\\Components\\ScoutPassive.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T21:30:07.134Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-09T21:30:07.134Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
-              "Title": "DamageTypes.cs",
-              "DocumentMoniker": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\OfficialScout\\Content\\DamageTypes.cs",
-              "RelativeDocumentMoniker": "ScoutProject\\OfficialScout\\Content\\DamageTypes.cs",
-              "ToolTip": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\OfficialScout\\Content\\DamageTypes.cs",
-              "RelativeToolTip": "ScoutProject\\OfficialScout\\Content\\DamageTypes.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAUwBoAAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T21:30:07.137Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 32,
               "Title": "ScoutStates.cs",
               "DocumentMoniker": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\OfficialScout\\Content\\ScoutStates.cs",
               "RelativeDocumentMoniker": "ScoutProject\\OfficialScout\\Content\\ScoutStates.cs",
@@ -748,8 +715,7 @@
               "RelativeToolTip": "ScoutProject\\OfficialScout\\Content\\ScoutStates.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABDAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T21:30:07.139Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-09T21:30:07.139Z"
             },
             {
               "$type": "Document",
@@ -761,12 +727,11 @@
               "RelativeToolTip": "ScoutProject\\Modules\\Content.cs",
               "ViewState": "AgIAAGEAAAAAAAAAAADwv4IAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T21:30:07.141Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-09T21:30:07.141Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 37,
               "Title": "ItemDisplayCheck.cs",
               "DocumentMoniker": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\Modules\\ItemDisplayCheck.cs",
               "RelativeDocumentMoniker": "ScoutProject\\Modules\\ItemDisplayCheck.cs",
@@ -774,12 +739,11 @@
               "RelativeToolTip": "ScoutProject\\Modules\\ItemDisplayCheck.cs",
               "ViewState": "AgIAAFUAAAAAAAAAAADwv2kAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T21:30:07.145Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-09T21:30:07.145Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 38,
               "Title": "ContentPacks.cs",
               "DocumentMoniker": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\Modules\\ContentPacks.cs",
               "RelativeDocumentMoniker": "ScoutProject\\Modules\\ContentPacks.cs",
@@ -787,12 +751,11 @@
               "RelativeToolTip": "ScoutProject\\Modules\\ContentPacks.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAABOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T21:30:07.147Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-09T21:30:07.147Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 39,
               "Title": "BaseMasteryAchievement.cs",
               "DocumentMoniker": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\Modules\\BaseContent\\Achievements\\BaseMasteryAchievement.cs",
               "RelativeDocumentMoniker": "ScoutProject\\Modules\\BaseContent\\Achievements\\BaseMasteryAchievement.cs",
@@ -800,12 +763,11 @@
               "RelativeToolTip": "ScoutProject\\Modules\\BaseContent\\Achievements\\BaseMasteryAchievement.cs",
               "ViewState": "AgIAABEAAAAAAAAAAADwvyEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T21:30:07.148Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-09T21:30:07.148Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 40,
               "Title": "ScoutUnlockAchievement.cs",
               "DocumentMoniker": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\OfficialScout\\Achievements\\ScoutUnlockAchievement.cs",
               "RelativeDocumentMoniker": "ScoutProject\\OfficialScout\\Achievements\\ScoutUnlockAchievement.cs",
@@ -813,12 +775,11 @@
               "RelativeToolTip": "ScoutProject\\OfficialScout\\Achievements\\ScoutUnlockAchievement.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T21:30:07.15Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-09T21:30:07.15Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 41,
               "Title": "ScoutMasteryAchievement.cs",
               "DocumentMoniker": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\OfficialScout\\Achievements\\ScoutMasteryAchievement.cs",
               "RelativeDocumentMoniker": "ScoutProject\\OfficialScout\\Achievements\\ScoutMasteryAchievement.cs",
@@ -826,12 +787,11 @@
               "RelativeToolTip": "ScoutProject\\OfficialScout\\Achievements\\ScoutMasteryAchievement.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T21:30:07.154Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-09T21:30:07.154Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 43,
               "Title": "EnterReload.cs",
               "DocumentMoniker": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\OfficialScout\\SkillStates\\EnterReload.cs",
               "RelativeDocumentMoniker": "ScoutProject\\OfficialScout\\SkillStates\\EnterReload.cs",
@@ -839,12 +799,11 @@
               "RelativeToolTip": "ScoutProject\\OfficialScout\\SkillStates\\EnterReload.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAqwAgAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T21:30:07.158Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-09T21:30:07.158Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 42,
               "Title": "BaseScoutState.cs",
               "DocumentMoniker": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\Modules\\BaseContent\\BaseStates\\BaseScoutState.cs",
               "RelativeDocumentMoniker": "ScoutProject\\Modules\\BaseContent\\BaseStates\\BaseScoutState.cs",
@@ -852,55 +811,7 @@
               "RelativeToolTip": "ScoutProject\\Modules\\BaseContent\\BaseStates\\BaseScoutState.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAABhwBUAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T21:30:07.159Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 43,
-              "Title": "BaseScoutSkillState.cs",
-              "DocumentMoniker": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\Modules\\BaseContent\\BaseStates\\BaseScoutSkillState.cs",
-              "RelativeDocumentMoniker": "ScoutProject\\Modules\\BaseContent\\BaseStates\\BaseScoutSkillState.cs",
-              "ToolTip": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\Modules\\BaseContent\\BaseStates\\BaseScoutSkillState.cs",
-              "RelativeToolTip": "ScoutProject\\Modules\\BaseContent\\BaseStates\\BaseScoutSkillState.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAqwCIAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T21:30:07.161Z",
-              "EditorCaption": ""
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Orientation": 0,
-      "VerticalTabListWidth": 256,
-      "FloatingWindowState": {
-        "Id": "5d2ff1e4-64b2-4af3-b102-1b4f08381134",
-        "Display": 0,
-        "X": 398,
-        "Y": 278,
-        "Width": 1527,
-        "Height": 759,
-        "WindowState": 2
-      },
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "ScoutConfig.cs",
-              "DocumentMoniker": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\OfficialScout\\Content\\ScoutConfig.cs",
-              "RelativeDocumentMoniker": "ScoutProject\\OfficialScout\\Content\\ScoutConfig.cs",
-              "ToolTip": "D:\\RoR2Mods\\ScoutMod\\ScoutProject\\OfficialScout\\Content\\ScoutConfig.cs",
-              "RelativeToolTip": "ScoutProject\\OfficialScout\\Content\\ScoutConfig.cs",
-              "ViewState": "AgIAAFIAAAAAAAAAAAAEwFoAAABjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T21:30:07.123Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-09T21:30:07.159Z"
             }
           ]
         }

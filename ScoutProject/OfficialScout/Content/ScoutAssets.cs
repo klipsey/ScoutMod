@@ -212,8 +212,10 @@ namespace OfficialScoutMod.Scout.Content
             scoutMaxGauge.GetComponent<EffectComponent>().soundName = "";
             Modules.Content.CreateAndAddEffectDef(scoutMaxGauge);
 
-            atomicImpactEffect = CreateImpactExplosionEffect("ScoutAtomicBlast", Addressables.LoadAssetAsync<Material>("RoR2/Base/Beetle/matBeetleSpitShockwave.mat").WaitForCompletion(), Addressables.LoadAssetAsync<Material>("RoR2/Base/Beetle/matBeetleQueenAcidDecal.mat").WaitForCompletion(), 2);
+            atomicImpactEffect = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/GreaterWisp/OmniExplosionVFXGreaterWisp.prefab").WaitForCompletion().InstantiateClone("ScoutImpactExplosion");
             atomicImpactEffect.GetComponent<EffectComponent>().applyScale = true;
+
+            Modules.Content.CreateAndAddEffectDef(atomicImpactEffect);
 
             bloodSplatterEffect = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Brother/BrotherSlamImpact.prefab").WaitForCompletion().InstantiateClone("ScoutSplat", true);
             bloodSplatterEffect.AddComponent<NetworkIdentity>();
@@ -249,7 +251,7 @@ namespace OfficialScoutMod.Scout.Content
             cleaverPrefab.GetComponent<ProjectileSingleTargetImpact>().hitSoundString = "sfx_scout_cleaver_miss";
             cleaverPrefab.GetComponent<ProjectileSingleTargetImpact>().enemyHitSoundString = "sfx_scout_cleaver_hit";
 
-            cleaverPrefab.GetComponent<SphereCollider>().radius = 0.5f;
+            cleaverPrefab.GetComponent<SphereCollider>().radius = 1.5f;
 
             var pdc = cleaverPrefab.GetComponent<ProjectileDamage>();
             pdc.damageType = DamageType.BlightOnHit;
@@ -284,7 +286,7 @@ namespace OfficialScoutMod.Scout.Content
             if (!baseballPrefab.GetComponent<NetworkIdentity>()) baseballPrefab.AddComponent<NetworkIdentity>();
             baseballPrefab.GetComponent <ProjectileStickOnImpact>().enabled = false;
 
-            baseballPrefab.GetComponent<SphereCollider>().radius = 0.5f;
+            baseballPrefab.GetComponent<SphereCollider>().radius = 1.5f;
 
             baseballPrefab.GetComponent<DelayedEvent>().enabled = false;
 

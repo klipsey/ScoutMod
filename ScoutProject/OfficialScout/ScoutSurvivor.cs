@@ -9,10 +9,6 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using RoR2.UI;
 using R2API;
-using UnityEngine.AddressableAssets;
-using UnityEngine.Networking;
-using UnityEngine.UI;
-using R2API.Networking;
 using OfficialScoutMod.Scout.Components;
 using OfficialScoutMod.Scout.Content;
 using OfficialScoutMod.Scout.SkillStates;
@@ -510,7 +506,7 @@ namespace OfficialScoutMod.Scout
 
             #region DefaultSkin
             //this creates a SkinDef with all default fields
-            SkinDef defaultSkin = Skins.CreateSkinDef("DEFAULT_SKIN",
+            SkinDef defaultSkin = Modules.Skins.CreateSkinDef("DEFAULT_SKIN",
                 assetBundle.LoadAsset<Sprite>("texDefaultSkin"),
                 defaultRendererinfos,
                 prefabCharacterModel.gameObject);
@@ -591,17 +587,24 @@ namespace OfficialScoutMod.Scout
             R2API.RecalculateStatsAPI.GetStatCoefficients += RecalculateStatsAPI_GetStatCoefficients;
             On.RoR2.UI.LoadoutPanelController.Rebuild += LoadoutPanelController_Rebuild;
             On.RoR2.HealthComponent.TakeDamageProcess += HealthComponent_TakeDamageProcess;
-            if (ScoutPlugin.emotesInstalled) Emotes();
+            On.RoR2.SurvivorCatalog.Init += SurvivorCatalog_Init;
         }
-        [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
-        private static void Emotes()
+
+        private void SurvivorCatalog_Init(On.RoR2.SurvivorCatalog.orig_Init orig)
         {
-            On.RoR2.SurvivorCatalog.Init += (orig) =>
+            orig();
+            if (ScoutPlugin.emotesInstalled) 
+                EmotesAPICompat.Emotes();
+        }
+
+        public static class EmotesAPICompat
+        {
+            [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
+            public static void Emotes()
             {
-                orig();
                 var skele = ScoutAssets.mainAssetBundle.LoadAsset<GameObject>("scout_emoteskeleton");
                 CustomEmotesAPI.ImportArmature(ScoutSurvivor.characterPrefab, skele);
-            };
+            }
         }
         private static void LoadoutPanelController_Rebuild(On.RoR2.UI.LoadoutPanelController.orig_Rebuild orig, LoadoutPanelController self)
         {

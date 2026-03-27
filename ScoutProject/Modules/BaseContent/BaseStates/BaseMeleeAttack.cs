@@ -19,7 +19,7 @@ namespace OfficialScoutMod.Modules.BaseStates
         protected string hitboxGroupName = "SwordGroup";
 
         protected DamageTypeCombo damageType = DamageType.Generic;
-        protected DamageSource damageSource = DamageSource.NoneSpecified;
+        protected DamageSource damageSource = DamageSource.Primary;
         protected List<DamageAPI.ModdedDamageType> moddedDamageTypeHolder = new List<DamageAPI.ModdedDamageType>();
         protected float damageCoefficient = 3.5f;
         protected float procCoefficient = 1f;
@@ -34,7 +34,7 @@ namespace OfficialScoutMod.Modules.BaseStates
 
         protected float hitStopDuration = 0.012f;
         protected float attackRecoil = 0.75f;
-        protected float hitHopVelocity = 4f;
+        protected float hitHopVelocity = 8f;
 
         protected string swingSoundString = "";
         protected string hitSoundString = "";
@@ -45,15 +45,14 @@ namespace OfficialScoutMod.Modules.BaseStates
         protected NetworkSoundEventIndex impactSound = NetworkSoundEventIndex.Invalid;
 
         public float duration;
-        private bool hasFired;
-        private float hitPauseTimer;
-        private OverlapAttack attack;
+        protected bool hasFired;
+        protected float hitPauseTimer;
+        protected OverlapAttack attack;
         protected bool inHitPause;
-        private bool hasHopped;
         protected float stopwatch;
         protected Animator animator;
-        private HitStopCachedState hitStopCachedState;
-        private Vector3 storedVelocity;
+        protected HitStopCachedState hitStopCachedState;
+        protected Vector3 storedVelocity;
 
         public override void OnEnter()
         {
@@ -72,7 +71,7 @@ namespace OfficialScoutMod.Modules.BaseStates
                 this.attack.AddModdedDamageType(i);
             }
             moddedDamageTypeHolder.Clear();
-            attack.damageColorIndex = scoutController.atomicDraining ? DamageColorIndex.Item : DamageColorIndex.Default;
+            attack.damageColorIndex = DamageColorIndex.Default;
             attack.attacker = gameObject;
             attack.inflictor = gameObject;
             attack.teamIndex = GetTeam();
@@ -109,16 +108,6 @@ namespace OfficialScoutMod.Modules.BaseStates
         {
             Util.PlaySound(hitSoundString, gameObject);
 
-            if (!hasHopped)
-            {
-                if (characterMotor && !characterMotor.isGrounded && hitHopVelocity > 0f)
-                {
-                    SmallHop(characterMotor, hitHopVelocity);
-                }
-
-                hasHopped = true;
-            }
-
             ApplyHitstop();
         }
 
@@ -144,7 +133,7 @@ namespace OfficialScoutMod.Modules.BaseStates
             }
         }
 
-        private void EnterAttack()
+        protected void EnterAttack()
         {
             hasFired = true;
             Util.PlayAttackSpeedSound(swingSoundString, gameObject, attackSpeedStat);
@@ -198,10 +187,11 @@ namespace OfficialScoutMod.Modules.BaseStates
             }
         }
 
-        private void RemoveHitstop()
+        protected void RemoveHitstop()
         {
             ConsumeHitStopCachedState(hitStopCachedState, characterMotor, animator);
             inHitPause = false;
+            if (!characterMotor.isGrounded) storedVelocity.y = Mathf.Max(storedVelocity.y, hitHopVelocity / Mathf.Sqrt(attackSpeedStat));
             characterMotor.velocity = storedVelocity;
         }
 

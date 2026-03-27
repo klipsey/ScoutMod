@@ -1,3 +1,15 @@
+# 0.9.10
+
+- DLC3Content.Items.JumpDamageStrike
+
+# 0.9.9
+
+- He loads in
+
+# 0.9.8
+
+- Temp fix to utility
+
 # 0.9.7
 
 - Playable for Sots v3
